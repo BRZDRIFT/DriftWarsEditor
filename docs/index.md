@@ -1,23 +1,7 @@
-# Drift Wars Editor
+Welcome to the Drift Wars Editor Documentation!
 
-## Commands
+The editor can be used for creating both `melee` and `custom` maps.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation ggsite.
-* `mkdocs -h` - Print help message and exit.
+Please use the navigation on the left to browse through the documentation.
 
-```c
-int a
-```
-
-## Project layout2
-    abc
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
+`!! Warning: This documentation is still a work in progress.. !!`

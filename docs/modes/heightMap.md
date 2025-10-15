@@ -1,17 +1,8 @@
-# Locations
+[ This page is work-in-progress ]
 
-## Commands
+`Height Map` allows you to control the height map used on maps.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation ggsite.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-## Test
+- This allows you to create cool effects such as craters on your maps.
+- Units do less damage when attacking from lower ground to higher ground.
+- Height map unfortunately does not effect fog of war and vision (only cliffs do).
+- Height map also currently does not effect unit `xy` speed. (may change in future)

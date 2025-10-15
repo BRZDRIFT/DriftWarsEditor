@@ -1,17 +1,9 @@
-# Locations
+[ This page is work-in-progress ]
 
-## Commands
+## Units
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation ggsite.
-* `mkdocs -h` - Print help message and exit.
+- You can add units on the map for the selected player.
 
-## Project layout
+## Unit Groups
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-## Test
+- You can assign unit groups to certain units, which can be helpful for scripting.

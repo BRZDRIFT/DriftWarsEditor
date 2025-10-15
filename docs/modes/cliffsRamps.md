@@ -1,17 +1,12 @@
-# Locations
+[ This page is work-in-progress ]
 
-## Commands
+`Cliffs / Ramps` allow you to add cliffs and ramps to your map.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation ggsite.
-* `mkdocs -h` - Print help message and exit.
+- Adding Cliffs
+    - `Add Cliffs`: Allows you to add cliffs units can walk on.
+    - `Add Closed Cliffs`: Allow you to add unwalkable cliffs.
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-## Test
+- Adding Ramps
+    - To create ramps, you need to 'assemble' them from smaller pieces.
+    - Ramp pieces: `Left Ramp`, `Middle Ramp`, `Right Ramp`, `etc...`
+    - `Important!` You can rotate Ramp pieces by pressing `R` when placing.

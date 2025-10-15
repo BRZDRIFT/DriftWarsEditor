@@ -1,17 +1,7 @@
-# Locations
+[ This page is work-in-progress ]
 
-## Commands
+`Spawns` allow you to place the starting locations for players.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation ggsite.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-## Test
+- This is where your Town Halls are placed in the beginning of the game (`melee` maps only)
+- This is also where player cameras are centered on at the begining of the game.
+- You are allowed to place Spawn Locations touching gemstones by enabling `Enable Unit Stacking`
