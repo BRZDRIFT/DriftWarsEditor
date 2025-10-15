@@ -1,0 +1,4 @@
+- Integer IDs are used to represent `Units`, `Players`, `Forces`, and other things..
+- Invalid Integer IDs are equal to 0.
+- String identifiers are used to represent `Locations`, `TriangleGroups`, `UnitDatas`, `UnitGroups` and other things..
+- Invalid string identifiers are equal to empty string `""`.

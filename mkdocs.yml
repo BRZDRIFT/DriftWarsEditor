@@ -1,0 +1,64 @@
+site_name: Drift Wars Editor
+
+nav:
+    - Home: 'index.md'
+    - 'Modes':
+      - Cliffs/Ramps: 'modes/cliffsRamps.md'
+      - Height Map: 'modes/heightMap.md'
+      - Spawns: 'modes/spawns.md'
+      - Tex Splatting: 'modes/texSplatting.md'
+      - Units: 'modes/units.md'
+      - Triangles: 'modes/triangles.md'
+      - Triangle Groups: 'modes/triangleGroups.md'
+      - Decals: 'modes/decals.md'
+      - Unbuildable: 'modes/unbuildable.md'
+      - Footprints: 'modes/footprints.md'
+      - Tex Layers: 'modes/texLayers.md'
+      - Locations: 'modes/locations.md'
+    - 'Other':
+      - 'Map Settings': 'other/mapSettings.md'
+      - '1v1 Spawns': 'other/1v1Spawns.md'
+      - 'Team Spawns': 'other/1v1Spawns.md'
+      - 'Data': 'other/data.md'
+      - 'Script': 'other/script.md'
+      - 'Forces': 'other/forces.md'
+      - 'Tags': 'other/tags.md'
+      - 'Tags Per Force': 'other/tagsPerForce.md'
+    - 'Side Controls':
+      - 'Misc Settings': 'side/miscSettings.md'
+      - 'Map Glow Settings': 'side/mapGlowSettings.md'
+      - 'Scene Settings': 'side/sceneSettings.md'
+      - 'Camera Settings': 'side/cameraSettings.md'
+    - Drift Script:
+        - 'Introduction': 'driftScript/intro.md'
+        - 'Script Entry Points': 'driftScript/scriptEntryPoints.md'
+        - 'Identifiers': 'driftScript/identifiers.md'
+        - 'Built-in Types': 'driftScript/builtinTypes.md'
+        - 'Math Library': 'driftScript/math.md'
+        - 'Functions': 'driftScript/functions.md'
+        - 'Enumerations': 'driftScript/enumerations.md'
+        - 'Event Queue': 'driftScript/eventQueue.md'
+        - 'VSCode Syntax Highlighting': 'driftScript/vscodeSyntaxHighlighting.md'
+        - 'Examples and Gotchyas': 'driftScript/gotchyas.md'
+        - 'More Examples..': 'driftScript/examples.md'
+
+theme:
+    name: material
+    palette:
+      # Palette toggle for light mode
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        toggle:
+          icon: material/brightness-7
+          name: Switch to dark mode
+
+      # Palette toggle for dark mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        toggle:
+          icon: material/brightness-4
+          name: Switch to light mode
+
+plugins:
+  - search
+  - macros
