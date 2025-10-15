@@ -1,0 +1,2743 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../math/">
+      
+      
+        <link rel="next" href="../enumerations/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Functions - Drift Wars Editor</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gx_include" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Drift Wars Editor" class="md-header__button md-logo" aria-label="Drift Wars Editor" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Drift Wars Editor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Drift Wars Editor" class="md-nav__button md-logo" aria-label="Drift Wars Editor" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Drift Wars Editor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Modes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/cliffsRamps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cliffs/Ramps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/heightMap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Height Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/spawns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Spawns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/texSplatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tex Splatting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Units
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/triangles.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triangles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/triangleGroups.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Triangle Groups
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/decals.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Decals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/unbuildable.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unbuildable
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/footprints.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Footprints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/texLayers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tex Layers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modes/locations.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Locations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Other
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Other
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/mapSettings.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Map Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/1v1Spawns.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1v1 Spawns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/1v1Spawns.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Team Spawns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/data.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/script.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Script
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/forces.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Forces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/tags.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/tagsPerForce.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags Per Force
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Side Controls
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Side Controls
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side/miscSettings.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Misc Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side/mapGlowSettings.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Map Glow Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side/sceneSettings.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scene Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../side/cameraSettings.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Camera Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Drift Script
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Drift Script
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scriptEntryPoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Script Entry Points
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identifiers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Identifiers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../builtinTypes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Built-in Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Math Library
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Functions
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gx_include" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_include
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_create_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_create_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_sim_tick" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_sim_tick
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_units" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_units
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_unit_count" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_unit_count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_create_explosion" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_create_explosion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_kill_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_kill_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_kills" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_kills
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_unit_killed" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_unit_killed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_remove_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_remove_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_unit_removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_unit_removed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_unit_exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_unit_exists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_unit_alive_and_constructed" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_unit_alive_and_constructed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_unit_alive" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_unit_alive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_unit_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_unit_position
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_unit_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_unit_position
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_ground_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_ground_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_air_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_air_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_players" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_players
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_player" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_player
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_print" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_print
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_victory" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_victory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_defeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_defeat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_encode_text" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_encode_text
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_copy_ud" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_copy_ud
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_modify_ud_props" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_modify_ud_props
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_add_build_structure_item" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_build_structure_item
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_remove_all_build_structure_items" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_remove_all_build_structure_items
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_add_build_item" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_build_item
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_remove_all_build_items" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_remove_all_build_items
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_fling_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_fling_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_area_vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_area_vision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_area_vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_area_vision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_terrain_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_terrain_type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_terrain_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_terrain_type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_lock_player_camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_lock_player_camera
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_unlock_player_camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_unlock_player_camera
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_queue_command" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_queue_command
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_speech_bubble" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_speech_bubble
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-getterssetters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Property Getters/Setters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#userdata-getterssetters" class="md-nav__link">
+    <span class="md-ellipsis">
+      UserData Getters/Setters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_event_queue_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_event_queue_empty
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_pop_event_from_queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_pop_event_from_queue()
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enumerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enumerations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eventQueue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Event Queue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vscodeSyntaxHighlighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VSCode Syntax Highlighting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gotchyas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examples and Gotchyas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    More Examples..
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gx_include" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_include
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_create_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_create_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_sim_tick" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_sim_tick
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_units" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_units
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_unit_count" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_unit_count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_create_explosion" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_create_explosion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_kill_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_kill_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_kills" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_kills
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_unit_killed" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_unit_killed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_remove_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_remove_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_unit_removed" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_unit_removed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_unit_exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_unit_exists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_unit_alive_and_constructed" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_unit_alive_and_constructed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_unit_alive" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_unit_alive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_unit_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_unit_position
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_unit_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_unit_position
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_ground_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_ground_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_air_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_air_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_players" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_players
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_player" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_player
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_print" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_print
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_victory" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_victory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_defeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_defeat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_encode_text" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_encode_text
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_copy_ud" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_copy_ud
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_modify_ud_props" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_modify_ud_props
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_add_build_structure_item" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_build_structure_item
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_remove_all_build_structure_items" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_remove_all_build_structure_items
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_add_build_item" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_build_item
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_remove_all_build_items" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_remove_all_build_items
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_fling_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_fling_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_area_vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_area_vision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_area_vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_area_vision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_terrain_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_terrain_type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_terrain_type" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_terrain_type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_lock_player_camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_lock_player_camera
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_unlock_player_camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_unlock_player_camera
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_queue_command" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_queue_command
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_speech_bubble" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_speech_bubble
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#property-getterssetters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Property Getters/Setters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#userdata-getterssetters" class="md-nav__link">
+    <span class="md-ellipsis">
+      UserData Getters/Setters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_is_event_queue_empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_is_event_queue_empty
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_pop_event_from_queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_pop_event_from_queue()
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Functions</h1>
+
+<h2 id="gx_include">gx_include</h2>
+<pre><code>gx_include(string filename)
+</code></pre>
+<ul>
+<li>Includes <code>filename</code> in current compilation.</li>
+<li>A file is only included once by <code>gx_include</code>; subsequent calls are ignored.</li>
+</ul>
+<h2 id="gx_create_unit">gx_create_unit</h2>
+<pre><code class="language-c">int gx_create_unit(table params)
+</code></pre>
+<pre><code class="language-c">table params = {
+    string m_unitType,              // Required
+    int m_playerID,                 // Required
+    Vec2 m_position = {},           // Optional
+    string m_location = {}          // Optional
+    int m_level = 1                 // Optional, default unit level = 1
+}
+</code></pre>
+<pre><code class="language-lua">local new_unit = gx_create_unit({ m_unitType = &quot;Brute&quot;, m_playerID = 1, m_location = &quot;my_cool_location&quot; })
+</code></pre>
+<ul>
+<li>Will create unit of type <code>m_unitType</code> at position <code>m_position</code> or at location <code>m_location</code> for player <code>m_playerID</code>.</li>
+<li>It is undefined behavior to have both <code>m_position</code> and <code>m_location</code> set.</li>
+<li>If neither <code>m_position</code> nor <code>m_location</code> is set, unit will be created at <code>(0, 0)</code></li>
+<li>Refer to <a href="/driftScript/builtinTypes/#vec2">Vec2</a> if needed.</li>
+</ul>
+<h2 id="gx_get_sim_tick">gx_get_sim_tick</h2>
+<pre><code class="language-c">int gx_get_sim_tick()
+</code></pre>
+<ul>
+<li>Returns the current sim tick number in simulation.</li>
+<li>The <a href="/driftScript/scriptEntryPoints/#gx_sim_init">gx_sim_init</a> call will have <code>tick = 0</code></li>
+<li>The first <a href="/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call will have <code>tick = 1</code></li>
+<li>The second <a href="/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call will have <code>tick = 2</code>, etc..</li>
+<li>every tick corresponds to 50ms real time</li>
+</ul>
+<h2 id="gx_get_units">gx_get_units</h2>
+<pre><code class="language-c">int[] gx_get_units(table params)
+</code></pre>
+<pre><code class="language-c">table params = {
+    int m_playerIDs[],                              // Optional, Filter for player_id
+    int m_forceIDs[],                               // Optional, Filter for force_id
+    string m_unitTypes[],                           // Optional, Filter for certain unit types
+    string m_exceptUnitTypes[],                     // Optional, ignore certain unit types
+    string m_locations[],                           // Optional, locations to get units from
+    BoundsCheck m_boundsCheck = BoundsCheck.Center  // Optional, used if m_location is set. (default = Center)
+    bool m_bIncludeAirUnits = true,                 // Optional, Set to false if you want to exclude air units
+    bool m_bIncludeGroundUnits = true               // Optional, set to false if you want to exclude ground units
+    bool m_bIncludeKilledUnits = false,             // Optional, Set to true if you want to include killed units
+    bool m_bIncludeRemovedUnits = false             // Optional, set to true if you want to include removed units
+    bool m_bIncludeProjectiles = false              // Optional, include projectiles (default: false)
+}
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-lua">local the_units = gx_get_units({
+    m_location = &quot;my_cool_location&quot;,
+    m_unitType = &quot;Brute&quot;,
+    m_playerID = 1
+})
+
+foreach (unit in the_units) {
+    gx_kill_unit(unit)
+}
+</code></pre>
+<ul>
+<li>If m_location is not set, will grab units from entire map.</li>
+<li>Refer to <a href="/driftScript/enumerations/#boundscheck">BoundsCheck </a> if needed.</li>
+</ul>
+<h2 id="gx_get_unit_count">gx_get_unit_count</h2>
+<pre><code class="language-c">int gx_get_unit_count(table params)
+</code></pre>
+<pre><code class="language-c">table params = {
+    int m_playerID = {},                            // Optional, filter by player_id
+    int m_forceID = {},                              // Optional, filter by force_id
+    string m_unitType = {},                         // Optional, filter by unit_type
+    string m_location = {},                         // Optional, only return units within specified location
+    BoundsCheck m_boundsCheck = BoundsCheck.Center  // Optional, used only if m_location is set (default: Center)
+    bool m_bCountAirUnits = true,                   // Optional, include air units in query (default: true)
+    bool m_bCountGroundUnits = true,                // Optional, include ground units in query (default: true)
+    bool m_bCountKilledUnits = false,               // Optional, include killed units (default: false)
+    bool m_bCountRemovedUnits = false               // Optional, include removed units (default: false)
+    bool m_bCountProjectiles = false                // Optional, include projectiles (default: false)
+}
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-lua">local numBrutesAtMyLocation = gx_get_unit_count({
+    m_unitType = &quot;Brute&quot;,
+    m_location = &quot;MyLocation&quot;
+})
+
+gx_print(numBrutesAtMyLocation)
+</code></pre>
+<ul>
+<li>If <code>m_location</code> is not set, will return number of units on entire map</li>
+<li>Refer to <a href="/driftScript/enumerations/#boundscheck">BoundsCheck </a> if needed.</li>
+</ul>
+<h2 id="gx_create_explosion">gx_create_explosion</h2>
+<pre><code class="language-c">void gx_create_explosion(table params)
+</code></pre>
+<pre><code class="language-c">table params = {
+    float m_size = {},              // Optional, Diameter of explosion
+    Vec3 m_color = Vec3(1,1,0)      // Optional, ColorSRGB of explosion.
+    string m_location = {},         // Optional, Location for explosion
+    Vec2 m_pos = {}                 // Optional, Position for explosion
+}
+</code></pre>
+<ul>
+<li>Refer to <a href="/driftScript/builtinTypes/#vec2">Vec2</a> and <a href="/driftScript/builtinTypes/#vec3">Vec3</a> if needed.</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-lua">gx_create_explosion( {
+    m_color = Vec3(1, 0, .5),
+    m_location = &quot;my_location&quot;
+} )
+</code></pre>
+<ul>
+<li>it is undefined behavior to set both <code>m_location</code> and <code>m_pos</code></li>
+<li>if <code>m_size</code> is not set and <code>m_location</code> is set, the resolved size will be the minimum width/height of <code>m_location</code></li>
+<li>if <code>m_size</code> is not set and <code>m_pos</code> is set, the resolved size will be <code>1</code></li>
+<li>Explosions are purely visual. They do not do any damage.</li>
+<li>Default value for <code>m_color</code> is <code>Vec3(1,1,0)</code> aka <code>0xFFFF00</code> (yellow)</li>
+<li>Refer to <a href="/driftScript/builtinTypes/#vec3">Vec3</a> if needed.</li>
+</ul>
+<h2 id="gx_kill_unit">gx_kill_unit</h2>
+<pre><code class="language-c">void gx_kill_unit(int unit_id)
+</code></pre>
+<ul>
+<li>kills the unit <code>unit_id</code>.</li>
+<li>It is safe to call this function on already killed units</li>
+</ul>
+<h2 id="gx_get_kills">gx_get_kills</h2>
+<pre><code class="language-c">void gx_get_kills(int player_id, table params = {})
+</code></pre>
+<pre><code>params = {
+    m_playerID = {},
+    m_bAlliedKills = {},
+    m_bSelfKills = {},
+    m_bNonAlliedKills = {},
+}
+</code></pre>
+<ul>
+<li>if <code>m_playerID</code> is set, none of <code>m_bAlliedKills</code>, <code>m_bSelfKills</code>, <code>m_bNonAlliedKills</code> should be set</li>
+<li>if empty {} is passed in for params, all kills will be returned, equivalent to:
+<code>{ m_bAlliedKills = true, m_bSelfKills = rue, m_bNonAlliedKills = true }</code></li>
+<li>Allied kills does not include self kills</li>
+</ul>
+<h2 id="gx_is_unit_killed">gx_is_unit_killed</h2>
+<pre><code class="language-c">void gx_is_unit_killed(int unit_id)
+</code></pre>
+<ul>
+<li>returns if the unit <code>unit_id</code> is killed</li>
+<li>returns <code>true</code> if unit does not exist</li>
+<li>equivalent to calling <code>!gx_is_unit_alive(unit_id)</code></li>
+</ul>
+<h2 id="gx_remove_unit">gx_remove_unit</h2>
+<pre><code class="language-c">void gx_remove_unit(int unit_id)
+</code></pre>
+<ul>
+<li>marks the unit to be removed by game</li>
+<li><code>unit_id</code> will be removed from game before the next <a href="/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call</li>
+<li>It is safe to call this function on already killed or removed units</li>
+</ul>
+<h2 id="gx_is_unit_removed">gx_is_unit_removed</h2>
+<pre><code class="language-c">void gx_is_unit_removed(int unit_id)
+</code></pre>
+<ul>
+<li>returns if unit is marked to be removed</li>
+<li>will still return <code>true</code> if unit_id does not exist</li>
+</ul>
+<h2 id="gx_unit_exists">gx_unit_exists</h2>
+<pre><code class="language-c">bool gx_unit_exists(int unit_id)
+</code></pre>
+<ul>
+<li>checks if unit still exists in the game</li>
+</ul>
+<h2 id="gx_is_unit_alive_and_constructed">gx_is_unit_alive_and_constructed</h2>
+<pre><code class="language-c">bool gx_is_unit_alive_and_constructed(int unit_id)
+</code></pre>
+<ul>
+<li>returns <code>true</code> if unit is alive and constructed</li>
+<li>returns <code>false</code> if unit_id is invalid or unit no longer exists in game</li>
+</ul>
+<h2 id="gx_is_unit_alive">gx_is_unit_alive</h2>
+<pre><code class="language-c">bool gx_is_unit_alive(int unit_id)
+</code></pre>
+<ul>
+<li>returns <code>true</code> if unit is alive</li>
+<li>returns <code>false</code> if unit_id is invalid or unit no longer exists in game</li>
+<li>Note: This function still returns <code>true</code> if unit is not yet fully constructed</li>
+<li>equivalent to calling <code>!gx_is_unit_killed(unit_id)</code></li>
+</ul>
+<h2 id="gx_get_unit_position">gx_get_unit_position</h2>
+<pre><code class="language-c">Vec2 gx_get_unit_position(int unit_id)
+</code></pre>
+<ul>
+<li>returns position of unit</li>
+<li>returns Vec2(0, 0) if unit no longer exists</li>
+</ul>
+<h2 id="gx_set_unit_position">gx_set_unit_position</h2>
+<pre><code class="language-c">void gx_set_unit_position(int unit_id, table params)
+</code></pre>
+<pre><code class="language-c">table params = {
+    string m_location = {},     // Optional, location to put unit
+}
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-lua">gx_set_unit_position(some_unit, { m_location = &quot;location_to_teleport_to&quot; } )
+</code></pre>
+<ul>
+<li>it is undefined to set both <code>m_location</code> and <code>m_pos</code></li>
+<li>if neither is defined, unit will be teleported to Vec2(0, 0)</li>
+</ul>
+<h2 id="gx_is_ground_unit">gx_is_ground_unit</h2>
+<pre><code class="language-c">bool gx_is_ground_unit(int unit_id)
+</code></pre>
+<ul>
+<li>returns if unit is currently a <code>ground</code> unit</li>
+<li>units are always in either the <code>ground</code> or <code>air</code> state</li>
+<li>note: knock-back effect can cause <code>ground</code> units to temporarily become <code>air</code> units</li>
+<li>equivalent to calling <code>!gx_is_air_unit(unit_id)</code></li>
+</ul>
+<h2 id="gx_is_air_unit">gx_is_air_unit</h2>
+<pre><code class="language-c">bool gx_is_air_unit(int unit_id)
+</code></pre>
+<ul>
+<li>returns if unit is currently an <code>air</code> unit</li>
+<li>units are always in either the <code>ground</code> or <code>air</code> state</li>
+<li>note: knock-back effect can cause <code>ground</code> units to temporarily become <code>air</code> units</li>
+<li>equivalent to calling <code>!gx_is_ground_unit(unit_id)</code></li>
+</ul>
+<h2 id="gx_get_players">gx_get_players</h2>
+<pre><code class="language-c">int[] gx_get_players(table params = {})
+</code></pre>
+<pre><code class="language-c">table params = {
+    bool m_bIncludeNormalPlayers = true;
+    bool m_bIncludeDefeatedPlayers = false;
+    bool m_bIncludeNeutralPlayer = false;
+    bool m_bIncludeRescuePlayer = false;
+    bool m_bIncludeHostilePlayer = false;
+    bool m_bPlayerMustBeInGame = true;
+}
+</code></pre>
+<h2 id="gx_get_player">gx_get_player</h2>
+<pre><code class="language-c">int gx_get_player(int unit_id)
+</code></pre>
+<ul>
+<li>returns the <code>player_id</code> for unit <code>unit_id</code></li>
+</ul>
+<h2 id="gx_print">gx_print</h2>
+<pre><code class="language-c">void gx_print(string message, table params = {})
+</code></pre>
+<pre><code class="language-c">table params = {
+    int m_forceID = {},      // Optional, send message to only force_id
+    int m_playerID = {}     // Optional, send message to only player_id
+}
+</code></pre>
+<ul>
+<li>Should only set <code>m_forceID</code> or <code>m_playerID</code>, it is undefined to set both.</li>
+<li>If neither <code>m_forceID</code> nor <code>m_playerID</code> is set, message will be broadcasted to all players (and observers)</li>
+</ul>
+<p>Example</p>
+<pre><code class="language-c">gx_print(&quot;Hello World!&quot;, { m_playerID = 3 } ) // display chat message 'Hello World!' to player 3
+</code></pre>
+<ul>
+<li>outputs text to game chat</li>
+<li>useful for debugging as well</li>
+</ul>
+<h2 id="gx_set_victory">gx_set_victory</h2>
+<pre><code class="language-c">void gx_set_victory(table params)
+</code></pre>
+<pre><code class="language-c">table params = {
+    int m_playerID = {},
+    int m_forceID = {}
+}
+</code></pre>
+<ul>
+<li>once a player or team is set to <code>victory</code>, future calls to <code>gx_set_victory</code>/<code>gx_set_defeat</code> for that player/team will be ignored</li>
+<li>should only set one of <code>m_playerID</code> or <code>m_forceID</code>, setting both is undefined</li>
+<li>setting <code>m_forceID</code> will set victory for all players within that force</li>
+</ul>
+<h2 id="gx_set_defeat">gx_set_defeat</h2>
+<pre><code class="language-c">void gx_set_defeat(table params)
+</code></pre>
+<pre><code class="language-c">table params = {
+    int m_playerID = {},
+    int m_forceID = {},
+    bool m_bKillAllUnits = true     // Optional, (default true)
+}
+</code></pre>
+<ul>
+<li>if <code>m_bKillAllUnits</code> is <code>true</code>, all units for player (or team) will be killed.</li>
+<li>once a player or team is set to <code>defeat</code>, future calls to <code>gx_set_victory</code>/<code>gx_set_defeat</code> for that player/team will be ignored</li>
+<li>should only set one of <code>m_playerID</code> or <code>m_forceID</code>, setting both is undefined</li>
+<li>setting <code>m_forceID</code> will set defeat for all players within that force</li>
+</ul>
+<h2 id="gx_encode_text">gx_encode_text</h2>
+<pre><code class="language-c">string gx_encode_text(string text)
+</code></pre>
+<p>Example</p>
+<pre><code class="language-lua">local someText = gx_encode_text(&quot;^23Rainbow Text&quot;)
+gx_print(someText)
+</code></pre>
+<h2 id="gx_copy_ud">gx_copy_ud</h2>
+<p>Creates a copy of a <code>unit_data</code>.
+A <code>unit_data</code> serves as a 'definition' for a type of unit.
+Required for creating new custom unit types.</p>
+<pre><code class="language-c">void gx_copy_ud(string unit_type, string new_unit_type)
+</code></pre>
+<p>The example below creates a new type of unit called "User_BabyBrute"
+It copies the existing definition of "Brute" to "User_BabyBrute".</p>
+<p>Example:</p>
+<pre><code class="language-c">gx_copy_ud(&quot;Brute&quot;, &quot;User_BabyBrute&quot;)
+</code></pre>
+<ul>
+<li>new unit type name MUST begin with <code>User_</code>. This is to prevent naming collisions for future added official units.</li>
+<li>this function will be a no-op if <code>new_unit_type</code> name does not begin with <code>_</code></li>
+<li><code>ud</code> is short for <code>unit_definition</code> </li>
+<li>Can only be called during <a href="/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+<li>any attempt to call this outside of the <a href="/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a> will be ignored.</li>
+</ul>
+<h2 id="gx_modify_ud_props">gx_modify_ud_props</h2>
+<pre><code class="language-c">void gx_modify_ud_props(string unit_type, table params = {})
+</code></pre>
+<pre><code class="language-c">table params = {
+    string m_friendlyName = {},     // Optional, set unit's friendly name
+    int m_maxHealth = {},           // Optional, set max health
+    float m_maxSpeed = {},          // Optional, set max speed
+    int m_baseArmor = {},           // Optional, sets base armor
+    int m_size = {}                 // Optional, set unit size,
+    int m_gemstoneCost = {},
+    int m_fungusCost = {},
+    int m_supplyCost = {},
+    int m_buildTime = {}
+}
+</code></pre>
+<p>The example below creates a new type of unit called "User_BabyBrute".
+It copies the existing <code>unit_definition</code> of "Brute" to "User_BabyBrute". 
+It then sets properties such as friendly name, maxHealth, baseArmor, and size.</p>
+<p>Example:</p>
+<pre><code class="language-c">gx_copy_ud(&quot;Brute&quot;, &quot;User_BabyBrute&quot;)
+gx_modify_ud_props(&quot;User_BabyBrute&quot;, {
+    m_friendlyName = &quot;Baby Brute&quot;,
+    m_maxHealth = 30,
+    m_baseArmor = 0,
+    m_size = 1
+})
+</code></pre>
+<ul>
+<li>Sets properties for a specific <code>unit_type</code></li>
+<li><code>ud</code> is short for <code>unit_definition</code> </li>
+<li>Can only be called during <a href="/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+<li>any attempt to call this outside of the <a href="/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a> will be ignored.</li>
+</ul>
+<h2 id="gx_add_build_structure_item">gx_add_build_structure_item</h2>
+<pre><code class="language-c">void gx_add_build_structure_item(string unitType, table params = {})
+</code></pre>
+<pre><code>table params = {
+    string m_structure = {},    // name of structure to build, i.e. &quot;Microwave&quot;
+    Vec2 m_position = {},           // position in command card to place at, leaving empty will use default
+    bool bBuildAdvanced = false     // default is false, if set to True, will be placed in 'build advanced' tab
+}
+</code></pre>
+<ul>
+<li>Can only be called during <a href="/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+</ul>
+<h2 id="gx_remove_all_build_structure_items">gx_remove_all_build_structure_items</h2>
+<pre><code class="language-c">void gx_remove_all_build_structure_items(string unitType)
+</code></pre>
+<ul>
+<li>Remove all build structure items from worker</li>
+<li>Can only be called during <a href="/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+</ul>
+<h2 id="gx_add_build_item">gx_add_build_item</h2>
+<pre><code class="language-c">void gx_add_build_item(string unitType, table params)
+</code></pre>
+<pre><code class="language-c">table params = {
+    string m_unitType = {},     // unit type to add
+    string m_research ={},      // research to add
+    string m_position = {}      // position in command card
+}
+</code></pre>
+<ul>
+<li>Only one <code>m_unitType</code> or <code>m_research</code> should be set</li>
+<li>Can only be called during <a href="/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+<li>Remove all build items from structure</li>
+</ul>
+<h2 id="gx_remove_all_build_items">gx_remove_all_build_items</h2>
+<pre><code class="language-c">void gx_remove_all_build_items(string unitType)
+</code></pre>
+<ul>
+<li>Remove all build items from structure</li>
+<li>Can only be called during <a href="/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+</ul>
+<h2 id="gx_fling_unit">gx_fling_unit</h2>
+<p>throws the unit</p>
+<pre><code class="language-c">void gx_fling_unit(int unit_id, table params = {})
+</code></pre>
+<pre><code class="language-c">table params = {
+    Vec2 m_dir = {},        // Optional, 2d direction to throw unit. Does not need to be normalized.
+    Vec3 m_dir3d = {},      // Optional, 3d direction to throw unit. Does not need to be normalized.
+    float m_force = 1       // Optional, velocity to throw unit
+}
+</code></pre>
+<ul>
+<li>If neither <code>m_dir</code> nor <code>m_dir3d</code> is set, unit will be thrown in random direction</li>
+<li>Only <code>m_dir</code> or <code>m_dir3d</code> should be set. Setting both is undefined behavior.</li>
+<li>Refer to <a href="/driftScript/builtinTypes/#vec2">Vec2</a> and <a href="/driftScript/builtinTypes/#vec3">Vec3</a> if needed. </li>
+</ul>
+<h2 id="gx_set_area_vision">gx_set_area_vision</h2>
+<pre><code class="language-c">void gx_set_area_vision(int player_id, table params)
+</code></pre>
+<pre><code class="language-c">table params = {
+    string m_location = {},         // location to give or take away vision of (depending on m_bSet)
+    string m_triangleGroup = {},    // triangle group to give or take away vision of (depending on m_bSet)
+    bool m_bFullMapVision = {}      // If set to true, will give or take away vision of entire map (depending on m_bSet)
+    bool m_bSet = true              // If true gives vision, else takes away vision. (default: true)
+}
+</code></pre>
+<ul>
+<li>This function gives or removes permanent vision of a <code>m_location</code>, <code>m_triangleGroup</code>, or <code>entire map</code>.</li>
+<li>Only one of <code>m_location</code>, <code>m_triangleGroup</code>, or <code>m_bFullMapVision</code> should be set.</li>
+<li>The only valid value of <code>m_bFullMapVision</code> is <code>true</code>. Setting to <code>false</code> is <code>undefined</code>.</li>
+<li>If you want to give <code>Full Map Vision</code> to a player, set <code>m_bFullMapVision</code> to <code>true</code> and <code>m_bSet</code> to <code>true</code>.</li>
+<li>If you want to remove <code>Full Map Vision</code> from a player, set <code>m_bFullMapVision</code> to <code>true</code> and <code>m_bSet</code> to <code>false</code>.</li>
+<li>The value of <code>m_bSet</code> determines if vision is given or taken away from player.</li>
+</ul>
+<h2 id="gx_get_area_vision">gx_get_area_vision</h2>
+<pre><code class="language-c">bool gx_get_area_vision(int player_id, table params)
+</code></pre>
+<pre><code class="language-c">table params = {
+    string m_location = {},         // location to query vision for
+    string m_triangleGroup = {},    // triangle group to query vision for
+    bool m_bFullMapVision = {}      // If set to true, queries if player has full map vision
+}
+</code></pre>
+<ul>
+<li>This function queries if the player has permanent vision of a <code>location</code>, <code>triangleGroup</code>, or <code>entire map</code>.</li>
+<li>Only one of <code>m_location</code>, <code>m_triangleGroup</code>, or <code>m_bFullMapVision</code> should be set.</li>
+<li>The only valid value of <code>m_bFullMapVision</code> is <code>true</code>. Setting to <code>false</code> is <code>undefined</code>.</li>
+</ul>
+<h2 id="gx_set_terrain_type">gx_set_terrain_type</h2>
+<pre><code class="language-c">void gx_set_terrain_type(params = {})
+</code></pre>
+<pre><code class="language-c">table params = {
+    TerrainType m_type         // Required. The type of terrain to change to. See TerrainType enum. 
+    int m_secondary = 0         // Secondary terrain type. (default = 0)
+    Vec2 m_index = {},          // 2d index of square to change terrain type of
+    int m_index2 = {},         // 0 or 1, 0 indicates bottom triangle, 1 indicates top.
+                                // If index2 is not defined, entire square specified by m_index
+                                // will be set to terrain type (i.e. both triangles, top and bottom).
+                                // m_index and index2 are ignored if m_location is set.
+    string m_location = {}      // location to set terrain tile types.,
+    string m_triangleGroup = {} // triangle group to set terrian tile stype
+}
+</code></pre>
+<p>Example that sets terrain at location <code>my_location</code> to Pacifist type:</p>
+<pre><code class="language-c">gx_set_terrain_type({
+    m_type = TerrainType.Normal,
+    m_secondary = SecondaryTerrainTypeNormal.Pacifist,
+    m_location = &quot;my_location&quot;
+})
+</code></pre>
+<ul>
+<li>Refer to <a href="/driftScript/enumerations/#terraintype">TerrainType</a> for valid <code>m_type</code> values</li>
+<li>If <code>m_type</code> is set to <code>TerrainType.Normal</code>, <code>m_secondary</code> must be one of <a href="/driftScript/enumerations/#secondaryterraintypenormal">SecondaryTerrainTypeNormal</a> values</li>
+<li>Refer to <a href="/driftScript/builtinTypes/#vec2">Vec2</a> if needed.</li>
+<li>if only <code>m_index</code> is set, the square at <code>m_index</code> is set to terrain type (i.e. both bottom and top triangle)</li>
+<li>if <code>m_location</code> is set, the triangles within the <code>m_location</code> are set to the new terrain type</li>
+<li>if <code>m_triangleGroup</code> is set, the triangles within <code>m_triangleGroup</code> are set to the new terrain type</li>
+<li>if <code>m_location</code> is set, it is <code>undefined behavior</code> to also set  <code>m_index</code>, <code>m_index2</code>, or <code>m_triangleGroup</code></li>
+<li>if <code>m_triangleGroup</code> is set, is it <code>undefined behavior</code> to also set <code>m_index</code>, <code>m_index2</code>, or <code>m_location</code></li>
+<li>if <code>m_index</code> is set, it is <code>undefined behavior</code> to also set <code>m_location</code>, and <code>m_triangleGroup</code></li>
+</ul>
+<h2 id="gx_get_terrain_type">gx_get_terrain_type</h2>
+<pre><code class="language-c">Vec2 gx_get_terrain_type(Vec2 index, int index2 = 0)
+````
+- returns primary terrain type in `vec.x` and returns secondary terrain type in `vec.y`
+
+## gx_set_player_camera_look_at
+```c
+void gx_set_player_camera_look_at(int player_id, table params)
+</code></pre>
+<pre><code class="language-c">local params = {
+    int m_unitID = {},
+    string m_location = {}
+}
+</code></pre>
+<ul>
+<li>Moves camera of <code>player_id</code> to look at <code>m_unit</code> or <code>m_location</code></li>
+<li>One of <code>m_unit</code> or <code>m_location</code> should be set. Not both.</li>
+</ul>
+<h2 id="gx_lock_player_camera">gx_lock_player_camera</h2>
+<pre><code class="language-c">void gx_lock_player_camera(int player_id, table params = {})
+</code></pre>
+<pre><code class="language-c">local params = {
+    int m_unitID = {},
+    string m_location = {}
+}
+</code></pre>
+<ul>
+<li>locks <code>player_id</code> camera to look at <code>m_unitID</code> or <code>m_location</code>.</li>
+<li>camera will follow <code>m_unitID</code> or <code>m_location</code> until <code>m_unitID</code> is removed from game</li>
+<li>can unlock camera by calling <code>gx_unlock_player_camera(player_id)</code></li>
+<li>passing empty args for <code>params</code> will unlock the camera for <code>player_id</code>.</li>
+</ul>
+<h2 id="gx_unlock_player_camera">gx_unlock_player_camera</h2>
+<pre><code class="language-c">void gx_unlock_player_camera(int player_id)
+</code></pre>
+<ul>
+<li>unlocks <code>player_id</code> camera position set by <a href="/driftScript/functions/#gx_lock_player_camera">gx_lock_player_camera</a></li>
+<li>equivalent to calling <code>gx_lock_player_camera(player_id, {})</code></li>
+</ul>
+<h2 id="gx_queue_command">gx_queue_command</h2>
+<pre><code class="language-c">gx_queue_command(int unit_ids[], CommandType command, table params = {})
+</code></pre>
+<pre><code class="language-c">table params = {
+    int m_unitID,            // unit to target
+    string m_location = {},     // location to target
+    string m_pos = {},          // position to target
+}
+</code></pre>
+<ul>
+<li>only one (or zero) unit_id, m_location, m_pos should be set</li>
+<li>some commands/spells only work when certain params are set</li>
+<li>(i.e., a spell that can only target units cannot target a <code>m_pos</code> or <code>m_location</code>)</li>
+<li><code>CommandType</code> can also be a spell identifier</li>
+<li>See <a href="/driftScript/enumerations/#commandtype">CommandType</a> for possible command values</li>
+</ul>
+<h2 id="gx_set_speech_bubble">gx_set_speech_bubble</h2>
+<pre><code class="language-c">void gx_set_speech_bubble(int unit_id, string text, table params = {})
+</code></pre>
+<ul>
+<li>set a speech bubble for unit_id</li>
+<li>currently there are no optional params</li>
+</ul>
+<h2 id="property-getterssetters">Property Getters/Setters</h2>
+<ul>
+<li>Allows you to get/set certain properties for <code>simulation</code>, <code>forces</code>, <code>players</code>, and <code>units</code>, and other things</li>
+</ul>
+<pre><code class="language-c">// getters
+mixed gx_get_force_prop(ForceProp prop, int force_id)
+mixed gx_get_player_prop(PlayerProp prop, int player_id)
+mixed gx_get_unit_prop(UnitProp prop, int unit_id)
+mixed gx_get_location_prop(LocationProp prop, string location)
+
+// setters
+void gx_set_force_prop(ForceProp prop, int force_id, mixed val)
+void gx_set_player_prop(PlayerProp prop, int player_id, mixed val)
+void gx_set_unit_prop(UnitProp prop, int unit_id, mixed val)
+
+// adders
+void gx_add_force_prop(ForceProp prop, int force_id, mixed val)
+void gx_add_player_prop(PlayerProp prop, int player_id, mixed val)
+void gx_add_unit_prop(UnitProp prop, int unit_id, mixed val)
+</code></pre>
+<ul>
+<li>Please refer to <a href="/driftScript/enumerations/#forceprop">ForceProp</a>, <a href="/driftScript/enumerations/#playerprop">PlayerProp</a>, <a href="/driftScript/enumerations/#unitprop">UnitProp</a>, and <a href="/driftScript/enumerations/#locationprop">LocationProp</a> for possibles values you can get/set (and their types).</li>
+<li>Properties that are <code>int</code> or <code>float</code> and are <code>Read-Write</code> can use the <code>gx_add_*</code> functions</li>
+</ul>
+<h2 id="userdata-getterssetters">UserData Getters/Setters</h2>
+<ul>
+<li>Allows you to get/set userdata integers for <code>simulation</code>, <code>forces</code>, <code>players</code>, and <code>units</code>, and other things for your own purposes</li>
+</ul>
+<pre><code class="language-c">// getters
+int gx_get_sim_variable(string varName)
+int gx_get_force_variable(int force_id, string varName)
+int gx_get_player_variable(int player_id, string varName)
+int gx_get_unit_variable(int unit_id, string varName)
+
+// setters
+void gx_set_sim_variable(string varName, int varValue)
+void gx_set_force_variable(int force_id, string varName, int varValue)
+void gx_set_player_variable(int player_id, string varName, int varValue)
+void gx_set_unit_variable(int unit_id, string varName, int varValue)
+
+// adders
+void gx_add_sim_variable(string varName, int varValue)
+void gx_add_force_variable(int force_id, string varName, int varValue)
+void gx_add_player_variable(int player_id, string varName, int varValue)
+void gx_add_unit_variable(int unit_id, string varName, int varValue)
+</code></pre>
+<ul>
+<li>Calling <code>gx_get_*</code> to retrieve a non-existing <code>varValue</code> will return <code>0</code>.</li>
+<li>Only <code>int</code> values can be set.</li>
+</ul>
+<h2 id="gx_is_event_queue_empty">gx_is_event_queue_empty</h2>
+<pre><code class="language-c">bool gx_is_event_queue_empty()
+</code></pre>
+<ul>
+<li>Check if event queue is empty.</li>
+<li>See <a href="/driftScript/eventQueue/#event_queue">Event Queue</a></li>
+</ul>
+<h2 id="gx_pop_event_from_queue">gx_pop_event_from_queue()</h2>
+<pre><code class="language-c">Event gx_pop_event_from_queue()
+</code></pre>
+<ul>
+<li>Pop event from event queue.</li>
+<li>See <a href="/driftScript/eventQueue/#event_queue">Event Queue</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
