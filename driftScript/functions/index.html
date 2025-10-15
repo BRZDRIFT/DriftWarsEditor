@@ -1376,6 +1376,78 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gx_set_unit_ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_unit_ammo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_unit_ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_unit_ammo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_add_unit_ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_unit_ammo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_player_ammo_in_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_player_ammo_in_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_player_ammo_in_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_player_ammo_in_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_add_player_ammo_in_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_player_ammo_in_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_player_ammo_total" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_player_ammo_total
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_unit_by_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_unit_by_name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#property-getterssetters" class="md-nav__link">
     <span class="md-ellipsis">
       Property Getters/Setters
@@ -1912,6 +1984,78 @@
   <a href="#gx_set_speech_bubble" class="md-nav__link">
     <span class="md-ellipsis">
       gx_set_speech_bubble
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_unit_ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_unit_ammo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_unit_ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_unit_ammo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_add_unit_ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_unit_ammo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_set_player_ammo_in_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_player_ammo_in_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_player_ammo_in_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_player_ammo_in_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_add_player_ammo_in_unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_player_ammo_in_unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_player_ammo_total" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_player_ammo_total
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_unit_by_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_unit_by_name
     </span>
   </a>
   
@@ -2506,6 +2650,35 @@ void gx_set_player_camera_look_at(int player_id, table params)
 <li>set a speech bubble for unit_id</li>
 <li>currently there are no optional params</li>
 </ul>
+<h2 id="gx_set_unit_ammo">gx_set_unit_ammo</h2>
+<pre><code class="language-c">void gx_set_unit_ammo(int unit_id, string ammoName, int count)
+</code></pre>
+<h2 id="gx_get_unit_ammo">gx_get_unit_ammo</h2>
+<pre><code class="language-c">int gx_get_unit_ammo(int unit_id, string ammoName)
+</code></pre>
+<h2 id="gx_add_unit_ammo">gx_add_unit_ammo</h2>
+<pre><code class="language-c">int gx_add_unit_ammo(int unit_id, string ammoName, int count)
+</code></pre>
+<h2 id="gx_set_player_ammo_in_unit">gx_set_player_ammo_in_unit</h2>
+<pre><code class="language-c">void gx_set_player_ammo_in_unit(int unit_id, string ammoName, int count)
+</code></pre>
+<h2 id="gx_get_player_ammo_in_unit">gx_get_player_ammo_in_unit</h2>
+<pre><code class="language-c">int gx_get_player_ammo_in_unit(int unit_id, string ammoName)
+</code></pre>
+<h2 id="gx_add_player_ammo_in_unit">gx_add_player_ammo_in_unit</h2>
+<pre><code class="language-c">int gx_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
+</code></pre>
+<h2 id="gx_get_player_ammo_total">gx_get_player_ammo_total</h2>
+<pre><code class="language-c">int gx_get_player_ammo_total(int player_id, string ammoName)
+</code></pre>
+<h2 id="gx_get_unit_by_name">gx_get_unit_by_name</h2>
+<pre><code class="language-c">int gx_get_unit_by_name(params = {})
+</code></pre>
+<pre><code>local params = {
+    m_name,             // Required                 (string)
+    m_player_id = 0     // Optional, Default = 0.   (int)
+}
+</code></pre>
 <h2 id="property-getterssetters">Property Getters/Setters</h2>
 <ul>
 <li>Allows you to get/set certain properties for <code>simulation</code>, <code>forces</code>, <code>players</code>, and <code>units</code>, and other things</li>
