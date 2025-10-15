@@ -1,8 +1,10 @@
+import os
+
 def define_env(env):
 
     baseUrl = ''
 
-    bGitHub =  env.variables.get('GITHUB_ACTIONS', False)
+    bGitHub = (os.getenv('GX_GITHUB', 0) == 1)
     if bGitHub:
         baseUrl = '/DriftWarsEditor'
 
