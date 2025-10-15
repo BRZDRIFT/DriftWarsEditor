@@ -4,7 +4,7 @@ def define_env(env):
 
     baseUrl = ''
 
-    bGitHub = (os.getenv('GX_GITHUB', 0) == 1)
+    bGitHub = (os.getenv('GX_GITHUB', 0) == "1")
     if bGitHub:
         baseUrl = '/DriftWarsEditor'
 
