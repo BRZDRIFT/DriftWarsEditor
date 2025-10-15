@@ -1494,7 +1494,7 @@
 
 <h2 id="boundscheck">BoundsCheck</h2>
 <p>The <code>BoundsCheck</code> enum is used in unit search queries within locations.<br />
-Most notably in <a href="/driftScript/functions/#gx_get_units">gx_get_units</a> and <a href="/driftScript/functions/#gx_get_unit_count">gx_get_unit_count</a></p>
+Most notably in <a href="/DriftWarsEditor/driftScript/functions/#gx_get_units">gx_get_units</a> and <a href="/DriftWarsEditor/driftScript/functions/#gx_get_unit_count">gx_get_unit_count</a></p>
 <pre><code>enum BoundsCheck
 {
     Invalid,
@@ -1504,7 +1504,7 @@ Most notably in <a href="/driftScript/functions/#gx_get_units">gx_get_units</a> 
 }
 </code></pre>
 <ul>
-<li>Primarily used in <a href="/driftScript/functions/#gx_get_units">gx_get_units</a> and <a href="/driftScript/functions/#gx_get_unit_count">gx_get_unit_count</a></li>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#gx_get_units">gx_get_units</a> and <a href="/DriftWarsEditor/driftScript/functions/#gx_get_unit_count">gx_get_unit_count</a></li>
 </ul>
 <h2 id="terraintype">TerrainType</h2>
 <pre><code>// Primary Terrain Types
@@ -1534,7 +1534,7 @@ enum TerrainType
 }
 </code></pre>
 <ul>
-<li>Primarily used in <a href="/driftScript/functions/#gx_set_terrain_type">gx_set_terrain_type</a> and <a href="/driftScript/functions/#gx_get_terrain_type">gx_get_terrain_type</a></li>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#gx_set_terrain_type">gx_set_terrain_type</a> and <a href="/DriftWarsEditor/driftScript/functions/#gx_get_terrain_type">gx_get_terrain_type</a></li>
 </ul>
 <h2 id="secondaryterraintypenormal">SecondaryTerrainTypeNormal</h2>
 <pre><code>enum SecondaryTerrainTypeNormal
@@ -1551,7 +1551,7 @@ enum TerrainType
 }
 </code></pre>
 <ul>
-<li>Primarily used in <a href="/driftScript/functions/#gx_set_terrain_type">gx_set_terrain_type</a> and <a href="/driftScript/functions/#gx_get_terrain_type">gx_get_terrain_type</a></li>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#gx_set_terrain_type">gx_set_terrain_type</a> and <a href="/DriftWarsEditor/driftScript/functions/#gx_get_terrain_type">gx_get_terrain_type</a></li>
 <li>Should only be used in conjunction with <code>TerrainType.Normal</code></li>
 </ul>
 <h2 id="forceprop">ForceProp</h2>
@@ -1564,7 +1564,7 @@ enum TerrainType
 }
 </code></pre>
 <ul>
-<li>Primarily used in <a href="/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
 </ul>
 <h2 id="playerprop">PlayerProp</h2>
 <pre><code class="language-c">enum PlayerProp
@@ -1598,7 +1598,7 @@ enum TerrainType
 }
 </code></pre>
 <ul>
-<li>Primarily used in <a href="/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
 </ul>
 <h2 id="unitprop">UnitProp</h2>
 <pre><code class="language-c">enum UnitProp
@@ -1621,7 +1621,7 @@ enum TerrainType
 }
 </code></pre>
 <ul>
-<li>Primarily used in <a href="/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
 <li>Setting <code>Health</code> to <code>&lt;= 0</code> will cause unit to be set to <code>killed</code> state.</li>
 </ul>
 <h2 id="locationprop">LocationProp</h2>
@@ -1638,7 +1638,7 @@ enum TerrainType
 }
 </code></pre>
 <ul>
-<li>Primarily used in <a href="/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
 </ul>
 <h2 id="gunshipstate">GunShipState</h2>
 <pre><code>enum GunShipState
@@ -1653,7 +1653,7 @@ enum TerrainType
 }
 </code></pre>
 <ul>
-<li>Primarily used for setting/getting unit property <code>GunShipState</code> in <a href="/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
+<li>Primarily used for setting/getting unit property <code>GunShipState</code> in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
 </ul>
 <p>Example:</p>
 <pre><code>gx_set_unit_prop(unit_id, UnitProp.GunShipState, GunShipState.ChainGunLevel2)
@@ -1673,7 +1673,7 @@ enum TerrainType
 }
 </code></pre>
 <ul>
-<li>Primarily used in <a href="/driftScript/functions/#gx_queue_command">gx_queue_command</a></li>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#gx_queue_command">gx_queue_command</a></li>
 <li><code>string</code> identifiers for <code>Spells</code> can be used as well.</li>
 <li>more to be added later</li>
 </ul>
