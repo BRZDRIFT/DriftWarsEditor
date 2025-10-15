@@ -15,6 +15,17 @@ enum BoundsCheck
 
 - Primarily used in {{fn("gx_get_units")}} and {{fn("gx_get_unit_count")}}
 
+## SpecialPlayer
+```
+enum SpecialPlayer
+{
+    Invalid =  0,
+    Neutral = -1,
+    Hostile = -2,
+    Rescue  = -3
+}
+```
+
 ## TerrainType
 ```
 // Primary Terrain Types

@@ -622,6 +622,53 @@ void gx_set_speech_bubble(int unit_id, string text, table params = {})
 - set a speech bubble for unit_id
 - currently there are no optional params
 
+## gx_set_unit_ammo
+```c
+void gx_set_unit_ammo(int unit_id, string ammoName, int count)
+```
+
+## gx_get_unit_ammo
+```c
+int gx_get_unit_ammo(int unit_id, string ammoName)
+```
+
+## gx_add_unit_ammo
+```c
+int gx_add_unit_ammo(int unit_id, string ammoName, int count)
+```
+
+## gx_set_player_ammo_in_unit
+```c
+void gx_set_player_ammo_in_unit(int unit_id, string ammoName, int count)
+```
+
+## gx_get_player_ammo_in_unit
+```c
+int gx_get_player_ammo_in_unit(int unit_id, string ammoName)
+```
+
+## gx_add_player_ammo_in_unit
+```c
+int gx_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
+```
+
+## gx_get_player_ammo_total
+```c
+int gx_get_player_ammo_total(int player_id, string ammoName)
+```
+
+## gx_get_unit_by_name
+```c
+int gx_get_unit_by_name(params = {})
+```
+
+```
+local params = {
+    m_name,             // Required                 (string)
+    m_player_id = 0     // Optional, Default = 0.   (int)
+}
+```
+
 ## Property Getters/Setters
 - Allows you to get/set certain properties for `simulation`, `forces`, `players`, and `units`, and other things
 
