@@ -17,13 +17,13 @@ nav:
       - Locations: 'modes/locations.md'
     - 'Other':
       - 'Map Settings': 'other/mapSettings.md'
-      - '1v1 Spawns': 'other/1v1Spawns.md'
-      - 'Team Spawns': 'other/1v1Spawns.md'
+      - '[Melee] 1v1 Spawns': 'other/1v1Spawns.md'
+      - '[Melee] Team Spawns': 'other/1v1Spawns.md'
       - 'Data': 'other/data.md'
       - 'Script': 'other/script.md'
-      - 'Forces': 'other/forces.md'
-      - 'Tags': 'other/tags.md'
-      - 'Tags Per Force': 'other/tagsPerForce.md'
+      - '[Custom] Forces': 'other/forces.md'
+      - '[Custom] Tags': 'other/tags.md'
+      - '[Custom] Tags Per Force': 'other/tagsPerForce.md'
     - 'Side Controls':
       - 'Misc Settings': 'side/miscSettings.md'
       - 'Map Glow Settings': 'side/mapGlowSettings.md'

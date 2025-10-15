@@ -14,7 +14,7 @@ table params = {
     string m_unitType,              // Required
     int m_playerID,                 // Required
     Vec2 m_position = {},           // Optional
-    string m_location = {}          // Optional
+    string m_location = {},         // Optional
     int m_level = 1                 // Optional, default unit level = 1
 }
 ```
