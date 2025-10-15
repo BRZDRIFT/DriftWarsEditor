@@ -1,5 +1,3 @@
-[ This page is work-in-progress ]
-
 `Spawns` allow you to place the starting locations for players.
 
 - This is where your Town Halls are placed in the beginning of the game (`melee` maps only)

@@ -1,5 +1,3 @@
-[ This page is work-in-progress ]
-
 ## Introduction
 `Tex Splatting` allows you to 'paint' textures onto the map.  
 Understanding how splatter terrain is rendered in `Drift Wars` can be a bit challenging..

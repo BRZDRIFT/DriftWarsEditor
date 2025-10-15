@@ -1,5 +1,3 @@
-[ This page is work-in-progress ]
-
 ## Units
 
 - You can add units on the map for the selected player.

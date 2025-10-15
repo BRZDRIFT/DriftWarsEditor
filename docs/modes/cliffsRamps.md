@@ -1,5 +1,3 @@
-[ This page is work-in-progress ]
-
 `Cliffs / Ramps` allow you to add cliffs and ramps to your map.
 
 - Adding Cliffs

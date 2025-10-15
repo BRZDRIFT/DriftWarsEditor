@@ -1,1 +1,9 @@
-[ This page is work-in-progress ]
+- Double clicking on `/MapInit.DriftScript` or `/SimUpdate.DriftScript` will open script file in default text editor
+- Right clicking items in left list-widget allows insertion and deletion of files
+- `Run Map-Init Script`: Does a dry run of `MapInit.DriftScript`
+    - Calls `gx_map_init` in `MapInit.DriftScript`
+    - Prints any errors to console
+- `Run Sim-Update Script`: Does a dry run of `SimUpdate.DriftScript`
+    - Calls `gx_sim_init` and `gx_sim_update` in `SimUpdate.DriftScript`
+    - Prints any errors to console
+- Refer to [DriftScript](../../driftScript/intro) for more information

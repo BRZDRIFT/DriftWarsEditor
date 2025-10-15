@@ -1,5 +1,3 @@
-[ This page is work-in-progress ]
-
 `Height Map` allows you to control the height map used on maps.
 
 - This allows you to create cool effects such as craters on your maps.

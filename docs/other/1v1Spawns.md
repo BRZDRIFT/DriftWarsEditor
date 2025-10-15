@@ -1,1 +1,6 @@
-[ This page is work-in-progress ]
+- The `1v1 Spawns` dialog allows you to set start locations for 1v1 matches.
+- You can use this to restrict certain spawn location combinations (i.e. close-spawns)
+- Duplicate spawn locations added to dialog will be optimized out when dialog closes.
+- A value of `1` means `Spawn Location 1`, `2` means `Spawn Location 2`, etc..
+- Having zero defined spawn locations is equivalent to allowing all spawn location combinations.
+- This information is only used in `1v1` game mode.
