@@ -1,8 +1,5 @@
 ## BoundsCheck 
 
-The `BoundsCheck` enum is used in unit search queries within locations.  
-Most notably in {{fn("gx_get_units")}} and {{fn("gx_get_unit_count")}}
-
 ```
 enum BoundsCheck
 {
@@ -12,8 +9,8 @@ enum BoundsCheck
     Inside      // Unit fully inside a location
 }
 ```
-
-- Primarily used in {{fn("gx_get_units")}} and {{fn("gx_get_unit_count")}}
+- The `BoundsCheck` enum is used in unit search queries within locations.  
+- Primarily used in {{fn("gx_get_units-gx_get_units_count")}}
 
 ## SpecialPlayer
 ```

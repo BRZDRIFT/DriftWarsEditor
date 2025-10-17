@@ -207,11 +207,11 @@ bool gx_is_unit_alive(int unit_id)
 
 ## gx_get_unit_position
 ```c
-Vec2 gx_get_unit_position(int unit_id)
+Vec3<float> gx_get_unit_position(int unit_id)
 ```
 
 - returns position of unit
-- returns Vec2(0, 0) if unit no longer exists
+- returns Vec3(0.0, 0.0, 0.0) if unit no longer exists
 
 ## gx_set_unit_position
 ```c
@@ -228,8 +228,8 @@ Example:
 gx_set_unit_position(some_unit, { m_location = "location_to_teleport_to" } )
 ```
 
-- it is undefined to set both `m_location` and `m_pos`
-- if neither is defined, unit will be teleported to Vec2(0, 0)
+- it is undefined to not set `m_location` 
+- if `m_location` does not exist, unit will be teleported to Vec2(0.0, 0.0)
 
 
 ## gx_is_ground_unit
@@ -557,13 +557,13 @@ gx_set_terrain_type({
 
 
 ## gx_get_terrain_type
-```c
-Vec2 gx_get_terrain_type(Vec2 index, int index2 = 0)
-````
-- returns primary terrain type in `vec.x` and returns secondary terrain type in `vec.y`
+```
+Vec2<int> gx_get_terrain_type(Vec2 index, int index2 = 0)
+```
+- returns primary terrain type in `vec.m_x` and returns secondary terrain type in `vec.m_y`
 
 ## gx_set_player_camera_look_at
-```c
+```
 void gx_set_player_camera_look_at(int player_id, table params)
 ```
 
@@ -628,40 +628,27 @@ void gx_set_speech_bubble(int unit_id, string text, table params = {})
 - set a speech bubble for unit_id
 - currently there are no optional params
 
-## gx_set_unit_ammo
-```c
-void gx_set_unit_ammo(int unit_id, string ammoName, int count)
-```
-
-## gx_get_unit_ammo
+## gx_(get|set|add)_unit_ammo
 ```c
 int gx_get_unit_ammo(int unit_id, string ammoName)
+void gx_set_unit_ammo(int unit_id, string ammoName, int count)
+void gx_add_unit_ammo(int unit_id, string ammoName, int count)
 ```
+- Can query and set how much `unit ammo` of type `ammoName` the unit is holding
 
-## gx_add_unit_ammo
-```c
-int gx_add_unit_ammo(int unit_id, string ammoName, int count)
-```
-
-## gx_set_player_ammo_in_unit
-```c
-void gx_set_player_ammo_in_unit(int unit_id, string ammoName, int count)
-```
-
-## gx_get_player_ammo_in_unit
+## gx_(get|set|add)_player_ammo_in_unit
 ```c
 int gx_get_player_ammo_in_unit(int unit_id, string ammoName)
+void gx_set_player_ammo_in_unit(int unit_id, string ammoName, int count)
+void gx_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
 ```
-
-## gx_add_player_ammo_in_unit
-```c
-int gx_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
-```
+- Can query and set how much `player ammo` of type `ammoName` the unit is holding
 
 ## gx_get_player_ammo_total
 ```c
 int gx_get_player_ammo_total(int player_id, string ammoName)
 ```
+- Returns how much `player ammo` of type `ammoName` the player has
 
 ## gx_get_unit_by_name
 ```c
@@ -670,10 +657,13 @@ int gx_get_unit_by_name(params = {})
 
 ```
 local params = {
-    m_name,             // Required                 (string)
-    m_player_id = 0     // Optional, Default = 0.   (int)
+    m_name,             // Required                                 (string)
+    m_player_id = 0     // Optional, used to Filter. Default = 0.   (int)
 }
 ```
+- returns unit_id with the given `m_name`
+- unit name can be set in map editor.
+- if multiple units have the same name, the first will be returned.
 
 ## Property Getters/Setters
 - Allows you to get/set certain properties for `simulation`, `forces`, `players`, and `units`, and other things
@@ -732,7 +722,7 @@ bool gx_is_event_queue_empty()
 - Check if event queue is empty.
 - See {{eventQueue()}}
 
-## gx_pop_event_from_queue()
+## gx_pop_event_from_queue
 ```c
 Event gx_pop_event_from_queue()
 ```

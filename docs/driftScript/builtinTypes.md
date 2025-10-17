@@ -15,6 +15,8 @@ class Vec2 {
     function Length()                       // returns float
     function LengthSquared()                // returns float or int
     function Normalize()                    // returns Vec2<float>
+    function ToInt2()                       // returns a copy as Vec2<int>
+    function ToFloat2()                     // returns a copy as Vec2<float>
     m_x = 0.0
     m_y = 0.0
 }
@@ -46,6 +48,8 @@ class Vec3 {
     function LengthSquared()                // returns float or int
     function Normalize()                    // returns Vec3<float>
     function xy()                           // returns Vec2(m_x, m_y)
+    function ToInt3()                       // returns a copy as Vec3<int>
+    function ToFloat3()                     // returns a copy as Vec3<float>
     m_x = 0.0
     m_y = 0.0
     m_z = 0.0
@@ -79,6 +83,8 @@ class Vec4 {
     function Normalize()                    // returns Vec4<float>
     function xy()                           // returns Vec2(m_x, m_y)
     function xyz()                          // returns Vec3(m_x, m_y, m_z)
+    function ToInt4()                       // returns a copy as Vec4<int>
+    function ToFloat4()                     // returns a copy as Vec4<float>
     m_x = 0.0
     m_y = 0.0
     m_z = 0.0
@@ -108,6 +114,8 @@ class AABR {
     function GetBottomLeft()        // returns Vec2<int|float>
     function GetBottomRight()       // returns Vec2<int|float>
     function GetCenter()            // returns Vec2<float>
+    function ToIntAABR()            // returns a copy as AABR<int>
+    function ToFloatAABR()          // returns a copy as AABR<float>
     m_minPt = Vec2()
     m_maxPt = Vec2() 
 }
