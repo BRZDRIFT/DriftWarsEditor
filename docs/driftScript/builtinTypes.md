@@ -104,7 +104,14 @@ class Vec4 {
 Axis aligned bounding rectangle
 ```
 class AABR {
+    // Create an AABR given minPt and maxPt
     constructor(minPt = Vec2(), maxPt = Vec2())
+
+    // Creates an AABR given any two points
+    // Internally determines m_minPt and m_maxPt
+    static function CreateFromPoints(Vec2 pt0, Vec2 pt1)
+    
+    // Methods
     function _tostring()            // returns string
     function Equals(other)          // returns bool
     function Copy()                 // returns AABR<int|float>
@@ -116,6 +123,8 @@ class AABR {
     function GetCenter()            // returns Vec2<float>
     function ToInt()                // returns a copy as AABR<int>
     function ToFloat()              // returns a copy as AABR<float>
+
+    // Variables
     m_minPt = Vec2()
     m_maxPt = Vec2() 
 }

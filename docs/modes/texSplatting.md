@@ -2,7 +2,7 @@
 `Tex Splatting` allows you to 'paint' textures onto the map.  
 Understanding how splatter terrain is rendered in `Drift Wars` can be a bit challenging..
 
-## High Level Explaination
+## High Level Explanation
 
 Rendering method:
 
@@ -13,7 +13,7 @@ Rendering method:
 Other:
 
 - Each triangle on the map is rendered exactly once. A triangle cannot belong to both `Tex Layer #1` and `Tex Layer #2`
-- You can define which `triangles` are part of which `Tex Layer` in the `Tex Layers` mode
+- You can define which `triangles` are part of which `Tex Layer` in the {{mode("texLayers")}} mode
 - Each `Tex Layer` is assigned a single `Texture Group`, `Atlas`, and `Blend Mode`
 - `Drift Wars` provides two seperate atlasses to better define 'hard' terrain edges in certain cases, and also allows for some other tricks. You can set which `atlas` is used for a given `Tex Layer` in `Layer Settings`
 - `Drift Wars` provides two seperate `Texture Groups` consisting of 4 `Textures` each for performance reasons (rather than 1 `Texture Group` of 8 `textures`).
@@ -29,3 +29,7 @@ Other:
 
 - Allows you to set the resolution for texture painting. Usually `Normal` is good enough.
 - Setting to `High` will slightly degrade performance and increase map size, but may look better depending on the textures used.
+
+## Paint/Brush Options
+- There are various brush options available
+- Compatible with {{sideControls("symmetry-mode")}}

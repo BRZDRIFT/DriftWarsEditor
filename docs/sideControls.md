@@ -24,7 +24,7 @@
         - `Mirrored (Up | Down)`
         - `Mirrored (Left | Right)`
         - `Rotational (2-way)`
-        - `Rotational (3-way)`
+        - `Rotational (3-way)` (best effort)
         - `Rotational (4-way)`
 
 ### `Add/Del only if symmetries are valid`

@@ -27,3 +27,27 @@ def define_env(env):
     @env.macro
     def type(typeName):
         return '[' + typeName + ']('+baseUrl+'/driftScript/builtinTypes/#'+typeName.lower()+')'
+
+    @env.macro
+    def math(mathHeader):
+        return '[' + mathHeader + ']('+baseUrl+'/driftScript/math/#'+mathHeader.lower()+')'
+
+    @env.macro
+    def event(header):
+        return '[' + header + ']('+baseUrl+'/driftScript/eventQueue/#'+header.lower()+')'
+
+    @env.macro
+    def entryPoints(header):
+        return '[' + header + ']('+baseUrl+'/driftScript/scriptEntryPoints/#'+header.lower()+')'
+
+    @env.macro
+    def mode(header):
+        return '[' + header + ']('+baseUrl+'/modes/'+header+')'
+
+    @env.macro
+    def sideControls(header):
+        return '[' + header + ']('+baseUrl+'/sideControls/#'+header.lower()+')'
+
+    @env.macro
+    def texSplatting(header):
+        return '[' + header + ']('+baseUrl+'/modes/texSplatting/#'+header.lower()+')'

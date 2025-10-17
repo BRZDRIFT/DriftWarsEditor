@@ -2,3 +2,4 @@
 
 - `Triangle Groups` can be used with certain units types, such as `terraforming towers`.
 - `Triangle Groups` can also be referenced in `DriftScript`
+- Compatible with {{sideControls("symmetry-mode")}} and {{sideControls("flood-fill-mode")}}

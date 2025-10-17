@@ -20,5 +20,6 @@ Additions to squirrel and/or things you might want to know..
 
 - `int` types are signed 64-bit
 - `float` types modified to be a 64-bit `Q31.32` fixed point types
+- more type information at {{math("scalar-types")}}
 - encoding `utf-8`
 - `Squirrel Standard Library` is not supported

@@ -109,6 +109,13 @@ print("My Float Vector = " + Vec2(4, 5).ToFloat2())
 print("My Float Vector = " + Vec2(4.0, 5.0))
 ```
 
+## Write floats as `0.3`, NOT as `.3`
+- float numbers cannot begin with a `.`, see below example..
+```
+local a = .3		// ERROR
+local b = 0.3		// Correct
+```
+
 ## Comments
 - You can write single-line comments by using `//` or `#`
 - You can write multi-line comments by using `/* multi-lines */`

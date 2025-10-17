@@ -48,7 +48,7 @@ float gx_get_distance_between_units(int unitID, int otherUnitID)
 ## gx_get_nearby_units / gx_get_nearby_units_count
 ```c
 int[] gx_get_nearby_units(table params)
-int[] gx_get_nearby_units_count(table params)
+int gx_get_nearby_units_count(table params)
 ```
 
 ```c

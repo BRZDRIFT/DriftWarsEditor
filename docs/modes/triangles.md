@@ -1,24 +1,31 @@
-## Normal
-- Normal
-- Speed
-- Attack Rate
-- Armor
-- Forbidden
-- Sniper
-- Reduce Range
-- Pacifist
+- Drift War maps are made of triangles.. lots of triangles.
+- Each triangle type provides different nerfs/buffs/effects to ground units 
+- The starting map triangles can be assigned using this mode.
+- Compatible with {{sideControls("symmetry-mode")}} and {{sideControls("flood-fill-mode")}}
 
-## Player Color
-- Increases speed for player's units
-
-## Water
-
-## Lava
-
-## Diamond
-
-## Unpassable
-
-## Space
-
-## Glow
+## Triangle Styles, Secondary Styles, etc..
+- `Normal`
+    - `Normal`: no effect
+    - `Speed`: units gain a slight speed bonus on this type
+    - `Attack Rate`: units gain a slight attack rate bonus on this type
+    - `Armor`: units gain a slight armor bonus on this type
+    - `Forbidden`: units insta-die if they touch this type
+    - `Sniper`: units gain a slight range buff on this type
+    - `Reduce Range`: units gain a range nerf on this type
+    - `Pacifist`: units are unable to attack when on this type
+-  `Player Color`
+    - Increases unit speed for associated player
+- `Water`
+    - Decreases unit speed
+- `Lava`
+    - Does damage over time to units
+- `Diamond`
+    - "cracks" when units walk on it
+- `Unpassable`
+    - Units cannot pass through this terrain type
+    - This style is `permanent`. Cannot be changed through game nor scripting.
+- `Space`
+    - units will fall to their death if they ever walk or touch this terrain
+- `Glow`
+    - 32 secondary styles, each style can be configured to show a different color
+    - Units gain health regen and speed increase when on this triangle type
