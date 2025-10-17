@@ -1162,6 +1162,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#write-floats-as-03-not-as-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write floats as 0.3, NOT as .3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#comments" class="md-nav__link">
     <span class="md-ellipsis">
       Comments
@@ -1300,6 +1309,15 @@
   <a href="#casting-ints-floats-strings-etc" class="md-nav__link">
     <span class="md-ellipsis">
       Casting, ints, floats, strings, etc...
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-floats-as-03-not-as-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write floats as 0.3, NOT as .3
     </span>
   </a>
   
@@ -1464,6 +1482,13 @@ print(&quot;My Float Vector = &quot; + Vec2(4, 5).ToFloat2())
 
 // Prints: &quot;My Float Vector = (4.00, 5.00)&quot;
 print(&quot;My Float Vector = &quot; + Vec2(4.0, 5.0))
+</code></pre>
+<h2 id="write-floats-as-03-not-as-3">Write floats as <code>0.3</code>, NOT as <code>.3</code></h2>
+<ul>
+<li>float numbers cannot begin with a <code>.</code>, see below example..</li>
+</ul>
+<pre><code>local a = .3        // ERROR
+local b = 0.3       // Correct
 </code></pre>
 <h2 id="comments">Comments</h2>
 <ul>

@@ -416,9 +416,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#high-level-explaination" class="md-nav__link">
+  <a href="#high-level-explanation" class="md-nav__link">
     <span class="md-ellipsis">
-      High Level Explaination
+      High Level Explanation
     </span>
   </a>
   
@@ -437,6 +437,15 @@
   <a href="#atlas-settings" class="md-nav__link">
     <span class="md-ellipsis">
       Atlas Settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paintbrush-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paint/Brush Options
     </span>
   </a>
   
@@ -1225,9 +1234,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#high-level-explaination" class="md-nav__link">
+  <a href="#high-level-explanation" class="md-nav__link">
     <span class="md-ellipsis">
-      High Level Explaination
+      High Level Explanation
     </span>
   </a>
   
@@ -1246,6 +1255,15 @@
   <a href="#atlas-settings" class="md-nav__link">
     <span class="md-ellipsis">
       Atlas Settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paintbrush-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paint/Brush Options
     </span>
   </a>
   
@@ -1272,7 +1290,7 @@
 <h2 id="introduction">Introduction</h2>
 <p><code>Tex Splatting</code> allows you to 'paint' textures onto the map.<br />
 Understanding how splatter terrain is rendered in <code>Drift Wars</code> can be a bit challenging..</p>
-<h2 id="high-level-explaination">High Level Explaination</h2>
+<h2 id="high-level-explanation">High Level Explanation</h2>
 <p>Rendering method:</p>
 <ul>
 <li>Splatter terrain is rendered using two passes.<ul>
@@ -1284,7 +1302,7 @@ Understanding how splatter terrain is rendered in <code>Drift Wars</code> can be
 <p>Other:</p>
 <ul>
 <li>Each triangle on the map is rendered exactly once. A triangle cannot belong to both <code>Tex Layer #1</code> and <code>Tex Layer #2</code></li>
-<li>You can define which <code>triangles</code> are part of which <code>Tex Layer</code> in the <code>Tex Layers</code> mode</li>
+<li>You can define which <code>triangles</code> are part of which <code>Tex Layer</code> in the <a href="/DriftWarsEditor/modes/texLayers">texLayers</a> mode</li>
 <li>Each <code>Tex Layer</code> is assigned a single <code>Texture Group</code>, <code>Atlas</code>, and <code>Blend Mode</code></li>
 <li><code>Drift Wars</code> provides two seperate atlasses to better define 'hard' terrain edges in certain cases, and also allows for some other tricks. You can set which <code>atlas</code> is used for a given <code>Tex Layer</code> in <code>Layer Settings</code></li>
 <li><code>Drift Wars</code> provides two seperate <code>Texture Groups</code> consisting of 4 <code>Textures</code> each for performance reasons (rather than 1 <code>Texture Group</code> of 8 <code>textures</code>).<ul>
@@ -1302,6 +1320,11 @@ Understanding how splatter terrain is rendered in <code>Drift Wars</code> can be
 <ul>
 <li>Allows you to set the resolution for texture painting. Usually <code>Normal</code> is good enough.</li>
 <li>Setting to <code>High</code> will slightly degrade performance and increase map size, but may look better depending on the textures used.</li>
+</ul>
+<h2 id="paintbrush-options">Paint/Brush Options</h2>
+<ul>
+<li>There are various brush options available</li>
+<li>Compatible with <a href="/DriftWarsEditor/sideControls/#symmetry-mode">symmetry-mode</a></li>
 </ul>
 
 
