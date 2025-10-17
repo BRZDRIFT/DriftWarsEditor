@@ -38,18 +38,27 @@ int gx_get_sim_tick()
 - The second {{entry("gx_sim_update")}} call will have `tick = 2`, etc..
 - every tick corresponds to 50ms real time
 
-## gx_get_units
-```c
-int[] gx_get_units(table params)
+## gx_get_distance_between_units
 ```
+float gx_get_distance_between_units(int unitID, int otherUnitID)
+```
+- returns the distance between the edges of two units
+- will return 0 if one or both of the units do not exist
+
+## gx_get_nearby_units / gx_get_nearby_units_count
+```c
+int[] gx_get_nearby_units(table params)
+int[] gx_get_nearby_units_count(table params)
+```
+
 ```c
 table params = {
+    int m_unitID,                                   // unit_id to center search on
+    float m_radius,                                 // search radius around unit
     int m_playerIDs[],                              // Optional, Filter for player_id
     int m_forceIDs[],                               // Optional, Filter for force_id
     string m_unitTypes[],                           // Optional, Filter for certain unit types
     string m_exceptUnitTypes[],                     // Optional, ignore certain unit types
-    string m_locations[],                           // Optional, locations to get units from
-    BoundsCheck m_boundsCheck = BoundsCheck.Center  // Optional, used if m_location is set. (default = Center)
     bool m_bIncludeAirUnits = true,                 // Optional, Set to false if you want to exclude air units
     bool m_bIncludeGroundUnits = true               // Optional, set to false if you want to exclude ground units
     bool m_bIncludeKilledUnits = false,             // Optional, Set to true if you want to include killed units
@@ -57,53 +66,37 @@ table params = {
     bool m_bIncludeProjectiles = false              // Optional, include projectiles (default: false)
 }
 ```
-Example:
-```lua
-local the_units = gx_get_units({
-    m_location = "my_cool_location",
-    m_unitType = "Brute",
-    m_playerID = 1
-})
+- `m_unitID` required to be set
+- `m_radius` required to be set
+- returns units whos outer edges have a distance equal/less than `m_radius` from `m_unitID`.
+- `note:` `m_unitID` will be included in part of query result
 
-foreach (unit in the_units) {
-    gx_kill_unit(unit)
-}
-```
-
-- If m_location is not set, will grab units from entire map.
-- Refer to {{enum("BoundsCheck ")}} if needed.
-
-## gx_get_unit_count
+## gx_get_units / gx_get_units_count
 ```c
-int gx_get_unit_count(table params)
+int[] gx_get_units(table params)
+int gx_get_units_count(table params)
 ```
+
 ```c
 table params = {
-    int m_playerID = {},                            // Optional, filter by player_id
-    int m_forceID = {},                              // Optional, filter by force_id
-    string m_unitType = {},                         // Optional, filter by unit_type
-    string m_location = {},                         // Optional, only return units within specified location
-    BoundsCheck m_boundsCheck = BoundsCheck.Center  // Optional, used only if m_location is set (default: Center)
-    bool m_bCountAirUnits = true,                   // Optional, include air units in query (default: true)
-    bool m_bCountGroundUnits = true,                // Optional, include ground units in query (default: true)
-    bool m_bCountKilledUnits = false,               // Optional, include killed units (default: false)
-    bool m_bCountRemovedUnits = false               // Optional, include removed units (default: false)
-    bool m_bCountProjectiles = false                // Optional, include projectiles (default: false)
+    string m_locations[],                           // Optional
+    BoundsCheck m_boundsCheck                       // Default: BoundsCheck.Center
+    int m_playerIDs[],                              // Optional, Filter for player_id
+    int m_forceIDs[],                               // Optional, Filter for force_id
+    string m_unitTypes[],                           // Optional, Filter for certain unit types
+    string m_exceptUnitTypes[],                     // Optional, ignore certain unit types
+    bool m_bIncludeAirUnits = true,                 // Optional, Set to false if you want to exclude air units
+    bool m_bIncludeGroundUnits = true               // Optional, set to false if you want to exclude ground units
+    bool m_bIncludeKilledUnits = false,             // Optional, Set to true if you want to include killed units
+    bool m_bIncludeRemovedUnits = false             // Optional, set to true if you want to include removed units
+    bool m_bIncludeProjectiles = false              // Optional, include projectiles (default: false)
 }
 ```
 
-Example:
-
-```lua
-local numBrutesAtMyLocation = gx_get_unit_count({
-    m_unitType = "Brute",
-    m_location = "MyLocation"
-})
-
-gx_print(numBrutesAtMyLocation)
-```
-
-- If `m_location` is not set, will return number of units on entire map
+- If `m_locations` is defined:
+    - Searches at `m_locations` for units
+- If `m_locations` is not defined:
+    - Searches for units on entire map
 - Refer to {{enum("BoundsCheck ")}} if needed.
 
 ## gx_create_explosion
@@ -113,10 +106,10 @@ void gx_create_explosion(table params)
 
 ```c
 table params = {
-    float m_size = {},              // Optional, Diameter of explosion
-    Vec3 m_color = Vec3(1,1,0)      // Optional, ColorSRGB of explosion.
-    string m_location = {},         // Optional, Location for explosion
-    Vec2 m_pos = {}                 // Optional, Position for explosion
+    float m_size = {},                  // Optional, Diameter of explosion
+    Vec3 m_color = Vec3(1, 1, 0)        // Optional, ColorSRGB of explosion.
+    string m_location = {},             // Optional, Location for explosion
+    Vec2 m_pos = {}                     // Optional, Position for explosion
 }
 ```
 
@@ -135,7 +128,7 @@ gx_create_explosion( {
 - if `m_size` is not set and `m_pos` is set, the resolved size will be `1`
 - Explosions are purely visual. They do not do any damage.
 - Default value for `m_color` is `Vec3(1,1,0)` aka `0xFFFF00` (yellow)
-- Refer to {{type("Vec3")}} if needed.
+- Refer to {{type("Vec2")}} and {{type("Vec3")}} if needed.
 
 ## gx_kill_unit
 ```c
@@ -296,11 +289,24 @@ table params = {
 
 Example
 ```c
-gx_print("Hello World!", { m_playerID = 3 } ) // display chat message 'Hello World!' to player 3
+// display chat message 'Hello World!' to player 3
+gx_print("Hello World!", { m_playerID = 3 } )
+
+// display chat message 'Hello World!' to everyone in force 2
+gx_print("Hello World!", { m_forceID = 2 } )
+
+// display chat message 'Hello World!' to everyone
+gx_print("Hello World!")
+
+// equivalent to above, display chat message 'Hello World!' to everyone
+gx_print("Hello World!", {})
 ```
 
-- outputs text to game chat
+- outputs text to game chat (or map editor console)
 - useful for debugging as well
+- `print(message)` is equivalent to `gx_print(message, {})`
+- `params` are ignored when running in map editor's console
+
 
 ## gx_set_victory
 ```c

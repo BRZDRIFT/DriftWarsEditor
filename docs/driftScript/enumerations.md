@@ -25,6 +25,17 @@ enum SpecialPlayer
     Rescue  = -3
 }
 ```
+- `Note:` Normal playerIDs are positive, with values: `[1-16]`
+
+## ShapeType
+```
+enum ShapeType
+{
+    Invalid,
+    Circle,
+	Rectangle
+}
+```
 
 ## TerrainType
 ```

@@ -1,5 +1,4 @@
 ## Vec2
-
 ```
 class Vec2 {
     constructor(x=0.0, y=0.0)
@@ -51,7 +50,6 @@ class Vec3 {
     m_y = 0.0
     m_z = 0.0
 }
-
 ```
 
 - By default `Vec3` has scalar type of `float`.
@@ -86,7 +84,6 @@ class Vec4 {
     m_z = 0.0
     m_w = 0.0
 }
-
 ```
 
 - By default `Vec4` has scalar type of `float`.
@@ -99,7 +96,6 @@ class Vec4 {
 
 ## AABR
 Axis aligned bounding rectangle
-
 ```
 class AABR {
     constructor(minPt = Vec2(), maxPt = Vec2())
@@ -115,7 +111,6 @@ class AABR {
     m_minPt = Vec2()
     m_maxPt = Vec2() 
 }
-
 ```
 
 - By default `AABR` has scalar type of `float`.
