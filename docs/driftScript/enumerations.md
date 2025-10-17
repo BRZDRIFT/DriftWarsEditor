@@ -30,6 +30,7 @@ enum ShapeType
 {
     Invalid,
     Circle,
+	Square,
 	Rectangle
 }
 ```

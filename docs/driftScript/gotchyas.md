@@ -109,6 +109,21 @@ print("My Float Vector = " + Vec2(4, 5).ToFloat2())
 print("My Float Vector = " + Vec2(4.0, 5.0))
 ```
 
+## Comments
+- You can write single-line comments by using `//` or `#`
+- You can write multi-line comments by using `/* multi-lines */`
+```
+// this is a single line comment
+
+# this is also a comment :)
+
+/*
+this is multiple lines
+of comments. this text
+will be ignored by the compiler.
+*/
+```
+
 ## Common dictionary and array tasks
 ```
 // deleting from dictionary
