@@ -1303,6 +1303,8 @@
     function Length()                       // returns float
     function LengthSquared()                // returns float or int
     function Normalize()                    // returns Vec2&lt;float&gt;
+    function ToInt2()                       // returns a copy as Vec2&lt;int&gt;
+    function ToFloat2()                     // returns a copy as Vec2&lt;float&gt;
     m_x = 0.0
     m_y = 0.0
 }
@@ -1335,6 +1337,8 @@
     function LengthSquared()                // returns float or int
     function Normalize()                    // returns Vec3&lt;float&gt;
     function xy()                           // returns Vec2(m_x, m_y)
+    function ToInt3()                       // returns a copy as Vec3&lt;int&gt;
+    function ToFloat3()                     // returns a copy as Vec3&lt;float&gt;
     m_x = 0.0
     m_y = 0.0
     m_z = 0.0
@@ -1369,6 +1373,8 @@
     function Normalize()                    // returns Vec4&lt;float&gt;
     function xy()                           // returns Vec2(m_x, m_y)
     function xyz()                          // returns Vec3(m_x, m_y, m_z)
+    function ToInt4()                       // returns a copy as Vec4&lt;int&gt;
+    function ToFloat4()                     // returns a copy as Vec4&lt;float&gt;
     m_x = 0.0
     m_y = 0.0
     m_z = 0.0
@@ -1399,6 +1405,8 @@
     function GetBottomLeft()        // returns Vec2&lt;int|float&gt;
     function GetBottomRight()       // returns Vec2&lt;int|float&gt;
     function GetCenter()            // returns Vec2&lt;float&gt;
+    function ToIntAABR()            // returns a copy as AABR&lt;int&gt;
+    function ToFloatAABR()          // returns a copy as AABR&lt;float&gt;
     m_minPt = Vec2()
     m_maxPt = Vec2() 
 }

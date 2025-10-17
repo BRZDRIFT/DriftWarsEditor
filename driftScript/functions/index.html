@@ -1349,6 +1349,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gx_set_player_camera_look_at" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_player_camera_look_at
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gx_lock_player_camera" class="md-nav__link">
     <span class="md-ellipsis">
       gx_lock_player_camera
@@ -1385,54 +1394,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_set_unit_ammo" class="md-nav__link">
+  <a href="#gx_getsetadd_unit_ammo" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_set_unit_ammo
+      gx_(get|set|add)_unit_ammo
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_unit_ammo" class="md-nav__link">
+  <a href="#gx_getsetadd_player_ammo_in_unit" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_unit_ammo
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gx_add_unit_ammo" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_add_unit_ammo
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gx_set_player_ammo_in_unit" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_set_player_ammo_in_unit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gx_get_player_ammo_in_unit" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_get_player_ammo_in_unit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gx_add_player_ammo_in_unit" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_add_player_ammo_in_unit
+      gx_(get|set|add)_player_ammo_in_unit
     </span>
   </a>
   
@@ -1486,7 +1459,7 @@
         <li class="md-nav__item">
   <a href="#gx_pop_event_from_queue" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_pop_event_from_queue()
+      gx_pop_event_from_queue
     </span>
   </a>
   
@@ -1972,6 +1945,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gx_set_player_camera_look_at" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_set_player_camera_look_at
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#gx_lock_player_camera" class="md-nav__link">
     <span class="md-ellipsis">
       gx_lock_player_camera
@@ -2008,54 +1990,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_set_unit_ammo" class="md-nav__link">
+  <a href="#gx_getsetadd_unit_ammo" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_set_unit_ammo
+      gx_(get|set|add)_unit_ammo
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_unit_ammo" class="md-nav__link">
+  <a href="#gx_getsetadd_player_ammo_in_unit" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_unit_ammo
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gx_add_unit_ammo" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_add_unit_ammo
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gx_set_player_ammo_in_unit" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_set_player_ammo_in_unit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gx_get_player_ammo_in_unit" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_get_player_ammo_in_unit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gx_add_player_ammo_in_unit" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_add_player_ammo_in_unit
+      gx_(get|set|add)_player_ammo_in_unit
     </span>
   </a>
   
@@ -2109,7 +2055,7 @@
         <li class="md-nav__item">
   <a href="#gx_pop_event_from_queue" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_pop_event_from_queue()
+      gx_pop_event_from_queue
     </span>
   </a>
   
@@ -2325,11 +2271,11 @@ int gx_get_units_count(table params)
 <li>equivalent to calling <code>!gx_is_unit_killed(unit_id)</code></li>
 </ul>
 <h2 id="gx_get_unit_position">gx_get_unit_position</h2>
-<pre><code class="language-c">Vec2 gx_get_unit_position(int unit_id)
+<pre><code class="language-c">Vec3&lt;float&gt; gx_get_unit_position(int unit_id)
 </code></pre>
 <ul>
 <li>returns position of unit</li>
-<li>returns Vec2(0, 0) if unit no longer exists</li>
+<li>returns Vec3(0.0, 0.0, 0.0) if unit no longer exists</li>
 </ul>
 <h2 id="gx_set_unit_position">gx_set_unit_position</h2>
 <pre><code class="language-c">void gx_set_unit_position(int unit_id, table params)
@@ -2342,8 +2288,8 @@ int gx_get_units_count(table params)
 <pre><code class="language-lua">gx_set_unit_position(some_unit, { m_location = &quot;location_to_teleport_to&quot; } )
 </code></pre>
 <ul>
-<li>it is undefined to set both <code>m_location</code> and <code>m_pos</code></li>
-<li>if neither is defined, unit will be teleported to Vec2(0, 0)</li>
+<li>it is undefined to not set <code>m_location</code> </li>
+<li>if <code>m_location</code> does not exist, unit will be teleported to Vec2(0.0, 0.0)</li>
 </ul>
 <h2 id="gx_is_ground_unit">gx_is_ground_unit</h2>
 <pre><code class="language-c">bool gx_is_ground_unit(int unit_id)
@@ -2619,13 +2565,13 @@ gx_modify_ud_props(&quot;User_BabyBrute&quot;, {
 <li>if <code>m_index</code> is set, it is <code>undefined behavior</code> to also set <code>m_location</code>, and <code>m_triangleGroup</code></li>
 </ul>
 <h2 id="gx_get_terrain_type">gx_get_terrain_type</h2>
-<pre><code class="language-c">Vec2 gx_get_terrain_type(Vec2 index, int index2 = 0)
-````
-- returns primary terrain type in `vec.x` and returns secondary terrain type in `vec.y`
-
-## gx_set_player_camera_look_at
-```c
-void gx_set_player_camera_look_at(int player_id, table params)
+<pre><code>Vec2&lt;int&gt; gx_get_terrain_type(Vec2 index, int index2 = 0)
+</code></pre>
+<ul>
+<li>returns primary terrain type in <code>vec.m_x</code> and returns secondary terrain type in <code>vec.m_y</code></li>
+</ul>
+<h2 id="gx_set_player_camera_look_at">gx_set_player_camera_look_at</h2>
+<pre><code>void gx_set_player_camera_look_at(int player_id, table params)
 </code></pre>
 <pre><code class="language-c">local params = {
     int m_unitID = {},
@@ -2680,35 +2626,41 @@ void gx_set_player_camera_look_at(int player_id, table params)
 <li>set a speech bubble for unit_id</li>
 <li>currently there are no optional params</li>
 </ul>
-<h2 id="gx_set_unit_ammo">gx_set_unit_ammo</h2>
-<pre><code class="language-c">void gx_set_unit_ammo(int unit_id, string ammoName, int count)
-</code></pre>
-<h2 id="gx_get_unit_ammo">gx_get_unit_ammo</h2>
+<h2 id="gx_getsetadd_unit_ammo">gx_(get|set|add)_unit_ammo</h2>
 <pre><code class="language-c">int gx_get_unit_ammo(int unit_id, string ammoName)
+void gx_set_unit_ammo(int unit_id, string ammoName, int count)
+void gx_add_unit_ammo(int unit_id, string ammoName, int count)
 </code></pre>
-<h2 id="gx_add_unit_ammo">gx_add_unit_ammo</h2>
-<pre><code class="language-c">int gx_add_unit_ammo(int unit_id, string ammoName, int count)
-</code></pre>
-<h2 id="gx_set_player_ammo_in_unit">gx_set_player_ammo_in_unit</h2>
-<pre><code class="language-c">void gx_set_player_ammo_in_unit(int unit_id, string ammoName, int count)
-</code></pre>
-<h2 id="gx_get_player_ammo_in_unit">gx_get_player_ammo_in_unit</h2>
+<ul>
+<li>Can query and set how much <code>unit ammo</code> of type <code>ammoName</code> the unit is holding</li>
+</ul>
+<h2 id="gx_getsetadd_player_ammo_in_unit">gx_(get|set|add)_player_ammo_in_unit</h2>
 <pre><code class="language-c">int gx_get_player_ammo_in_unit(int unit_id, string ammoName)
+void gx_set_player_ammo_in_unit(int unit_id, string ammoName, int count)
+void gx_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
 </code></pre>
-<h2 id="gx_add_player_ammo_in_unit">gx_add_player_ammo_in_unit</h2>
-<pre><code class="language-c">int gx_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
-</code></pre>
+<ul>
+<li>Can query and set how much <code>player ammo</code> of type <code>ammoName</code> the unit is holding</li>
+</ul>
 <h2 id="gx_get_player_ammo_total">gx_get_player_ammo_total</h2>
 <pre><code class="language-c">int gx_get_player_ammo_total(int player_id, string ammoName)
 </code></pre>
+<ul>
+<li>Returns how much <code>player ammo</code> of type <code>ammoName</code> the player has</li>
+</ul>
 <h2 id="gx_get_unit_by_name">gx_get_unit_by_name</h2>
 <pre><code class="language-c">int gx_get_unit_by_name(params = {})
 </code></pre>
 <pre><code>local params = {
-    m_name,             // Required                 (string)
-    m_player_id = 0     // Optional, Default = 0.   (int)
+    m_name,             // Required                                 (string)
+    m_player_id = 0     // Optional, used to Filter. Default = 0.   (int)
 }
 </code></pre>
+<ul>
+<li>returns unit_id with the given <code>m_name</code></li>
+<li>unit name can be set in map editor.</li>
+<li>if multiple units have the same name, the first will be returned.</li>
+</ul>
 <h2 id="property-getterssetters">Property Getters/Setters</h2>
 <ul>
 <li>Allows you to get/set certain properties for <code>simulation</code>, <code>forces</code>, <code>players</code>, and <code>units</code>, and other things</li>
@@ -2766,7 +2718,7 @@ void gx_add_unit_variable(int unit_id, string varName, int varValue)
 <li>Check if event queue is empty.</li>
 <li>See <a href="/DriftWarsEditor/driftScript/eventQueue/#event_queue">Event Queue</a></li>
 </ul>
-<h2 id="gx_pop_event_from_queue">gx_pop_event_from_queue()</h2>
+<h2 id="gx_pop_event_from_queue">gx_pop_event_from_queue</h2>
 <pre><code class="language-c">Event gx_pop_event_from_queue()
 </code></pre>
 <ul>
