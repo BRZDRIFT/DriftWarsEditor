@@ -1,6 +1,6 @@
 ## BoundsCheck 
 
-```
+```sq
 enum BoundsCheck
 {
 	Invalid,
@@ -13,7 +13,7 @@ enum BoundsCheck
 - Primarily used in {{fn("gx_get_units-gx_get_units_count")}}
 
 ## SpecialPlayer
-```
+```sq
 enum SpecialPlayer
 {
     Invalid =  0,
@@ -25,7 +25,7 @@ enum SpecialPlayer
 - `Note:` Normal playerIDs are positive, with values: `[1-16]`
 
 ## ShapeType
-```
+```sq
 enum ShapeType
 {
     Invalid,
@@ -36,7 +36,7 @@ enum ShapeType
 ```
 
 ## TerrainType
-```
+```sq
 // Primary Terrain Types
 enum TerrainType
 {
@@ -67,7 +67,7 @@ enum TerrainType
 - Primarily used in {{fn("gx_set_terrain_type")}} and {{fn("gx_get_terrain_type")}}
 
 ## SecondaryTerrainTypeNormal
-```
+```sq
 enum SecondaryTerrainTypeNormal
 {
 	Invalid,
@@ -87,8 +87,7 @@ enum SecondaryTerrainTypeNormal
 
 
 ## ForceProp
-
-```
+```sq
 enum ForceProp
 {
 					// Access		Type
@@ -101,7 +100,7 @@ enum ForceProp
 
 ## PlayerProp
 
-```c
+```sq
 enum PlayerProp
 {
 							// Access			Type
@@ -136,7 +135,7 @@ enum PlayerProp
 
 ## UnitProp
 
-```c
+```sq
 enum UnitProp
 {
 							// Access			Type
@@ -160,7 +159,7 @@ enum UnitProp
 - Setting `Health` to `<= 0` will cause unit to be set to `killed` state.
 
 ## LocationProp
-```c
+```sq
 enum LocationProp
 {
 					// Access		Type
@@ -176,7 +175,7 @@ enum LocationProp
 - Primarily used in {{fn("property-getterssetters")}}
 
 ## GunShipState 
-```
+```sq
 enum GunShipState
 {
 	Invalid,
@@ -191,15 +190,15 @@ enum GunShipState
 - Primarily used for setting/getting unit property `GunShipState` in {{fn("property-getterssetters")}}
 
 Example:
-```
+```sq
 gx_set_unit_prop(unit_id, UnitProp.GunShipState, GunShipState.ChainGunLevel2)
 ```
 
 - the above would give a gunship two chainguns
 
 ## CommandType
-```c
-enum CommandType : string
+```sq
+enum CommandType
 {
 	Invalid,
     Attack,             // valid params: [m_unitID, m_location, m_pos]
@@ -216,7 +215,7 @@ enum CommandType : string
 
 ## EventType
 
-```c
+```sq
 enum EventType
 {
     Invalid,            	// Invalid Event

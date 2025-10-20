@@ -40,6 +40,7 @@ nav:
 
 theme:
     name: material
+    highlightjs: false  # disable highlight.js
     palette:
       # Palette toggle for light mode
       - media: "(prefers-color-scheme: light)"
@@ -58,3 +59,15 @@ theme:
 plugins:
   - search
   - macros
+
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true   # enable Pygments highlighting
+      guess_lang: false    # prevent guessing
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - sq_lexer

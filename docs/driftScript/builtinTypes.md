@@ -1,5 +1,5 @@
 ## Vec2
-```
+```sq
 class Vec2 {
     constructor(x=0.0, y=0.0)
     function _add(Vec2 other)               // returns Vec2
@@ -31,7 +31,7 @@ class Vec2 {
 - Assignment operator `=` will only copy reference (not create a new `Vec2`)
 
 ## Vec3
-```
+```sq
 class Vec3 {
     constructor(x=0.0, y=0.0, z=0.0)
     function _add(Vec3 other)               // returns Vec3
@@ -65,7 +65,7 @@ class Vec3 {
 - Assignment operator `=` will only copy reference (not create a new `Vec3`)
 
 ## Vec4
-```
+```sq
 class Vec4 {
     constructor(x=0.0, y=0.0, z=0.0, w=0.0)
     function _add(Vec4 other)               // returns Vec4
@@ -102,7 +102,7 @@ class Vec4 {
 
 ## AABR
 Axis aligned bounding rectangle
-```
+```sq
 class AABR {
     // Create an AABR given minPt and maxPt
     constructor(minPt = Vec2(), maxPt = Vec2())

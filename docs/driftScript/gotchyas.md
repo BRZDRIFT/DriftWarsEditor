@@ -1,13 +1,13 @@
 ## Use `local` for defining variables
 - Variables must be defined using `local`
-```
+```sq
 local myVariable = 7    // good!
 
 myVariable2 = 8         // script-error! Forgot local keyword.
 ```
 
 ## Must use `<-` operator to add new key/value to dictionary
-```
+```sq
 // need to use <- to add new key/value to dictionary
 local myDictionary = {}
 myDictionary["abc"] <- 7        // works
@@ -28,7 +28,7 @@ myNewDictionary[15] <- "some string"        // keys can also be integers
 - Instead use their defined `.Equals(other)` functions!  
 - `==` equality operator for primitive types `int`, `float`, `bool`, `string` compare by value (not reference)
 
-```
+```sq
 // == checks if reference points to same object, not value equality
 local a = Vec2(6.0, 7.0)
 local b = Vec2(1.0, 5.0)
@@ -48,7 +48,7 @@ local isEqual4 = (q == w)       // true
 ```
 
 ## `=` assignment operator copies reference, not value! (for custom types)
-```
+```sq
 local a = Vec2(2.0, 6.0)
 local b = a			// reference copy
 local c = a.Copy()	// value copy
@@ -64,7 +64,7 @@ print(a.Equals(d))	// true
 - If you make your own types, it's a good idea to create your own `.Copy()` and `.Equal(other)` functions.
 
 ## Casting, ints, floats, strings, etc...
-```
+```sq
 local a = 5     // a is type 'integer' of value 5
 print(a)        // prints '5'
 print(a / 2)    // prints '2',  	# integer division is truncated 
@@ -111,7 +111,7 @@ print("My Float Vector = " + Vec2(4.0, 5.0))
 
 ## Write floats as `0.3`, NOT as `.3`
 - float numbers cannot begin with a `.`, see below example..
-```
+```sq
 local a = .3		// ERROR
 local b = 0.3		// Correct
 ```
@@ -119,7 +119,7 @@ local b = 0.3		// Correct
 ## Comments
 - You can write single-line comments by using `//` or `#`
 - You can write multi-line comments by using `/* multi-lines */`
-```
+```sq
 // this is a single line comment
 
 # this is also a comment :)
@@ -132,7 +132,7 @@ will be ignored by the compiler.
 ```
 
 ## Common dictionary and array tasks
-```
+```sq
 // deleting from dictionary
 local myDictionary = { "abc": 6, "def": 7 }     // create dictionary
 delete myDictionary["abc"]                  // delete "abc" from dictionary
@@ -147,7 +147,7 @@ myArray.remove(1)           // remove at index 1, myArray: ["my_string", 1, 2, 7
 - See [http://squirrel-lang.org/squirreldoc/reference/language.html](http://squirrel-lang.org/squirreldoc/reference/language.html) for more language features.
 
 ## Dictionary and array foreach loops
-```
+```sq
 // dictionary initializer syntax #1: { key = val }
 // Possible Output (dictionary iteration order is unspecified):
 // a -> 5

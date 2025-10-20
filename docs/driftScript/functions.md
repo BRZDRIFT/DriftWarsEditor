@@ -1,15 +1,16 @@
 ## gx_include
-```
-gx_include(string filename)
+```sq
+void gx_include(string filename)
 ```
 - Includes `filename` in current compilation.
 - A file is only included once by `gx_include`; subsequent calls are ignored.
 
 ## gx_create_unit
-```c
-int gx_create_unit(table params)
+```sq
+int gx_create_unit(int params)
 ```
-```c
+
+```sq
 table params = {
     string m_unitType,              // Required
     int m_playerID,                 // Required
@@ -19,7 +20,7 @@ table params = {
 }
 ```
 
-```lua
+```sq
 local new_unit = gx_create_unit({ m_unitType = "Brute", m_playerID = 1, m_location = "my_cool_location" })
 ```
 
@@ -29,7 +30,7 @@ local new_unit = gx_create_unit({ m_unitType = "Brute", m_playerID = 1, m_locati
 - Refer to {{type("Vec2")}} if needed.
 
 ## gx_get_sim_tick
-```c
+```sq
 int gx_get_sim_tick()
 ```
 - Returns the current sim tick number in simulation.
@@ -39,19 +40,19 @@ int gx_get_sim_tick()
 - every tick corresponds to 50ms real time
 
 ## gx_get_distance_between_units
-```
+```sq
 float gx_get_distance_between_units(int unitID, int otherUnitID)
 ```
 - returns the distance between the edges of two units
 - will return 0 if one or both of the units do not exist
 
 ## gx_get_nearby_units / gx_get_nearby_units_count
-```c
+```sq
 int[] gx_get_nearby_units(table params)
 int gx_get_nearby_units_count(table params)
 ```
 
-```c
+```sq
 table params = {
     int m_unitID,                                   // unit_id to center search on
     float m_radius,                                 // search radius around unit
@@ -72,12 +73,12 @@ table params = {
 - `note:` `m_unitID` will be included in part of query result
 
 ## gx_get_units / gx_get_units_count
-```c
+```sq
 int[] gx_get_units(table params)
 int gx_get_units_count(table params)
 ```
 
-```c
+```sq
 table params = {
     string m_locations[],                           // Optional
     BoundsCheck m_boundsCheck                       // Default: BoundsCheck.Center
@@ -100,11 +101,11 @@ table params = {
 - Refer to {{enum("BoundsCheck ")}} if needed.
 
 ## gx_create_explosion
-```c
+```sq
 void gx_create_explosion(table params)
 ```
 
-```c
+```sq
 table params = {
     float m_size = {},                  // Optional, Diameter of explosion
     Vec3 m_color = Vec3(1, 1, 0)        // Optional, ColorSRGB of explosion.
@@ -131,7 +132,7 @@ gx_create_explosion( {
 - Refer to {{type("Vec2")}} and {{type("Vec3")}} if needed.
 
 ## gx_kill_unit
-```c
+```sq
 void gx_kill_unit(int unit_id)
 ```
 
@@ -139,11 +140,11 @@ void gx_kill_unit(int unit_id)
 - It is safe to call this function on already killed units
 
 ## gx_get_kills
-```c
+```sq
 void gx_get_kills(int player_id, table params = {})
 ```
-```
-params = {
+```sq
+table params = {
     m_playerID = {},
     m_bAlliedKills = {},
     m_bSelfKills = {},
@@ -153,12 +154,12 @@ params = {
 
 - if `m_playerID` is set, none of `m_bAlliedKills`, `m_bSelfKills`, `m_bNonAlliedKills` should be set
 - if empty {} is passed in for params, all kills will be returned, equivalent to:
-```{ m_bAlliedKills = true, m_bSelfKills = rue, m_bNonAlliedKills = true }```
+`{ m_bAlliedKills = true, m_bSelfKills = rue, m_bNonAlliedKills = true }`
 - Allied kills does not include self kills
 
 
 ## gx_is_unit_killed
-```c
+```sq
 void gx_is_unit_killed(int unit_id)
 ```
 - returns if the unit `unit_id` is killed
@@ -166,7 +167,7 @@ void gx_is_unit_killed(int unit_id)
 - equivalent to calling `!gx_is_unit_alive(unit_id)`
 
 ## gx_remove_unit
-```c
+```sq
 void gx_remove_unit(int unit_id)
 ```
 
@@ -175,7 +176,7 @@ void gx_remove_unit(int unit_id)
 - It is safe to call this function on already killed or removed units
 
 ## gx_is_unit_removed
-```c
+```sq
 void gx_is_unit_removed(int unit_id)
 ```
 
@@ -183,21 +184,21 @@ void gx_is_unit_removed(int unit_id)
 - will still return `true` if unit_id does not exist
 
 ## gx_unit_exists
-```c
+```sq
 bool gx_unit_exists(int unit_id)
 ```
 
 - checks if unit still exists in the game
 
 ## gx_is_unit_alive_and_constructed
-```c
+```sq
 bool gx_is_unit_alive_and_constructed(int unit_id)
 ```
 - returns `true` if unit is alive and constructed
 - returns `false` if unit_id is invalid or unit no longer exists in game
 
 ## gx_is_unit_alive
-```c
+```sq
 bool gx_is_unit_alive(int unit_id)
 ```
 - returns `true` if unit is alive
@@ -206,7 +207,7 @@ bool gx_is_unit_alive(int unit_id)
 - equivalent to calling `!gx_is_unit_killed(unit_id)`
 
 ## gx_get_unit_position
-```c
+```sq
 Vec3<float> gx_get_unit_position(int unit_id)
 ```
 
@@ -214,11 +215,11 @@ Vec3<float> gx_get_unit_position(int unit_id)
 - returns Vec3(0.0, 0.0, 0.0) if unit no longer exists
 
 ## gx_set_unit_position
-```c
+```sq
 void gx_set_unit_position(int unit_id, table params)
 ```
 
-```c
+```sq
 table params = {
     string m_location = {},     // Optional, location to put unit
 }
@@ -233,7 +234,7 @@ gx_set_unit_position(some_unit, { m_location = "location_to_teleport_to" } )
 
 
 ## gx_is_ground_unit
-```c
+```sq
 bool gx_is_ground_unit(int unit_id)
 ```
 - returns if unit is currently a `ground` unit
@@ -242,7 +243,7 @@ bool gx_is_ground_unit(int unit_id)
 - equivalent to calling `!gx_is_air_unit(unit_id)`
 
 ## gx_is_air_unit
-```c
+```sq
 bool gx_is_air_unit(int unit_id)
 ```
 - returns if unit is currently an `air` unit
@@ -251,11 +252,11 @@ bool gx_is_air_unit(int unit_id)
 - equivalent to calling `!gx_is_ground_unit(unit_id)`
 
 ## gx_get_players
-```c
+```sq
 int[] gx_get_players(table params = {})
 ```
 
-```c
+```sq
 table params = {
 	bool m_bIncludeNormalPlayers = true;
 	bool m_bIncludeDefeatedPlayers = false;
@@ -268,17 +269,17 @@ table params = {
 
 
 ## gx_get_player
-```c
+```sq
 int gx_get_player(int unit_id)
 ```
 - returns the `player_id` for unit `unit_id`
 
 ## gx_print
-```c
+```sq
 void gx_print(string message, table params = {})
 ```
 
-```c
+```sq
 table params = {
     int m_forceID = {},      // Optional, send message to only force_id
     int m_playerID = {}     // Optional, send message to only player_id
@@ -288,7 +289,7 @@ table params = {
 - If neither `m_forceID` nor `m_playerID` is set, message will be broadcasted to all players (and observers)
 
 Example
-```c
+```sq
 // display chat message 'Hello World!' to player 3
 gx_print("Hello World!", { m_playerID = 3 } )
 
@@ -309,11 +310,11 @@ gx_print("Hello World!", {})
 
 
 ## gx_set_victory
-```c
+```sq
 void gx_set_victory(table params)
 ```
 
-```c
+```sq
 table params = {
     int m_playerID = {},
     int m_forceID = {}
@@ -324,11 +325,11 @@ table params = {
 - setting `m_forceID` will set victory for all players within that force
 
 ## gx_set_defeat
-```c
+```sq
 void gx_set_defeat(table params)
 ```
 
-```c
+```sq
 table params = {
     int m_playerID = {},
     int m_forceID = {},
@@ -341,7 +342,7 @@ table params = {
 - setting `m_forceID` will set defeat for all players within that force
 
 ## gx_encode_text
-```c
+```sq
 string gx_encode_text(string text)
 ```
 
@@ -357,7 +358,7 @@ Creates a copy of a `unit_data`.
 A `unit_data` serves as a 'definition' for a type of unit.
 Required for creating new custom unit types.
 
-```c
+```sq
 void gx_copy_ud(string unit_type, string new_unit_type)
 ```
 
@@ -366,7 +367,7 @@ It copies the existing definition of "Brute" to "User_BabyBrute".
 
 Example:
 
-```c
+```sq
 gx_copy_ud("Brute", "User_BabyBrute")
 ```
 - new unit type name MUST begin with `User_`. This is to prevent naming collisions for future added official units.
@@ -376,11 +377,11 @@ gx_copy_ud("Brute", "User_BabyBrute")
 - any attempt to call this outside of the {{entry("gx_map_init")}} will be ignored.
 
 ## gx_modify_ud_props
-```c
+```sq
 void gx_modify_ud_props(string unit_type, table params = {})
 ```
 
-```c
+```sq
 table params = {
     string m_friendlyName = {},     // Optional, set unit's friendly name
     int m_maxHealth = {},           // Optional, set max health
@@ -399,7 +400,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.
 
 Example:
 
-```c
+```sq
 gx_copy_ud("Brute", "User_BabyBrute")
 gx_modify_ud_props("User_BabyBrute", {
     m_friendlyName = "Baby Brute",
@@ -415,7 +416,7 @@ gx_modify_ud_props("User_BabyBrute", {
 - any attempt to call this outside of the {{entry("gx_map_init")}} will be ignored.
 
 ## gx_add_build_structure_item
-```c
+```sq
 void gx_add_build_structure_item(string unitType, table params = {})
 ```
 ```
@@ -428,7 +429,7 @@ table params = {
 - Can only be called during {{entry("gx_map_init")}}
 
 ## gx_remove_all_build_structure_items
-```c
+```sq
 void gx_remove_all_build_structure_items(string unitType)
 ```
 
@@ -436,11 +437,11 @@ void gx_remove_all_build_structure_items(string unitType)
 - Can only be called during {{entry("gx_map_init")}}
 
 ## gx_add_build_item
-```c
+```sq
 void gx_add_build_item(string unitType, table params)
 ```
 
-```c
+```sq
 table params = {
     string m_unitType = {},     // unit type to add
     string m_research ={},      // research to add
@@ -452,7 +453,7 @@ table params = {
 - Remove all build items from structure
 
 ## gx_remove_all_build_items
-```c
+```sq
 void gx_remove_all_build_items(string unitType)
 ```
 
@@ -463,11 +464,11 @@ void gx_remove_all_build_items(string unitType)
 
 throws the unit
 
-```c
+```sq
 void gx_fling_unit(int unit_id, table params = {})
 ```
 
-```c
+```sq
 table params = {
     Vec2 m_dir = {},        // Optional, 2d direction to throw unit. Does not need to be normalized.
     Vec3 m_dir3d = {},      // Optional, 3d direction to throw unit. Does not need to be normalized.
@@ -480,11 +481,11 @@ table params = {
 - Refer to {{type("Vec2")}} and {{type("Vec3")}} if needed. 
 
 ## gx_set_area_vision
-```c
+```sq
 void gx_set_area_vision(int player_id, table params)
 ```
 
-```c
+```sq
 table params = {
     string m_location = {},         // location to give or take away vision of (depending on m_bSet)
     string m_triangleGroup = {},    // triangle group to give or take away vision of (depending on m_bSet)
@@ -500,11 +501,11 @@ table params = {
 - The value of `m_bSet` determines if vision is given or taken away from player.
 
 ## gx_get_area_vision
-```c
+```sq
 bool gx_get_area_vision(int player_id, table params)
 ```
 
-```c
+```sq
 table params = {
     string m_location = {},         // location to query vision for
     string m_triangleGroup = {},    // triangle group to query vision for
@@ -517,11 +518,11 @@ table params = {
 - The only valid value of `m_bFullMapVision` is `true`. Setting to `false` is `undefined`.
 
 ## gx_set_terrain_type
-```c
+```sq
 void gx_set_terrain_type(params = {})
 ```
 
-```c
+```sq
 table params = {
     TerrainType m_type         // Required. The type of terrain to change to. See TerrainType enum. 
     int m_secondary = 0         // Secondary terrain type. (default = 0)
@@ -536,7 +537,7 @@ table params = {
 ```
 
 Example that sets terrain at location `my_location` to Pacifist type:
-```c
+```sq
 gx_set_terrain_type({
     m_type = TerrainType.Normal,
     m_secondary = SecondaryTerrainTypeNormal.Pacifist,
@@ -567,7 +568,7 @@ Vec2<int> gx_get_terrain_type(Vec2 index, int index2 = 0)
 void gx_set_player_camera_look_at(int player_id, table params)
 ```
 
-```c
+```sq
 local params = {
     int m_unitID = {},
     string m_location = {}
@@ -578,11 +579,11 @@ local params = {
 - One of `m_unit` or `m_location` should be set. Not both.
 
 ## gx_lock_player_camera
-```c
+```sq
 void gx_lock_player_camera(int player_id, table params = {})
 ```
 
-```c
+```sq
 local params = {
     int m_unitID = {},
     string m_location = {}
@@ -595,7 +596,7 @@ local params = {
 - passing empty args for `params` will unlock the camera for `player_id`.
 
 ## gx_unlock_player_camera
-```c
+```sq
 void gx_unlock_player_camera(int player_id)
 ```
 
@@ -603,11 +604,11 @@ void gx_unlock_player_camera(int player_id)
 - equivalent to calling `gx_lock_player_camera(player_id, {})`
 
 ## gx_queue_command
-```c
+```sq
 gx_queue_command(int unit_ids[], CommandType command, table params = {})
 ```
 
-```c
+```sq
 table params = {
     int m_unitID,            // unit to target
     string m_location = {},     // location to target
@@ -622,14 +623,14 @@ table params = {
 - See {{enum("CommandType")}} for possible command values
 
 ## gx_set_speech_bubble
-```c
+```sq
 void gx_set_speech_bubble(int unit_id, string text, table params = {})
 ```
 - set a speech bubble for unit_id
 - currently there are no optional params
 
 ## gx_(get|set|add)_unit_ammo
-```c
+```sq
 int gx_get_unit_ammo(int unit_id, string ammoName)
 void gx_set_unit_ammo(int unit_id, string ammoName, int count)
 void gx_add_unit_ammo(int unit_id, string ammoName, int count)
@@ -637,7 +638,7 @@ void gx_add_unit_ammo(int unit_id, string ammoName, int count)
 - Can query and set how much `unit ammo` of type `ammoName` the unit is holding
 
 ## gx_(get|set|add)_player_ammo_in_unit
-```c
+```sq
 int gx_get_player_ammo_in_unit(int unit_id, string ammoName)
 void gx_set_player_ammo_in_unit(int unit_id, string ammoName, int count)
 void gx_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
@@ -645,17 +646,17 @@ void gx_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
 - Can query and set how much `player ammo` of type `ammoName` the unit is holding
 
 ## gx_get_player_ammo_total
-```c
+```sq
 int gx_get_player_ammo_total(int player_id, string ammoName)
 ```
 - Returns how much `player ammo` of type `ammoName` the player has
 
 ## gx_get_unit_by_name
-```c
+```sq
 int gx_get_unit_by_name(params = {})
 ```
 
-```
+```sq
 local params = {
     m_name,             // Required                                 (string)
     m_player_id = 0     // Optional, used to Filter. Default = 0.   (int)
@@ -668,7 +669,7 @@ local params = {
 ## Property Getters/Setters
 - Allows you to get/set certain properties for `simulation`, `forces`, `players`, and `units`, and other things
 
-```c
+```sq
 // getters
 mixed gx_get_force_prop(ForceProp prop, int force_id)
 mixed gx_get_player_prop(PlayerProp prop, int player_id)
@@ -691,7 +692,7 @@ void gx_add_unit_prop(UnitProp prop, int unit_id, mixed val)
 ## UserData Getters/Setters
 - Allows you to get/set userdata integers for `simulation`, `forces`, `players`, and `units`, and other things for your own purposes
 
-```c
+```sq
 // getters
 int gx_get_sim_variable(string varName)
 int gx_get_force_variable(int force_id, string varName)
@@ -715,7 +716,7 @@ void gx_add_unit_variable(int unit_id, string varName, int varValue)
 
 
 ## gx_is_event_queue_empty
-```c
+```sq
 bool gx_is_event_queue_empty()
 ```
 
@@ -723,7 +724,7 @@ bool gx_is_event_queue_empty()
 - See {{eventQueue()}}
 
 ## gx_pop_event_from_queue
-```c
+```sq
 Event gx_pop_event_from_queue()
 ```
 - Pop event from event queue.

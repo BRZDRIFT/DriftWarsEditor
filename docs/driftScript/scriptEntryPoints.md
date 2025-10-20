@@ -3,7 +3,7 @@
 Your script code has 3 entry points.
 
 ## gx_map_init
-```
+```sq
 function gx_map_init() {
     // your code here
 }
@@ -16,7 +16,7 @@ function gx_map_init() {
 - Should be defined in `/MapInit.DriftScript`
 
 ## gx_sim_init
-```
+```sq
 function gx_sim_init() {
     // your code here
 }
@@ -30,7 +30,7 @@ function gx_sim_init() {
 - Should be defined in `/SimUpdate.DriftScript`
 
 ## gx_sim_update
-```
+```sq
 function gx_sim_update() {
     // your code here
 }

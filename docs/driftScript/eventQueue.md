@@ -1,7 +1,7 @@
 ## Event Queue
 
 Event Structure:
-```c
+```sq
 table Event
 {
     EventType m_type        // Always populated, specifies type of event.
@@ -16,7 +16,7 @@ table Event
 
 Example of reading events from queue
 
-```c
+```sq
 function gx_sim_update()
 {
     while (!gx_is_event_queue_empty())
