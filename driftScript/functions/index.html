@@ -2080,25 +2080,23 @@
   <h1>Functions</h1>
 
 <h2 id="gx_include">gx_include</h2>
-<pre><code>gx_include(string filename)
-</code></pre>
-<ul>
-<li>Includes <code>filename</code> in current compilation.</li>
-<li>A file is only included once by <code>gx_include</code>; subsequent calls are ignored.</li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_include</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">filename</span><span class="p">)</span>
+</span></code></pre></div>
+- Includes <code>filename</code> in current compilation.
+- A file is only included once by <code>gx_include</code>; subsequent calls are ignored.</p>
 <h2 id="gx_create_unit">gx_create_unit</h2>
-<pre><code class="language-c">int gx_create_unit(table params)
-</code></pre>
-<pre><code class="language-c">table params = {
-    string m_unitType,              // Required
-    int m_playerID,                 // Required
-    Vec2 m_position = {},           // Optional
-    string m_location = {},         // Optional
-    int m_level = 1                 // Optional, default unit level = 1
-}
-</code></pre>
-<pre><code class="language-lua">local new_unit = gx_create_unit({ m_unitType = &quot;Brute&quot;, m_playerID = 1, m_location = &quot;my_cool_location&quot; })
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_create_unit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_unitType</span><span class="p">,</span><span class="w">              </span><span class="c1">// Required</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerID</span><span class="p">,</span><span class="w">                 </span><span class="c1">// Required</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kt">Vec2</span><span class="w"> </span><span class="n">m_position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">           </span><span class="c1">// Optional</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">         </span><span class="c1">// Optional</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">                 </span><span class="c1">// Optional, default unit level = 1</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">new_unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gx_create_unit</span><span class="p">({</span><span class="w"> </span><span class="n">m_unitType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Brute&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m_playerID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_cool_location&quot;</span><span class="w"> </span><span class="p">})</span>
+</span></code></pre></div>
 <ul>
 <li>Will create unit of type <code>m_unitType</code> at position <code>m_position</code> or at location <code>m_location</code> for player <code>m_playerID</code>.</li>
 <li>It is undefined behavior to have both <code>m_position</code> and <code>m_location</code> set.</li>
@@ -2106,64 +2104,58 @@
 <li>Refer to <a href="/DriftWarsEditor/driftScript/builtinTypes/#vec2">Vec2</a> if needed.</li>
 </ul>
 <h2 id="gx_get_sim_tick">gx_get_sim_tick</h2>
-<pre><code class="language-c">int gx_get_sim_tick()
-</code></pre>
-<ul>
-<li>Returns the current sim tick number in simulation.</li>
-<li>The <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_sim_init">gx_sim_init</a> call will have <code>tick = 0</code></li>
-<li>The first <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call will have <code>tick = 1</code></li>
-<li>The second <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call will have <code>tick = 2</code>, etc..</li>
-<li>every tick corresponds to 50ms real time</li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_sim_tick</span><span class="p">()</span>
+</span></code></pre></div>
+- Returns the current sim tick number in simulation.
+- The <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_sim_init">gx_sim_init</a> call will have <code>tick = 0</code>
+- The first <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call will have <code>tick = 1</code>
+- The second <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call will have <code>tick = 2</code>, etc..
+- every tick corresponds to 50ms real time</p>
 <h2 id="gx_get_distance_between_units">gx_get_distance_between_units</h2>
-<pre><code>float gx_get_distance_between_units(int unitID, int otherUnitID)
-</code></pre>
-<ul>
-<li>returns the distance between the edges of two units</li>
-<li>will return 0 if one or both of the units do not exist</li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_get_distance_between_units</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unitID</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">otherUnitID</span><span class="p">)</span>
+</span></code></pre></div>
+- returns the distance between the edges of two units
+- will return 0 if one or both of the units do not exist</p>
 <h2 id="gx_get_nearby_units-gx_get_nearby_units_count">gx_get_nearby_units / gx_get_nearby_units_count</h2>
-<pre><code class="language-c">int[] gx_get_nearby_units(table params)
-int gx_get_nearby_units_count(table params)
-</code></pre>
-<pre><code class="language-c">table params = {
-    int m_unitID,                                   // unit_id to center search on
-    float m_radius,                                 // search radius around unit
-    int m_playerIDs[],                              // Optional, Filter for player_id
-    int m_forceIDs[],                               // Optional, Filter for force_id
-    string m_unitTypes[],                           // Optional, Filter for certain unit types
-    string m_exceptUnitTypes[],                     // Optional, ignore certain unit types
-    bool m_bIncludeAirUnits = true,                 // Optional, Set to false if you want to exclude air units
-    bool m_bIncludeGroundUnits = true               // Optional, set to false if you want to exclude ground units
-    bool m_bIncludeKilledUnits = false,             // Optional, Set to true if you want to include killed units
-    bool m_bIncludeRemovedUnits = false             // Optional, set to true if you want to include removed units
-    bool m_bIncludeProjectiles = false              // Optional, include projectiles (default: false)
-}
-</code></pre>
-<ul>
-<li><code>m_unitID</code> required to be set</li>
-<li><code>m_radius</code> required to be set</li>
-<li>returns units whos outer edges have a distance equal/less than <code>m_radius</code> from <code>m_unitID</code>.</li>
-<li><code>note:</code> <code>m_unitID</code> will be included in part of query result</li>
-</ul>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">gx_get_nearby_units</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_nearby_units_count</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_unitID</span><span class="p">,</span><span class="w">                                   </span><span class="c1">// unit_id to center search on</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_radius</span><span class="p">,</span><span class="w">                                 </span><span class="c1">// search radius around unit</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span><span class="w">                              </span><span class="c1">// Optional, Filter for player_id</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span><span class="w">                               </span><span class="c1">// Optional, Filter for force_id</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_unitTypes</span><span class="p">[],</span><span class="w">                           </span><span class="c1">// Optional, Filter for certain unit types</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_exceptUnitTypes</span><span class="p">[],</span><span class="w">                     </span><span class="c1">// Optional, ignore certain unit types</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeAirUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w">                 </span><span class="c1">// Optional, Set to false if you want to exclude air units</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeGroundUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="w">               </span><span class="c1">// Optional, set to false if you want to exclude ground units</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeKilledUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w">             </span><span class="c1">// Optional, Set to true if you want to include killed units</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeRemovedUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="w">             </span><span class="c1">// Optional, set to true if you want to include removed units</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeProjectiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="w">              </span><span class="c1">// Optional, include projectiles (default: false)</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="p">}</span>
+</span></code></pre></div>
+- <code>m_unitID</code> required to be set
+- <code>m_radius</code> required to be set
+- returns units whos outer edges have a distance equal/less than <code>m_radius</code> from <code>m_unitID</code>.
+- <code>note:</code> <code>m_unitID</code> will be included in part of query result</p>
 <h2 id="gx_get_units-gx_get_units_count">gx_get_units / gx_get_units_count</h2>
-<pre><code class="language-c">int[] gx_get_units(table params)
-int gx_get_units_count(table params)
-</code></pre>
-<pre><code class="language-c">table params = {
-    string m_locations[],                           // Optional
-    BoundsCheck m_boundsCheck                       // Default: BoundsCheck.Center
-    int m_playerIDs[],                              // Optional, Filter for player_id
-    int m_forceIDs[],                               // Optional, Filter for force_id
-    string m_unitTypes[],                           // Optional, Filter for certain unit types
-    string m_exceptUnitTypes[],                     // Optional, ignore certain unit types
-    bool m_bIncludeAirUnits = true,                 // Optional, Set to false if you want to exclude air units
-    bool m_bIncludeGroundUnits = true               // Optional, set to false if you want to exclude ground units
-    bool m_bIncludeKilledUnits = false,             // Optional, Set to true if you want to include killed units
-    bool m_bIncludeRemovedUnits = false             // Optional, set to true if you want to include removed units
-    bool m_bIncludeProjectiles = false              // Optional, include projectiles (default: false)
-}
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">gx_get_units</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_units_count</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_locations</span><span class="p">[],</span><span class="w">                           </span><span class="c1">// Optional</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="kt">BoundsCheck</span><span class="w"> </span><span class="n">m_boundsCheck</span><span class="w">                       </span><span class="c1">// Default: BoundsCheck.Center</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span><span class="w">                              </span><span class="c1">// Optional, Filter for player_id</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span><span class="w">                               </span><span class="c1">// Optional, Filter for force_id</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_unitTypes</span><span class="p">[],</span><span class="w">                           </span><span class="c1">// Optional, Filter for certain unit types</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_exceptUnitTypes</span><span class="p">[],</span><span class="w">                     </span><span class="c1">// Optional, ignore certain unit types</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeAirUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w">                 </span><span class="c1">// Optional, Set to false if you want to exclude air units</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeGroundUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="w">               </span><span class="c1">// Optional, set to false if you want to exclude ground units</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeKilledUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w">             </span><span class="c1">// Optional, Set to true if you want to include killed units</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeRemovedUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="w">             </span><span class="c1">// Optional, set to true if you want to include removed units</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeProjectiles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="w">              </span><span class="c1">// Optional, include projectiles (default: false)</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="p">}</span>
+</span></code></pre></div>
 <ul>
 <li>If <code>m_locations</code> is defined:<ul>
 <li>Searches at <code>m_locations</code> for units</li>
@@ -2176,24 +2168,24 @@ int gx_get_units_count(table params)
 <li>Refer to <a href="/DriftWarsEditor/driftScript/enumerations/#boundscheck">BoundsCheck </a> if needed.</li>
 </ul>
 <h2 id="gx_create_explosion">gx_create_explosion</h2>
-<pre><code class="language-c">void gx_create_explosion(table params)
-</code></pre>
-<pre><code class="language-c">table params = {
-    float m_size = {},                  // Optional, Diameter of explosion
-    Vec3 m_color = Vec3(1, 1, 0)        // Optional, ColorSRGB of explosion.
-    string m_location = {},             // Optional, Location for explosion
-    Vec2 m_pos = {}                     // Optional, Position for explosion
-}
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_create_explosion</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">                  </span><span class="c1">// Optional, Diameter of explosion</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="kt">Vec3</span><span class="w"> </span><span class="n">m_color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Vec3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">        </span><span class="c1">// Optional, ColorSRGB of explosion.</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">             </span><span class="c1">// Optional, Location for explosion</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="kt">Vec2</span><span class="w"> </span><span class="n">m_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w">                     </span><span class="c1">// Optional, Position for explosion</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">}</span>
+</span></code></pre></div>
 <ul>
 <li>Refer to <a href="/DriftWarsEditor/driftScript/builtinTypes/#vec2">Vec2</a> and <a href="/DriftWarsEditor/driftScript/builtinTypes/#vec3">Vec3</a> if needed.</li>
 </ul>
-<p>Example:</p>
-<pre><code class="language-lua">gx_create_explosion( {
-    m_color = Vec3(1, 0, .5),
-    m_location = &quot;my_location&quot;
-} )
-</code></pre>
+<p>Example:
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nf">gx_create_explosion</span><span class="p">(</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nv">m_color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">Vec3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">.5</span><span class="p">),</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nv">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my_location&quot;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">}</span><span class="w"> </span><span class="p">)</span>
+</span></code></pre></div></p>
 <ul>
 <li>it is undefined behavior to set both <code>m_location</code> and <code>m_pos</code></li>
 <li>if <code>m_size</code> is not set and <code>m_location</code> is set, the resolved size will be the minimum width/height of <code>m_location</code></li>
@@ -2203,22 +2195,22 @@ int gx_get_units_count(table params)
 <li>Refer to <a href="/DriftWarsEditor/driftScript/builtinTypes/#vec2">Vec2</a> and <a href="/DriftWarsEditor/driftScript/builtinTypes/#vec3">Vec3</a> if needed.</li>
 </ul>
 <h2 id="gx_kill_unit">gx_kill_unit</h2>
-<pre><code class="language-c">void gx_kill_unit(int unit_id)
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_kill_unit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span></code></pre></div>
 <ul>
 <li>kills the unit <code>unit_id</code>.</li>
 <li>It is safe to call this function on already killed units</li>
 </ul>
 <h2 id="gx_get_kills">gx_get_kills</h2>
-<pre><code class="language-c">void gx_get_kills(int player_id, table params = {})
-</code></pre>
-<pre><code>params = {
-    m_playerID = {},
-    m_bAlliedKills = {},
-    m_bSelfKills = {},
-    m_bNonAlliedKills = {},
-}
-</code></pre>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_get_kills</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="n">m_playerID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="n">m_bAlliedKills</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="n">m_bSelfKills</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="n">m_bNonAlliedKills</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">}</span>
+</span></code></pre></div></p>
 <ul>
 <li>if <code>m_playerID</code> is set, none of <code>m_bAlliedKills</code>, <code>m_bSelfKills</code>, <code>m_bNonAlliedKills</code> should be set</li>
 <li>if empty {} is passed in for params, all kills will be returned, equivalent to:
@@ -2226,132 +2218,118 @@ int gx_get_units_count(table params)
 <li>Allied kills does not include self kills</li>
 </ul>
 <h2 id="gx_is_unit_killed">gx_is_unit_killed</h2>
-<pre><code class="language-c">void gx_is_unit_killed(int unit_id)
-</code></pre>
-<ul>
-<li>returns if the unit <code>unit_id</code> is killed</li>
-<li>returns <code>true</code> if unit does not exist</li>
-<li>equivalent to calling <code>!gx_is_unit_alive(unit_id)</code></li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_is_unit_killed</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span></code></pre></div>
+- returns if the unit <code>unit_id</code> is killed
+- returns <code>true</code> if unit does not exist
+- equivalent to calling <code>!gx_is_unit_alive(unit_id)</code></p>
 <h2 id="gx_remove_unit">gx_remove_unit</h2>
-<pre><code class="language-c">void gx_remove_unit(int unit_id)
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_remove_unit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span></code></pre></div>
 <ul>
 <li>marks the unit to be removed by game</li>
 <li><code>unit_id</code> will be removed from game before the next <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call</li>
 <li>It is safe to call this function on already killed or removed units</li>
 </ul>
 <h2 id="gx_is_unit_removed">gx_is_unit_removed</h2>
-<pre><code class="language-c">void gx_is_unit_removed(int unit_id)
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_is_unit_removed</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span></code></pre></div>
 <ul>
 <li>returns if unit is marked to be removed</li>
 <li>will still return <code>true</code> if unit_id does not exist</li>
 </ul>
 <h2 id="gx_unit_exists">gx_unit_exists</h2>
-<pre><code class="language-c">bool gx_unit_exists(int unit_id)
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_unit_exists</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span></code></pre></div>
 <ul>
 <li>checks if unit still exists in the game</li>
 </ul>
 <h2 id="gx_is_unit_alive_and_constructed">gx_is_unit_alive_and_constructed</h2>
-<pre><code class="language-c">bool gx_is_unit_alive_and_constructed(int unit_id)
-</code></pre>
-<ul>
-<li>returns <code>true</code> if unit is alive and constructed</li>
-<li>returns <code>false</code> if unit_id is invalid or unit no longer exists in game</li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_is_unit_alive_and_constructed</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span></code></pre></div>
+- returns <code>true</code> if unit is alive and constructed
+- returns <code>false</code> if unit_id is invalid or unit no longer exists in game</p>
 <h2 id="gx_is_unit_alive">gx_is_unit_alive</h2>
-<pre><code class="language-c">bool gx_is_unit_alive(int unit_id)
-</code></pre>
-<ul>
-<li>returns <code>true</code> if unit is alive</li>
-<li>returns <code>false</code> if unit_id is invalid or unit no longer exists in game</li>
-<li>Note: This function still returns <code>true</code> if unit is not yet fully constructed</li>
-<li>equivalent to calling <code>!gx_is_unit_killed(unit_id)</code></li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_is_unit_alive</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span></code></pre></div>
+- returns <code>true</code> if unit is alive
+- returns <code>false</code> if unit_id is invalid or unit no longer exists in game
+- Note: This function still returns <code>true</code> if unit is not yet fully constructed
+- equivalent to calling <code>!gx_is_unit_killed(unit_id)</code></p>
 <h2 id="gx_get_unit_position">gx_get_unit_position</h2>
-<pre><code class="language-c">Vec3&lt;float&gt; gx_get_unit_position(int unit_id)
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kt">Vec3</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">gx_get_unit_position</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span></code></pre></div>
 <ul>
 <li>returns position of unit</li>
 <li>returns Vec3(0.0, 0.0, 0.0) if unit no longer exists</li>
 </ul>
 <h2 id="gx_set_unit_position">gx_set_unit_position</h2>
-<pre><code class="language-c">void gx_set_unit_position(int unit_id, table params)
-</code></pre>
-<pre><code class="language-c">table params = {
-    string m_location = {},     // Optional, location to put unit
-}
-</code></pre>
-<p>Example:</p>
-<pre><code class="language-lua">gx_set_unit_position(some_unit, { m_location = &quot;location_to_teleport_to&quot; } )
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_unit_position</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">     </span><span class="c1">// Optional, location to put unit</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="p">}</span>
+</span></code></pre></div>
+Example:
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nf">gx_set_unit_position</span><span class="p">(</span><span class="nv">some_unit</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nv">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;location_to_teleport_to&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">)</span>
+</span></code></pre></div></p>
 <ul>
 <li>it is undefined to not set <code>m_location</code> </li>
 <li>if <code>m_location</code> does not exist, unit will be teleported to Vec2(0.0, 0.0)</li>
 </ul>
 <h2 id="gx_is_ground_unit">gx_is_ground_unit</h2>
-<pre><code class="language-c">bool gx_is_ground_unit(int unit_id)
-</code></pre>
-<ul>
-<li>returns if unit is currently a <code>ground</code> unit</li>
-<li>units are always in either the <code>ground</code> or <code>air</code> state</li>
-<li>note: knock-back effect can cause <code>ground</code> units to temporarily become <code>air</code> units</li>
-<li>equivalent to calling <code>!gx_is_air_unit(unit_id)</code></li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_is_ground_unit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span></code></pre></div>
+- returns if unit is currently a <code>ground</code> unit
+- units are always in either the <code>ground</code> or <code>air</code> state
+- note: knock-back effect can cause <code>ground</code> units to temporarily become <code>air</code> units
+- equivalent to calling <code>!gx_is_air_unit(unit_id)</code></p>
 <h2 id="gx_is_air_unit">gx_is_air_unit</h2>
-<pre><code class="language-c">bool gx_is_air_unit(int unit_id)
-</code></pre>
-<ul>
-<li>returns if unit is currently an <code>air</code> unit</li>
-<li>units are always in either the <code>ground</code> or <code>air</code> state</li>
-<li>note: knock-back effect can cause <code>ground</code> units to temporarily become <code>air</code> units</li>
-<li>equivalent to calling <code>!gx_is_ground_unit(unit_id)</code></li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_is_air_unit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span></code></pre></div>
+- returns if unit is currently an <code>air</code> unit
+- units are always in either the <code>ground</code> or <code>air</code> state
+- note: knock-back effect can cause <code>ground</code> units to temporarily become <code>air</code> units
+- equivalent to calling <code>!gx_is_ground_unit(unit_id)</code></p>
 <h2 id="gx_get_players">gx_get_players</h2>
-<pre><code class="language-c">int[] gx_get_players(table params = {})
-</code></pre>
-<pre><code class="language-c">table params = {
-    bool m_bIncludeNormalPlayers = true;
-    bool m_bIncludeDefeatedPlayers = false;
-    bool m_bIncludeNeutralPlayer = false;
-    bool m_bIncludeRescuePlayer = false;
-    bool m_bIncludeHostilePlayer = false;
-    bool m_bPlayerMustBeInGame = true;
-}
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">gx_get_players</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeNormalPlayers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeDefeatedPlayers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeNeutralPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeRescuePlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIncludeHostilePlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bPlayerMustBeInGame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="p">}</span>
+</span></code></pre></div>
 <h2 id="gx_get_player">gx_get_player</h2>
-<pre><code class="language-c">int gx_get_player(int unit_id)
-</code></pre>
-<ul>
-<li>returns the <code>player_id</code> for unit <code>unit_id</code></li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_player</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span></code></pre></div>
+- returns the <code>player_id</code> for unit <code>unit_id</code></p>
 <h2 id="gx_print">gx_print</h2>
-<pre><code class="language-c">void gx_print(string message, table params = {})
-</code></pre>
-<pre><code class="language-c">table params = {
-    int m_forceID = {},      // Optional, send message to only force_id
-    int m_playerID = {}     // Optional, send message to only player_id
-}
-</code></pre>
-<ul>
-<li>Should only set <code>m_forceID</code> or <code>m_playerID</code>, it is undefined to set both.</li>
-<li>If neither <code>m_forceID</code> nor <code>m_playerID</code> is set, message will be broadcasted to all players (and observers)</li>
-</ul>
-<p>Example</p>
-<pre><code class="language-c">// display chat message 'Hello World!' to player 3
-gx_print(&quot;Hello World!&quot;, { m_playerID = 3 } )
-
-// display chat message 'Hello World!' to everyone in force 2
-gx_print(&quot;Hello World!&quot;, { m_forceID = 2 } )
-
-// display chat message 'Hello World!' to everyone
-gx_print(&quot;Hello World!&quot;)
-
-// equivalent to above, display chat message 'Hello World!' to everyone
-gx_print(&quot;Hello World!&quot;, {})
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_print</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">      </span><span class="c1">// Optional, send message to only force_id</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w">     </span><span class="c1">// Optional, send message to only player_id</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="p">}</span>
+</span></code></pre></div>
+- Should only set <code>m_forceID</code> or <code>m_playerID</code>, it is undefined to set both.
+- If neither <code>m_forceID</code> nor <code>m_playerID</code> is set, message will be broadcasted to all players (and observers)</p>
+<p>Example
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1">// display chat message &#39;Hello World!&#39; to player 3</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="n">gx_print</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_playerID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="c1">// display chat message &#39;Hello World!&#39; to everyone in force 2</span>
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="n">gx_print</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_forceID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="c1">// display chat message &#39;Hello World!&#39; to everyone</span>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="n">gx_print</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">)</span>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="c1">// equivalent to above, display chat message &#39;Hello World!&#39; to everyone</span>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a><span class="n">gx_print</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div></p>
 <ul>
 <li>outputs text to game chat (or map editor console)</li>
 <li>useful for debugging as well</li>
@@ -2359,85 +2337,79 @@ gx_print(&quot;Hello World!&quot;, {})
 <li><code>params</code> are ignored when running in map editor's console</li>
 </ul>
 <h2 id="gx_set_victory">gx_set_victory</h2>
-<pre><code class="language-c">void gx_set_victory(table params)
-</code></pre>
-<pre><code class="language-c">table params = {
-    int m_playerID = {},
-    int m_forceID = {}
-}
-</code></pre>
-<ul>
-<li>once a player or team is set to <code>victory</code>, future calls to <code>gx_set_victory</code>/<code>gx_set_defeat</code> for that player/team will be ignored</li>
-<li>should only set one of <code>m_playerID</code> or <code>m_forceID</code>, setting both is undefined</li>
-<li>setting <code>m_forceID</code> will set victory for all players within that force</li>
-</ul>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_victory</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="p">}</span>
+</span></code></pre></div>
+- once a player or team is set to <code>victory</code>, future calls to <code>gx_set_victory</code>/<code>gx_set_defeat</code> for that player/team will be ignored
+- should only set one of <code>m_playerID</code> or <code>m_forceID</code>, setting both is undefined
+- setting <code>m_forceID</code> will set victory for all players within that force</p>
 <h2 id="gx_set_defeat">gx_set_defeat</h2>
-<pre><code class="language-c">void gx_set_defeat(table params)
-</code></pre>
-<pre><code class="language-c">table params = {
-    int m_playerID = {},
-    int m_forceID = {},
-    bool m_bKillAllUnits = true     // Optional, (default true)
-}
-</code></pre>
-<ul>
-<li>if <code>m_bKillAllUnits</code> is <code>true</code>, all units for player (or team) will be killed.</li>
-<li>once a player or team is set to <code>defeat</code>, future calls to <code>gx_set_victory</code>/<code>gx_set_defeat</code> for that player/team will be ignored</li>
-<li>should only set one of <code>m_playerID</code> or <code>m_forceID</code>, setting both is undefined</li>
-<li>setting <code>m_forceID</code> will set defeat for all players within that force</li>
-</ul>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_defeat</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bKillAllUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="w">     </span><span class="c1">// Optional, (default true)</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="p">}</span>
+</span></code></pre></div>
+- if <code>m_bKillAllUnits</code> is <code>true</code>, all units for player (or team) will be killed.
+- once a player or team is set to <code>defeat</code>, future calls to <code>gx_set_victory</code>/<code>gx_set_defeat</code> for that player/team will be ignored
+- should only set one of <code>m_playerID</code> or <code>m_forceID</code>, setting both is undefined
+- setting <code>m_forceID</code> will set defeat for all players within that force</p>
 <h2 id="gx_encode_text">gx_encode_text</h2>
-<pre><code class="language-c">string gx_encode_text(string text)
-</code></pre>
-<p>Example</p>
-<pre><code class="language-lua">local someText = gx_encode_text(&quot;^23Rainbow Text&quot;)
-gx_print(someText)
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">gx_encode_text</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Example
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">someText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">gx_encode_text</span><span class="p">(</span><span class="s2">&quot;^23Rainbow Text&quot;</span><span class="p">)</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="nf">gx_print</span><span class="p">(</span><span class="nv">someText</span><span class="p">)</span>
+</span></code></pre></div></p>
 <h2 id="gx_copy_ud">gx_copy_ud</h2>
 <p>Creates a copy of a <code>unit_data</code>.
 A <code>unit_data</code> serves as a 'definition' for a type of unit.
 Required for creating new custom unit types.</p>
-<pre><code class="language-c">void gx_copy_ud(string unit_type, string new_unit_type)
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_copy_ud</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unit_type</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">new_unit_type</span><span class="p">)</span>
+</span></code></pre></div>
 <p>The example below creates a new type of unit called "User_BabyBrute"
 It copies the existing definition of "Brute" to "User_BabyBrute".</p>
 <p>Example:</p>
-<pre><code class="language-c">gx_copy_ud(&quot;Brute&quot;, &quot;User_BabyBrute&quot;)
-</code></pre>
-<ul>
-<li>new unit type name MUST begin with <code>User_</code>. This is to prevent naming collisions for future added official units.</li>
-<li>this function will be a no-op if <code>new_unit_type</code> name does not begin with <code>_</code></li>
-<li><code>ud</code> is short for <code>unit_definition</code> </li>
-<li>Can only be called during <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
-<li>any attempt to call this outside of the <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a> will be ignored.</li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">gx_copy_ud</span><span class="p">(</span><span class="s">&quot;Brute&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;User_BabyBrute&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+- new unit type name MUST begin with <code>User_</code>. This is to prevent naming collisions for future added official units.
+- this function will be a no-op if <code>new_unit_type</code> name does not begin with <code>_</code>
+- <code>ud</code> is short for <code>unit_definition</code> 
+- Can only be called during <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a>
+- any attempt to call this outside of the <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a> will be ignored.</p>
 <h2 id="gx_modify_ud_props">gx_modify_ud_props</h2>
-<pre><code class="language-c">void gx_modify_ud_props(string unit_type, table params = {})
-</code></pre>
-<pre><code class="language-c">table params = {
-    string m_friendlyName = {},     // Optional, set unit's friendly name
-    int m_maxHealth = {},           // Optional, set max health
-    float m_maxSpeed = {},          // Optional, set max speed
-    int m_baseArmor = {},           // Optional, sets base armor
-    int m_size = {}                 // Optional, set unit size,
-    int m_gemstoneCost = {},
-    int m_fungusCost = {},
-    int m_supplyCost = {},
-    int m_buildTime = {}
-}
-</code></pre>
-<p>The example below creates a new type of unit called "User_BabyBrute".
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_modify_ud_props</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unit_type</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_friendlyName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">     </span><span class="c1">// Optional, set unit&#39;s friendly name</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_maxHealth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">           </span><span class="c1">// Optional, set max health</span>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_maxSpeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">          </span><span class="c1">// Optional, set max speed</span>
+</span><span id="__span-43-5"><a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_baseArmor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">           </span><span class="c1">// Optional, sets base armor</span>
+</span><span id="__span-43-6"><a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w">                 </span><span class="c1">// Optional, set unit size,</span>
+</span><span id="__span-43-7"><a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_gemstoneCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-43-8"><a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_fungusCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-43-9"><a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_supplyCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-43-10"><a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_buildTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-43-11"><a id="__codelineno-43-11" name="__codelineno-43-11" href="#__codelineno-43-11"></a><span class="p">}</span>
+</span></code></pre></div>
+The example below creates a new type of unit called "User_BabyBrute".
 It copies the existing <code>unit_definition</code> of "Brute" to "User_BabyBrute". 
 It then sets properties such as friendly name, maxHealth, baseArmor, and size.</p>
 <p>Example:</p>
-<pre><code class="language-c">gx_copy_ud(&quot;Brute&quot;, &quot;User_BabyBrute&quot;)
-gx_modify_ud_props(&quot;User_BabyBrute&quot;, {
-    m_friendlyName = &quot;Baby Brute&quot;,
-    m_maxHealth = 30,
-    m_baseArmor = 0,
-    m_size = 1
-})
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="n">gx_copy_ud</span><span class="p">(</span><span class="s">&quot;Brute&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;User_BabyBrute&quot;</span><span class="p">)</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="n">gx_modify_ud_props</span><span class="p">(</span><span class="s">&quot;User_BabyBrute&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="w">    </span><span class="n">m_friendlyName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Baby Brute&quot;</span><span class="p">,</span>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="w">    </span><span class="n">m_maxHealth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="w">    </span><span class="n">m_baseArmor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a><span class="w">    </span><span class="n">m_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a><span class="p">})</span>
+</span></code></pre></div>
 <ul>
 <li>Sets properties for a specific <code>unit_type</code></li>
 <li><code>ud</code> is short for <code>unit_definition</code> </li>
@@ -2445,114 +2417,108 @@ gx_modify_ud_props(&quot;User_BabyBrute&quot;, {
 <li>any attempt to call this outside of the <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a> will be ignored.</li>
 </ul>
 <h2 id="gx_add_build_structure_item">gx_add_build_structure_item</h2>
-<pre><code class="language-c">void gx_add_build_structure_item(string unitType, table params = {})
-</code></pre>
-<pre><code>table params = {
-    string m_structure = {},    // name of structure to build, i.e. &quot;Microwave&quot;
-    Vec2 m_position = {},           // position in command card to place at, leaving empty will use default
-    bool bBuildAdvanced = false     // default is false, if set to True, will be placed in 'build advanced' tab
-}
-</code></pre>
-<ul>
-<li>Can only be called during <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_build_structure_item</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>table params = {
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>    string m_structure = {},    // name of structure to build, i.e. &quot;Microwave&quot;
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>    Vec2 m_position = {},           // position in command card to place at, leaving empty will use default
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>    bool bBuildAdvanced = false     // default is false, if set to True, will be placed in &#39;build advanced&#39; tab
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>}
+</span></code></pre></div>
+- Can only be called during <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></p>
 <h2 id="gx_remove_all_build_structure_items">gx_remove_all_build_structure_items</h2>
-<pre><code class="language-c">void gx_remove_all_build_structure_items(string unitType)
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_remove_all_build_structure_items</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">)</span>
+</span></code></pre></div>
 <ul>
 <li>Remove all build structure items from worker</li>
 <li>Can only be called during <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
 </ul>
 <h2 id="gx_add_build_item">gx_add_build_item</h2>
-<pre><code class="language-c">void gx_add_build_item(string unitType, table params)
-</code></pre>
-<pre><code class="language-c">table params = {
-    string m_unitType = {},     // unit type to add
-    string m_research ={},      // research to add
-    string m_position = {}      // position in command card
-}
-</code></pre>
-<ul>
-<li>Only one <code>m_unitType</code> or <code>m_research</code> should be set</li>
-<li>Can only be called during <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
-<li>Remove all build items from structure</li>
-</ul>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_build_item</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_unitType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">     </span><span class="c1">// unit type to add</span>
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_research</span><span class="w"> </span><span class="o">=</span><span class="p">{},</span><span class="w">      </span><span class="c1">// research to add</span>
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w">      </span><span class="c1">// position in command card</span>
+</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a><span class="p">}</span>
+</span></code></pre></div>
+- Only one <code>m_unitType</code> or <code>m_research</code> should be set
+- Can only be called during <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a>
+- Remove all build items from structure</p>
 <h2 id="gx_remove_all_build_items">gx_remove_all_build_items</h2>
-<pre><code class="language-c">void gx_remove_all_build_items(string unitType)
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_remove_all_build_items</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">)</span>
+</span></code></pre></div>
 <ul>
 <li>Remove all build items from structure</li>
 <li>Can only be called during <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
 </ul>
 <h2 id="gx_fling_unit">gx_fling_unit</h2>
 <p>throws the unit</p>
-<pre><code class="language-c">void gx_fling_unit(int unit_id, table params = {})
-</code></pre>
-<pre><code class="language-c">table params = {
-    Vec2 m_dir = {},        // Optional, 2d direction to throw unit. Does not need to be normalized.
-    Vec3 m_dir3d = {},      // Optional, 3d direction to throw unit. Does not need to be normalized.
-    float m_force = 1       // Optional, velocity to throw unit
-}
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_fling_unit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="w">    </span><span class="kt">Vec2</span><span class="w"> </span><span class="n">m_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">        </span><span class="c1">// Optional, 2d direction to throw unit. Does not need to be normalized.</span>
+</span><span id="__span-52-3"><a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="w">    </span><span class="kt">Vec3</span><span class="w"> </span><span class="n">m_dir3d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">      </span><span class="c1">// Optional, 3d direction to throw unit. Does not need to be normalized.</span>
+</span><span id="__span-52-4"><a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_force</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w">       </span><span class="c1">// Optional, velocity to throw unit</span>
+</span><span id="__span-52-5"><a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <ul>
 <li>If neither <code>m_dir</code> nor <code>m_dir3d</code> is set, unit will be thrown in random direction</li>
 <li>Only <code>m_dir</code> or <code>m_dir3d</code> should be set. Setting both is undefined behavior.</li>
 <li>Refer to <a href="/DriftWarsEditor/driftScript/builtinTypes/#vec2">Vec2</a> and <a href="/DriftWarsEditor/driftScript/builtinTypes/#vec3">Vec3</a> if needed. </li>
 </ul>
 <h2 id="gx_set_area_vision">gx_set_area_vision</h2>
-<pre><code class="language-c">void gx_set_area_vision(int player_id, table params)
-</code></pre>
-<pre><code class="language-c">table params = {
-    string m_location = {},         // location to give or take away vision of (depending on m_bSet)
-    string m_triangleGroup = {},    // triangle group to give or take away vision of (depending on m_bSet)
-    bool m_bFullMapVision = {}      // If set to true, will give or take away vision of entire map (depending on m_bSet)
-    bool m_bSet = true              // If true gives vision, else takes away vision. (default: true)
-}
-</code></pre>
-<ul>
-<li>This function gives or removes permanent vision of a <code>m_location</code>, <code>m_triangleGroup</code>, or <code>entire map</code>.</li>
-<li>Only one of <code>m_location</code>, <code>m_triangleGroup</code>, or <code>m_bFullMapVision</code> should be set.</li>
-<li>The only valid value of <code>m_bFullMapVision</code> is <code>true</code>. Setting to <code>false</code> is <code>undefined</code>.</li>
-<li>If you want to give <code>Full Map Vision</code> to a player, set <code>m_bFullMapVision</code> to <code>true</code> and <code>m_bSet</code> to <code>true</code>.</li>
-<li>If you want to remove <code>Full Map Vision</code> from a player, set <code>m_bFullMapVision</code> to <code>true</code> and <code>m_bSet</code> to <code>false</code>.</li>
-<li>The value of <code>m_bSet</code> determines if vision is given or taken away from player.</li>
-</ul>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_area_vision</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">         </span><span class="c1">// location to give or take away vision of (depending on m_bSet)</span>
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_triangleGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">    </span><span class="c1">// triangle group to give or take away vision of (depending on m_bSet)</span>
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bFullMapVision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w">      </span><span class="c1">// If set to true, will give or take away vision of entire map (depending on m_bSet)</span>
+</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="w">              </span><span class="c1">// If true gives vision, else takes away vision. (default: true)</span>
+</span><span id="__span-54-6"><a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a><span class="p">}</span>
+</span></code></pre></div>
+- This function gives or removes permanent vision of a <code>m_location</code>, <code>m_triangleGroup</code>, or <code>entire map</code>.
+- Only one of <code>m_location</code>, <code>m_triangleGroup</code>, or <code>m_bFullMapVision</code> should be set.
+- The only valid value of <code>m_bFullMapVision</code> is <code>true</code>. Setting to <code>false</code> is <code>undefined</code>.
+- If you want to give <code>Full Map Vision</code> to a player, set <code>m_bFullMapVision</code> to <code>true</code> and <code>m_bSet</code> to <code>true</code>.
+- If you want to remove <code>Full Map Vision</code> from a player, set <code>m_bFullMapVision</code> to <code>true</code> and <code>m_bSet</code> to <code>false</code>.
+- The value of <code>m_bSet</code> determines if vision is given or taken away from player.</p>
 <h2 id="gx_get_area_vision">gx_get_area_vision</h2>
-<pre><code class="language-c">bool gx_get_area_vision(int player_id, table params)
-</code></pre>
-<pre><code class="language-c">table params = {
-    string m_location = {},         // location to query vision for
-    string m_triangleGroup = {},    // triangle group to query vision for
-    bool m_bFullMapVision = {}      // If set to true, queries if player has full map vision
-}
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_get_area_vision</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">         </span><span class="c1">// location to query vision for</span>
+</span><span id="__span-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_triangleGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">    </span><span class="c1">// triangle group to query vision for</span>
+</span><span id="__span-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bFullMapVision</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w">      </span><span class="c1">// If set to true, queries if player has full map vision</span>
+</span><span id="__span-56-5"><a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <ul>
 <li>This function queries if the player has permanent vision of a <code>location</code>, <code>triangleGroup</code>, or <code>entire map</code>.</li>
 <li>Only one of <code>m_location</code>, <code>m_triangleGroup</code>, or <code>m_bFullMapVision</code> should be set.</li>
 <li>The only valid value of <code>m_bFullMapVision</code> is <code>true</code>. Setting to <code>false</code> is <code>undefined</code>.</li>
 </ul>
 <h2 id="gx_set_terrain_type">gx_set_terrain_type</h2>
-<pre><code class="language-c">void gx_set_terrain_type(params = {})
-</code></pre>
-<pre><code class="language-c">table params = {
-    TerrainType m_type         // Required. The type of terrain to change to. See TerrainType enum. 
-    int m_secondary = 0         // Secondary terrain type. (default = 0)
-    Vec2 m_index = {},          // 2d index of square to change terrain type of
-    int m_index2 = {},         // 0 or 1, 0 indicates bottom triangle, 1 indicates top.
-                                // If index2 is not defined, entire square specified by m_index
-                                // will be set to terrain type (i.e. both triangles, top and bottom).
-                                // m_index and index2 are ignored if m_location is set.
-    string m_location = {}      // location to set terrain tile types.,
-    string m_triangleGroup = {} // triangle group to set terrian tile stype
-}
-</code></pre>
-<p>Example that sets terrain at location <code>my_location</code> to Pacifist type:</p>
-<pre><code class="language-c">gx_set_terrain_type({
-    m_type = TerrainType.Normal,
-    m_secondary = SecondaryTerrainTypeNormal.Pacifist,
-    m_location = &quot;my_location&quot;
-})
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_terrain_type</span><span class="p">(</span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-58-2"><a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="w">    </span><span class="n">TerrainType</span><span class="w"> </span><span class="n">m_type</span><span class="w">         </span><span class="c1">// Required. The type of terrain to change to. See TerrainType enum. </span>
+</span><span id="__span-58-3"><a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_secondary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">         </span><span class="c1">// Secondary terrain type. (default = 0)</span>
+</span><span id="__span-58-4"><a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a><span class="w">    </span><span class="kt">Vec2</span><span class="w"> </span><span class="n">m_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">          </span><span class="c1">// 2d index of square to change terrain type of</span>
+</span><span id="__span-58-5"><a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_index2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">         </span><span class="c1">// 0 or 1, 0 indicates bottom triangle, 1 indicates top.</span>
+</span><span id="__span-58-6"><a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a><span class="w">                                </span><span class="c1">// If index2 is not defined, entire square specified by m_index</span>
+</span><span id="__span-58-7"><a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a><span class="w">                                </span><span class="c1">// will be set to terrain type (i.e. both triangles, top and bottom).</span>
+</span><span id="__span-58-8"><a id="__codelineno-58-8" name="__codelineno-58-8" href="#__codelineno-58-8"></a><span class="w">                                </span><span class="c1">// m_index and index2 are ignored if m_location is set.</span>
+</span><span id="__span-58-9"><a id="__codelineno-58-9" name="__codelineno-58-9" href="#__codelineno-58-9"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w">      </span><span class="c1">// location to set terrain tile types.,</span>
+</span><span id="__span-58-10"><a id="__codelineno-58-10" name="__codelineno-58-10" href="#__codelineno-58-10"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_triangleGroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">// triangle group to set terrian tile stype</span>
+</span><span id="__span-58-11"><a id="__codelineno-58-11" name="__codelineno-58-11" href="#__codelineno-58-11"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Example that sets terrain at location <code>my_location</code> to Pacifist type:
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="n">gx_set_terrain_type</span><span class="p">({</span>
+</span><span id="__span-59-2"><a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="w">    </span><span class="n">m_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TerrainType</span><span class="p">.</span><span class="n">Normal</span><span class="p">,</span>
+</span><span id="__span-59-3"><a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="w">    </span><span class="n">m_secondary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SecondaryTerrainTypeNormal</span><span class="p">.</span><span class="n">Pacifist</span><span class="p">,</span>
+</span><span id="__span-59-4"><a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a><span class="w">    </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_location&quot;</span>
+</span><span id="__span-59-5"><a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a><span class="p">})</span>
+</span></code></pre></div></p>
 <ul>
 <li>Refer to <a href="/DriftWarsEditor/driftScript/enumerations/#terraintype">TerrainType</a> for valid <code>m_type</code> values</li>
 <li>If <code>m_type</code> is set to <code>TerrainType.Normal</code>, <code>m_secondary</code> must be one of <a href="/DriftWarsEditor/driftScript/enumerations/#secondaryterraintypenormal">SecondaryTerrainTypeNormal</a> values</li>
@@ -2565,31 +2531,29 @@ gx_modify_ud_props(&quot;User_BabyBrute&quot;, {
 <li>if <code>m_index</code> is set, it is <code>undefined behavior</code> to also set <code>m_location</code>, and <code>m_triangleGroup</code></li>
 </ul>
 <h2 id="gx_get_terrain_type">gx_get_terrain_type</h2>
-<pre><code>Vec2&lt;int&gt; gx_get_terrain_type(Vec2 index, int index2 = 0)
-</code></pre>
-<ul>
-<li>returns primary terrain type in <code>vec.m_x</code> and returns secondary terrain type in <code>vec.m_y</code></li>
-</ul>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>Vec2&lt;int&gt; gx_get_terrain_type(Vec2 index, int index2 = 0)
+</span></code></pre></div>
+- returns primary terrain type in <code>vec.m_x</code> and returns secondary terrain type in <code>vec.m_y</code></p>
 <h2 id="gx_set_player_camera_look_at">gx_set_player_camera_look_at</h2>
-<pre><code>void gx_set_player_camera_look_at(int player_id, table params)
-</code></pre>
-<pre><code class="language-c">local params = {
-    int m_unitID = {},
-    string m_location = {}
-}
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>void gx_set_player_camera_look_at(int player_id, table params)
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_unitID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-62-3"><a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-62-4"><a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <ul>
 <li>Moves camera of <code>player_id</code> to look at <code>m_unit</code> or <code>m_location</code></li>
 <li>One of <code>m_unit</code> or <code>m_location</code> should be set. Not both.</li>
 </ul>
 <h2 id="gx_lock_player_camera">gx_lock_player_camera</h2>
-<pre><code class="language-c">void gx_lock_player_camera(int player_id, table params = {})
-</code></pre>
-<pre><code class="language-c">local params = {
-    int m_unitID = {},
-    string m_location = {}
-}
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_lock_player_camera</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_unitID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
+</span><span id="__span-64-3"><a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-64-4"><a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a><span class="p">}</span>
+</span></code></pre></div>
 <ul>
 <li>locks <code>player_id</code> camera to look at <code>m_unitID</code> or <code>m_location</code>.</li>
 <li>camera will follow <code>m_unitID</code> or <code>m_location</code> until <code>m_unitID</code> is removed from game</li>
@@ -2597,21 +2561,21 @@ gx_modify_ud_props(&quot;User_BabyBrute&quot;, {
 <li>passing empty args for <code>params</code> will unlock the camera for <code>player_id</code>.</li>
 </ul>
 <h2 id="gx_unlock_player_camera">gx_unlock_player_camera</h2>
-<pre><code class="language-c">void gx_unlock_player_camera(int player_id)
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_unlock_player_camera</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">)</span>
+</span></code></pre></div>
 <ul>
 <li>unlocks <code>player_id</code> camera position set by <a href="/DriftWarsEditor/driftScript/functions/#gx_lock_player_camera">gx_lock_player_camera</a></li>
 <li>equivalent to calling <code>gx_lock_player_camera(player_id, {})</code></li>
 </ul>
 <h2 id="gx_queue_command">gx_queue_command</h2>
-<pre><code class="language-c">gx_queue_command(int unit_ids[], CommandType command, table params = {})
-</code></pre>
-<pre><code class="language-c">table params = {
-    int m_unitID,            // unit to target
-    string m_location = {},     // location to target
-    string m_pos = {},          // position to target
-}
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="n">gx_queue_command</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_ids</span><span class="p">[],</span><span class="w"> </span><span class="n">CommandType</span><span class="w"> </span><span class="n">command</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_unitID</span><span class="p">,</span><span class="w">            </span><span class="c1">// unit to target</span>
+</span><span id="__span-67-3"><a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">     </span><span class="c1">// location to target</span>
+</span><span id="__span-67-4"><a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">          </span><span class="c1">// position to target</span>
+</span><span id="__span-67-5"><a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a><span class="p">}</span>
+</span></code></pre></div>
 <ul>
 <li>only one (or zero) unit_id, m_location, m_pos should be set</li>
 <li>some commands/spells only work when certain params are set</li>
@@ -2620,111 +2584,95 @@ gx_modify_ud_props(&quot;User_BabyBrute&quot;, {
 <li>See <a href="/DriftWarsEditor/driftScript/enumerations/#commandtype">CommandType</a> for possible command values</li>
 </ul>
 <h2 id="gx_set_speech_bubble">gx_set_speech_bubble</h2>
-<pre><code class="language-c">void gx_set_speech_bubble(int unit_id, string text, table params = {})
-</code></pre>
-<ul>
-<li>set a speech bubble for unit_id</li>
-<li>currently there are no optional params</li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_speech_bubble</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+- set a speech bubble for unit_id
+- currently there are no optional params</p>
 <h2 id="gx_getsetadd_unit_ammo">gx_(get|set|add)_unit_ammo</h2>
-<pre><code class="language-c">int gx_get_unit_ammo(int unit_id, string ammoName)
-void gx_set_unit_ammo(int unit_id, string ammoName, int count)
-void gx_add_unit_ammo(int unit_id, string ammoName, int count)
-</code></pre>
-<ul>
-<li>Can query and set how much <code>unit ammo</code> of type <code>ammoName</code> the unit is holding</li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_unit_ammo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ammoName</span><span class="p">)</span>
+</span><span id="__span-69-2"><a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_unit_ammo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ammoName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
+</span><span id="__span-69-3"><a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_unit_ammo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ammoName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
+</span></code></pre></div>
+- Can query and set how much <code>unit ammo</code> of type <code>ammoName</code> the unit is holding</p>
 <h2 id="gx_getsetadd_player_ammo_in_unit">gx_(get|set|add)_player_ammo_in_unit</h2>
-<pre><code class="language-c">int gx_get_player_ammo_in_unit(int unit_id, string ammoName)
-void gx_set_player_ammo_in_unit(int unit_id, string ammoName, int count)
-void gx_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
-</code></pre>
-<ul>
-<li>Can query and set how much <code>player ammo</code> of type <code>ammoName</code> the unit is holding</li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_player_ammo_in_unit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ammoName</span><span class="p">)</span>
+</span><span id="__span-70-2"><a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_player_ammo_in_unit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ammoName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
+</span><span id="__span-70-3"><a id="__codelineno-70-3" name="__codelineno-70-3" href="#__codelineno-70-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_player_ammo_in_unit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ammoName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
+</span></code></pre></div>
+- Can query and set how much <code>player ammo</code> of type <code>ammoName</code> the unit is holding</p>
 <h2 id="gx_get_player_ammo_total">gx_get_player_ammo_total</h2>
-<pre><code class="language-c">int gx_get_player_ammo_total(int player_id, string ammoName)
-</code></pre>
-<ul>
-<li>Returns how much <code>player ammo</code> of type <code>ammoName</code> the player has</li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_player_ammo_total</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ammoName</span><span class="p">)</span>
+</span></code></pre></div>
+- Returns how much <code>player ammo</code> of type <code>ammoName</code> the player has</p>
 <h2 id="gx_get_unit_by_name">gx_get_unit_by_name</h2>
-<pre><code class="language-c">int gx_get_unit_by_name(params = {})
-</code></pre>
-<pre><code>local params = {
-    m_name,             // Required                                 (string)
-    m_player_id = 0     // Optional, used to Filter. Default = 0.   (int)
-}
-</code></pre>
-<ul>
-<li>returns unit_id with the given <code>m_name</code></li>
-<li>unit name can be set in map editor.</li>
-<li>if multiple units have the same name, the first will be returned.</li>
-</ul>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_unit_by_name</span><span class="p">(</span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-73-2"><a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a><span class="w">    </span><span class="n">m_name</span><span class="p">,</span><span class="w">             </span><span class="c1">// Required                                 (string)</span>
+</span><span id="__span-73-3"><a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a><span class="w">    </span><span class="n">m_player_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w">     </span><span class="c1">// Optional, used to Filter. Default = 0.   (int)</span>
+</span><span id="__span-73-4"><a id="__codelineno-73-4" name="__codelineno-73-4" href="#__codelineno-73-4"></a><span class="p">}</span>
+</span></code></pre></div>
+- returns unit_id with the given <code>m_name</code>
+- unit name can be set in map editor.
+- if multiple units have the same name, the first will be returned.</p>
 <h2 id="property-getterssetters">Property Getters/Setters</h2>
 <ul>
 <li>Allows you to get/set certain properties for <code>simulation</code>, <code>forces</code>, <code>players</code>, and <code>units</code>, and other things</li>
 </ul>
-<pre><code class="language-c">// getters
-mixed gx_get_force_prop(ForceProp prop, int force_id)
-mixed gx_get_player_prop(PlayerProp prop, int player_id)
-mixed gx_get_unit_prop(UnitProp prop, int unit_id)
-mixed gx_get_location_prop(LocationProp prop, string location)
-
-// setters
-void gx_set_force_prop(ForceProp prop, int force_id, mixed val)
-void gx_set_player_prop(PlayerProp prop, int player_id, mixed val)
-void gx_set_unit_prop(UnitProp prop, int unit_id, mixed val)
-
-// adders
-void gx_add_force_prop(ForceProp prop, int force_id, mixed val)
-void gx_add_player_prop(PlayerProp prop, int player_id, mixed val)
-void gx_add_unit_prop(UnitProp prop, int unit_id, mixed val)
-</code></pre>
-<ul>
-<li>Please refer to <a href="/DriftWarsEditor/driftScript/enumerations/#forceprop">ForceProp</a>, <a href="/DriftWarsEditor/driftScript/enumerations/#playerprop">PlayerProp</a>, <a href="/DriftWarsEditor/driftScript/enumerations/#unitprop">UnitProp</a>, and <a href="/DriftWarsEditor/driftScript/enumerations/#locationprop">LocationProp</a> for possibles values you can get/set (and their types).</li>
-<li>Properties that are <code>int</code> or <code>float</code> and are <code>Read-Write</code> can use the <code>gx_add_*</code> functions</li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="c1">// getters</span>
+</span><span id="__span-74-2"><a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a><span class="n">mixed</span><span class="w"> </span><span class="n">gx_get_force_prop</span><span class="p">(</span><span class="n">ForceProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">force_id</span><span class="p">)</span>
+</span><span id="__span-74-3"><a id="__codelineno-74-3" name="__codelineno-74-3" href="#__codelineno-74-3"></a><span class="n">mixed</span><span class="w"> </span><span class="n">gx_get_player_prop</span><span class="p">(</span><span class="n">PlayerProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">)</span>
+</span><span id="__span-74-4"><a id="__codelineno-74-4" name="__codelineno-74-4" href="#__codelineno-74-4"></a><span class="n">mixed</span><span class="w"> </span><span class="n">gx_get_unit_prop</span><span class="p">(</span><span class="n">UnitProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
+</span><span id="__span-74-5"><a id="__codelineno-74-5" name="__codelineno-74-5" href="#__codelineno-74-5"></a><span class="n">mixed</span><span class="w"> </span><span class="n">gx_get_location_prop</span><span class="p">(</span><span class="n">LocationProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">location</span><span class="p">)</span>
+</span><span id="__span-74-6"><a id="__codelineno-74-6" name="__codelineno-74-6" href="#__codelineno-74-6"></a>
+</span><span id="__span-74-7"><a id="__codelineno-74-7" name="__codelineno-74-7" href="#__codelineno-74-7"></a><span class="c1">// setters</span>
+</span><span id="__span-74-8"><a id="__codelineno-74-8" name="__codelineno-74-8" href="#__codelineno-74-8"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_force_prop</span><span class="p">(</span><span class="n">ForceProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">force_id</span><span class="p">,</span><span class="w"> </span><span class="n">mixed</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-74-9"><a id="__codelineno-74-9" name="__codelineno-74-9" href="#__codelineno-74-9"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_player_prop</span><span class="p">(</span><span class="n">PlayerProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="n">mixed</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-74-10"><a id="__codelineno-74-10" name="__codelineno-74-10" href="#__codelineno-74-10"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_unit_prop</span><span class="p">(</span><span class="n">UnitProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="n">mixed</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-74-11"><a id="__codelineno-74-11" name="__codelineno-74-11" href="#__codelineno-74-11"></a>
+</span><span id="__span-74-12"><a id="__codelineno-74-12" name="__codelineno-74-12" href="#__codelineno-74-12"></a><span class="c1">// adders</span>
+</span><span id="__span-74-13"><a id="__codelineno-74-13" name="__codelineno-74-13" href="#__codelineno-74-13"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_force_prop</span><span class="p">(</span><span class="n">ForceProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">force_id</span><span class="p">,</span><span class="w"> </span><span class="n">mixed</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-74-14"><a id="__codelineno-74-14" name="__codelineno-74-14" href="#__codelineno-74-14"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_player_prop</span><span class="p">(</span><span class="n">PlayerProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="n">mixed</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-74-15"><a id="__codelineno-74-15" name="__codelineno-74-15" href="#__codelineno-74-15"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_unit_prop</span><span class="p">(</span><span class="n">UnitProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="n">mixed</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+</span></code></pre></div>
+- Please refer to <a href="/DriftWarsEditor/driftScript/enumerations/#forceprop">ForceProp</a>, <a href="/DriftWarsEditor/driftScript/enumerations/#playerprop">PlayerProp</a>, <a href="/DriftWarsEditor/driftScript/enumerations/#unitprop">UnitProp</a>, and <a href="/DriftWarsEditor/driftScript/enumerations/#locationprop">LocationProp</a> for possibles values you can get/set (and their types).
+- Properties that are <code>int</code> or <code>float</code> and are <code>Read-Write</code> can use the <code>gx_add_*</code> functions</p>
 <h2 id="userdata-getterssetters">UserData Getters/Setters</h2>
 <ul>
 <li>Allows you to get/set userdata integers for <code>simulation</code>, <code>forces</code>, <code>players</code>, and <code>units</code>, and other things for your own purposes</li>
 </ul>
-<pre><code class="language-c">// getters
-int gx_get_sim_variable(string varName)
-int gx_get_force_variable(int force_id, string varName)
-int gx_get_player_variable(int player_id, string varName)
-int gx_get_unit_variable(int unit_id, string varName)
-
-// setters
-void gx_set_sim_variable(string varName, int varValue)
-void gx_set_force_variable(int force_id, string varName, int varValue)
-void gx_set_player_variable(int player_id, string varName, int varValue)
-void gx_set_unit_variable(int unit_id, string varName, int varValue)
-
-// adders
-void gx_add_sim_variable(string varName, int varValue)
-void gx_add_force_variable(int force_id, string varName, int varValue)
-void gx_add_player_variable(int player_id, string varName, int varValue)
-void gx_add_unit_variable(int unit_id, string varName, int varValue)
-</code></pre>
-<ul>
-<li>Calling <code>gx_get_*</code> to retrieve a non-existing <code>varValue</code> will return <code>0</code>.</li>
-<li>Only <code>int</code> values can be set.</li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="c1">// getters</span>
+</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_sim_variable</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">)</span>
+</span><span id="__span-75-3"><a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_force_variable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">force_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">)</span>
+</span><span id="__span-75-4"><a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_player_variable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">)</span>
+</span><span id="__span-75-5"><a id="__codelineno-75-5" name="__codelineno-75-5" href="#__codelineno-75-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_unit_variable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">)</span>
+</span><span id="__span-75-6"><a id="__codelineno-75-6" name="__codelineno-75-6" href="#__codelineno-75-6"></a>
+</span><span id="__span-75-7"><a id="__codelineno-75-7" name="__codelineno-75-7" href="#__codelineno-75-7"></a><span class="c1">// setters</span>
+</span><span id="__span-75-8"><a id="__codelineno-75-8" name="__codelineno-75-8" href="#__codelineno-75-8"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_sim_variable</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varValue</span><span class="p">)</span>
+</span><span id="__span-75-9"><a id="__codelineno-75-9" name="__codelineno-75-9" href="#__codelineno-75-9"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_force_variable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">force_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varValue</span><span class="p">)</span>
+</span><span id="__span-75-10"><a id="__codelineno-75-10" name="__codelineno-75-10" href="#__codelineno-75-10"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_player_variable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varValue</span><span class="p">)</span>
+</span><span id="__span-75-11"><a id="__codelineno-75-11" name="__codelineno-75-11" href="#__codelineno-75-11"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_unit_variable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varValue</span><span class="p">)</span>
+</span><span id="__span-75-12"><a id="__codelineno-75-12" name="__codelineno-75-12" href="#__codelineno-75-12"></a>
+</span><span id="__span-75-13"><a id="__codelineno-75-13" name="__codelineno-75-13" href="#__codelineno-75-13"></a><span class="c1">// adders</span>
+</span><span id="__span-75-14"><a id="__codelineno-75-14" name="__codelineno-75-14" href="#__codelineno-75-14"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_sim_variable</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varValue</span><span class="p">)</span>
+</span><span id="__span-75-15"><a id="__codelineno-75-15" name="__codelineno-75-15" href="#__codelineno-75-15"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_force_variable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">force_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varValue</span><span class="p">)</span>
+</span><span id="__span-75-16"><a id="__codelineno-75-16" name="__codelineno-75-16" href="#__codelineno-75-16"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_player_variable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varValue</span><span class="p">)</span>
+</span><span id="__span-75-17"><a id="__codelineno-75-17" name="__codelineno-75-17" href="#__codelineno-75-17"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_unit_variable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">varName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">varValue</span><span class="p">)</span>
+</span></code></pre></div>
+- Calling <code>gx_get_*</code> to retrieve a non-existing <code>varValue</code> will return <code>0</code>.
+- Only <code>int</code> values can be set.</p>
 <h2 id="gx_is_event_queue_empty">gx_is_event_queue_empty</h2>
-<pre><code class="language-c">bool gx_is_event_queue_empty()
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_is_event_queue_empty</span><span class="p">()</span>
+</span></code></pre></div>
 <ul>
 <li>Check if event queue is empty.</li>
 <li>See <a href="/DriftWarsEditor/driftScript/eventQueue/#event_queue">Event Queue</a></li>
 </ul>
 <h2 id="gx_pop_event_from_queue">gx_pop_event_from_queue</h2>
-<pre><code class="language-c">Event gx_pop_event_from_queue()
-</code></pre>
-<ul>
-<li>Pop event from event queue.</li>
-<li>See <a href="/DriftWarsEditor/driftScript/eventQueue/#event_queue">Event Queue</a></li>
-</ul>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="kt">Event</span><span class="w"> </span><span class="n">gx_pop_event_from_queue</span><span class="p">()</span>
+</span></code></pre></div>
+- Pop event from event queue.
+- See <a href="/DriftWarsEditor/driftScript/eventQueue/#event_queue">Event Queue</a></p>
 
 
 

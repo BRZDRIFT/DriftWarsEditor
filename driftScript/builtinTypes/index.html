@@ -1288,27 +1288,27 @@
   <h1>Built-in Types</h1>
 
 <h2 id="vec2">Vec2</h2>
-<pre><code>class Vec2 {
-    constructor(x=0.0, y=0.0)
-    function _add(Vec2 other)               // returns Vec2
-    function _sub(Vec2 other)               // returns Vec2
-    function _mul((float|int|Vec2) other)   // returns Vec2
-    function _div((float|int|Vec2) other)   // returns Vec2
-    function _unm(Vec2 other)               // returns Vec2
-    function _tostring()                    // returns string
-    function Equals(other)                  // returns bool
-    function Copy()                         // returns Vec2&lt;int|float&gt;
-    function IsZero(other)                  // returns bool
-    function Dot(Vec2 other)                // returns float or int
-    function Length()                       // returns float
-    function LengthSquared()                // returns float or int
-    function Normalize()                    // returns Vec2&lt;float&gt;
-    function ToInt()                        // returns a copy as Vec2&lt;int&gt;
-    function ToFloat()                      // returns a copy as Vec2&lt;float&gt;
-    m_x = 0.0
-    m_y = 0.0
-}
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Vec2</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_add</span><span class="p">(</span><span class="kt">Vec2</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">               </span><span class="c1">// returns Vec2</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_sub</span><span class="p">(</span><span class="kt">Vec2</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">               </span><span class="c1">// returns Vec2</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_mul</span><span class="p">((</span><span class="kt">float</span><span class="o">|</span><span class="kt">int</span><span class="o">|</span><span class="kt">Vec2</span><span class="p">)</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">   </span><span class="c1">// returns Vec2</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_div</span><span class="p">((</span><span class="kt">float</span><span class="o">|</span><span class="kt">int</span><span class="o">|</span><span class="kt">Vec2</span><span class="p">)</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">   </span><span class="c1">// returns Vec2</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_unm</span><span class="p">(</span><span class="kt">Vec2</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">               </span><span class="c1">// returns Vec2</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_tostring</span><span class="p">()</span><span class="w">                    </span><span class="c1">// returns string</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Equals</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="w">                  </span><span class="c1">// returns bool</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Copy</span><span class="p">()</span><span class="w">                         </span><span class="c1">// returns Vec2&lt;int|float&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">IsZero</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="w">                  </span><span class="c1">// returns bool</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Dot</span><span class="p">(</span><span class="kt">Vec2</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">                </span><span class="c1">// returns float or int</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Length</span><span class="p">()</span><span class="w">                       </span><span class="c1">// returns float</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">LengthSquared</span><span class="p">()</span><span class="w">                </span><span class="c1">// returns float or int</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Normalize</span><span class="p">()</span><span class="w">                    </span><span class="c1">// returns Vec2&lt;float&gt;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">ToInt</span><span class="p">()</span><span class="w">                        </span><span class="c1">// returns a copy as Vec2&lt;int&gt;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">ToFloat</span><span class="p">()</span><span class="w">                      </span><span class="c1">// returns a copy as Vec2&lt;float&gt;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="n">m_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="n">m_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">}</span>
+</span></code></pre></div>
 <ul>
 <li>By default <code>Vec2</code> has scalar type of <code>float</code>.</li>
 <li>However you can change scalar type to be <code>int</code> by passing integers into the constructor<ul>
@@ -1321,29 +1321,29 @@
 <li>Assignment operator <code>=</code> will only copy reference (not create a new <code>Vec2</code>)</li>
 </ul>
 <h2 id="vec3">Vec3</h2>
-<pre><code>class Vec3 {
-    constructor(x=0.0, y=0.0, z=0.0)
-    function _add(Vec3 other)               // returns Vec3
-    function _sub(Vec3 other)               // returns Vec3
-    function _mul((float|int|Vec3) other)   // returns Vec3
-    function _div((float|int|Vec3) other)   // returns Vec3
-    function _unm(Vec3 other)               // returns Vec3
-    function _tostring()                    // returns string
-    function Equals(other)                  // returns bool
-    function Copy()                         // returns Vec3&lt;int|float&gt;
-    function IsZero(other)                  // returns bool
-    function Dot(Vec3 other)                // returns float or int
-    function Length()                       // returns float
-    function LengthSquared()                // returns float or int
-    function Normalize()                    // returns Vec3&lt;float&gt;
-    function xy()                           // returns Vec2(m_x, m_y)
-    function ToInt()                        // returns a copy as Vec3&lt;int&gt;
-    function ToFloat()                      // returns a copy as Vec3&lt;float&gt;
-    m_x = 0.0
-    m_y = 0.0
-    m_z = 0.0
-}
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Vec3</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_add</span><span class="p">(</span><span class="kt">Vec3</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">               </span><span class="c1">// returns Vec3</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_sub</span><span class="p">(</span><span class="kt">Vec3</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">               </span><span class="c1">// returns Vec3</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_mul</span><span class="p">((</span><span class="kt">float</span><span class="o">|</span><span class="kt">int</span><span class="o">|</span><span class="kt">Vec3</span><span class="p">)</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">   </span><span class="c1">// returns Vec3</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_div</span><span class="p">((</span><span class="kt">float</span><span class="o">|</span><span class="kt">int</span><span class="o">|</span><span class="kt">Vec3</span><span class="p">)</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">   </span><span class="c1">// returns Vec3</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_unm</span><span class="p">(</span><span class="kt">Vec3</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">               </span><span class="c1">// returns Vec3</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_tostring</span><span class="p">()</span><span class="w">                    </span><span class="c1">// returns string</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Equals</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="w">                  </span><span class="c1">// returns bool</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Copy</span><span class="p">()</span><span class="w">                         </span><span class="c1">// returns Vec3&lt;int|float&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">IsZero</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="w">                  </span><span class="c1">// returns bool</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Dot</span><span class="p">(</span><span class="kt">Vec3</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">                </span><span class="c1">// returns float or int</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Length</span><span class="p">()</span><span class="w">                       </span><span class="c1">// returns float</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">LengthSquared</span><span class="p">()</span><span class="w">                </span><span class="c1">// returns float or int</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Normalize</span><span class="p">()</span><span class="w">                    </span><span class="c1">// returns Vec3&lt;float&gt;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">xy</span><span class="p">()</span><span class="w">                           </span><span class="c1">// returns Vec2(m_x, m_y)</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">ToInt</span><span class="p">()</span><span class="w">                        </span><span class="c1">// returns a copy as Vec3&lt;int&gt;</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">ToFloat</span><span class="p">()</span><span class="w">                      </span><span class="c1">// returns a copy as Vec3&lt;float&gt;</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="n">m_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="n">m_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="n">m_z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">}</span>
+</span></code></pre></div>
 <ul>
 <li>By default <code>Vec3</code> has scalar type of <code>float</code>.</li>
 <li>However you can change scalar type to be <code>int</code> by passing integers into the constructor<ul>
@@ -1356,31 +1356,31 @@
 <li>Assignment operator <code>=</code> will only copy reference (not create a new <code>Vec3</code>)</li>
 </ul>
 <h2 id="vec4">Vec4</h2>
-<pre><code>class Vec4 {
-    constructor(x=0.0, y=0.0, z=0.0, w=0.0)
-    function _add(Vec4 other)               // returns Vec4
-    function _sub(Vec4 other)               // returns Vec4
-    function _mul((float|int|Vec4) other)   // returns Vec4
-    function _div((float|int|Vec4) other)   // returns Vec4
-    function _unm(Vec4 other)               // returns Vec4
-    function _tostring()                    // returns string
-    function Equals(other)                  // returns bool
-    function Copy()                         // returns Vec4&lt;int|float&gt;
-    function IsZero(other)                  // returns bool
-    function Dot(Vec4 other)                // returns float or int
-    function Length()                       // returns float
-    function LengthSquared()                // returns float or int
-    function Normalize()                    // returns Vec4&lt;float&gt;
-    function xy()                           // returns Vec2(m_x, m_y)
-    function xyz()                          // returns Vec3(m_x, m_y, m_z)
-    function ToInt()                        // returns a copy as Vec4&lt;int&gt;
-    function ToFloat()                      // returns a copy as Vec4&lt;float&gt;
-    m_x = 0.0
-    m_y = 0.0
-    m_z = 0.0
-    m_w = 0.0
-}
-</code></pre>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Vec4</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_add</span><span class="p">(</span><span class="kt">Vec4</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">               </span><span class="c1">// returns Vec4</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_sub</span><span class="p">(</span><span class="kt">Vec4</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">               </span><span class="c1">// returns Vec4</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_mul</span><span class="p">((</span><span class="kt">float</span><span class="o">|</span><span class="kt">int</span><span class="o">|</span><span class="kt">Vec4</span><span class="p">)</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">   </span><span class="c1">// returns Vec4</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_div</span><span class="p">((</span><span class="kt">float</span><span class="o">|</span><span class="kt">int</span><span class="o">|</span><span class="kt">Vec4</span><span class="p">)</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">   </span><span class="c1">// returns Vec4</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_unm</span><span class="p">(</span><span class="kt">Vec4</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">               </span><span class="c1">// returns Vec4</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_tostring</span><span class="p">()</span><span class="w">                    </span><span class="c1">// returns string</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Equals</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="w">                  </span><span class="c1">// returns bool</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Copy</span><span class="p">()</span><span class="w">                         </span><span class="c1">// returns Vec4&lt;int|float&gt;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">IsZero</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="w">                  </span><span class="c1">// returns bool</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Dot</span><span class="p">(</span><span class="kt">Vec4</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w">                </span><span class="c1">// returns float or int</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Length</span><span class="p">()</span><span class="w">                       </span><span class="c1">// returns float</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">LengthSquared</span><span class="p">()</span><span class="w">                </span><span class="c1">// returns float or int</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Normalize</span><span class="p">()</span><span class="w">                    </span><span class="c1">// returns Vec4&lt;float&gt;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">xy</span><span class="p">()</span><span class="w">                           </span><span class="c1">// returns Vec2(m_x, m_y)</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">xyz</span><span class="p">()</span><span class="w">                          </span><span class="c1">// returns Vec3(m_x, m_y, m_z)</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">ToInt</span><span class="p">()</span><span class="w">                        </span><span class="c1">// returns a copy as Vec4&lt;int&gt;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">ToFloat</span><span class="p">()</span><span class="w">                      </span><span class="c1">// returns a copy as Vec4&lt;float&gt;</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="n">m_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="n">m_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="n">m_z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="n">m_w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="p">}</span>
+</span></code></pre></div>
 <ul>
 <li>By default <code>Vec4</code> has scalar type of <code>float</code>.</li>
 <li>However you can change scalar type to be <code>int</code> by passing integers into the constructor<ul>
@@ -1393,33 +1393,33 @@
 <li>Assignment operator <code>=</code> will only copy reference (not create a new <code>Vec4</code>)</li>
 </ul>
 <h2 id="aabr">AABR</h2>
-<p>Axis aligned bounding rectangle</p>
-<pre><code>class AABR {
-    // Create an AABR given minPt and maxPt
-    constructor(minPt = Vec2(), maxPt = Vec2())
-
-    // Creates an AABR given any two points
-    // Internally determines m_minPt and m_maxPt
-    static function CreateFromPoints(Vec2 pt0, Vec2 pt1)
-
-    // Methods
-    function _tostring()            // returns string
-    function Equals(other)          // returns bool
-    function Copy()                 // returns AABR&lt;int|float&gt;
-    function GetSize()              // returns Vec2&lt;int|float&gt;
-    function GetTopLeft()           // returns Vec2&lt;int|float&gt;
-    function GetTopRight()          // returns Vec2&lt;int|float&gt;
-    function GetBottomLeft()        // returns Vec2&lt;int|float&gt;
-    function GetBottomRight()       // returns Vec2&lt;int|float&gt;
-    function GetCenter()            // returns Vec2&lt;float&gt;
-    function ToInt()                // returns a copy as AABR&lt;int&gt;
-    function ToFloat()              // returns a copy as AABR&lt;float&gt;
-
-    // Variables
-    m_minPt = Vec2()
-    m_maxPt = Vec2() 
-}
-</code></pre>
+<p>Axis aligned bounding rectangle
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">AABR</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="c1">// Create an AABR given minPt and maxPt</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kt">constructor</span><span class="p">(</span><span class="n">minPt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Vec2</span><span class="p">(),</span><span class="w"> </span><span class="n">maxPt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Vec2</span><span class="p">())</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="c1">// Creates an AABR given any two points</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="c1">// Internally determines m_minPt and m_maxPt</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">function</span><span class="w"> </span><span class="n">CreateFromPoints</span><span class="p">(</span><span class="kt">Vec2</span><span class="w"> </span><span class="n">pt0</span><span class="p">,</span><span class="w"> </span><span class="kt">Vec2</span><span class="w"> </span><span class="n">pt1</span><span class="p">)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="c1">// Methods</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">_tostring</span><span class="p">()</span><span class="w">            </span><span class="c1">// returns string</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Equals</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="w">          </span><span class="c1">// returns bool</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">Copy</span><span class="p">()</span><span class="w">                 </span><span class="c1">// returns AABR&lt;int|float&gt;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">GetSize</span><span class="p">()</span><span class="w">              </span><span class="c1">// returns Vec2&lt;int|float&gt;</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">GetTopLeft</span><span class="p">()</span><span class="w">           </span><span class="c1">// returns Vec2&lt;int|float&gt;</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">GetTopRight</span><span class="p">()</span><span class="w">          </span><span class="c1">// returns Vec2&lt;int|float&gt;</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">GetBottomLeft</span><span class="p">()</span><span class="w">        </span><span class="c1">// returns Vec2&lt;int|float&gt;</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">GetBottomRight</span><span class="p">()</span><span class="w">       </span><span class="c1">// returns Vec2&lt;int|float&gt;</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">GetCenter</span><span class="p">()</span><span class="w">            </span><span class="c1">// returns Vec2&lt;float&gt;</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">ToInt</span><span class="p">()</span><span class="w">                </span><span class="c1">// returns a copy as AABR&lt;int&gt;</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="kt">function</span><span class="w"> </span><span class="n">ToFloat</span><span class="p">()</span><span class="w">              </span><span class="c1">// returns a copy as AABR&lt;float&gt;</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="c1">// Variables</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="n">m_minPt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Vec2</span><span class="p">()</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="n">m_maxPt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Vec2</span><span class="p">()</span><span class="w"> </span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="p">}</span>
+</span></code></pre></div></p>
 <ul>
 <li>By default <code>AABR</code> has scalar type of <code>float</code>.</li>
 <li>However you can change scalar type to be <code>int</code> by passing <code>Vec2&lt;int&gt;</code>'s into the constructor<ul>
