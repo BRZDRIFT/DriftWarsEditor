@@ -1492,7 +1492,7 @@
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="kt">local</span><span class="w"> </span><span class="n">isEqual4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">q</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">w</span><span class="p">)</span><span class="w">       </span><span class="c1">// true </span>
 </span></code></pre></div>
 <h2 id="assignment-operator-copies-reference-not-value-for-custom-types"><code>=</code> assignment operator copies reference, not value! (for custom types)</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Vec2</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Vec2</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">local</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w">         </span><span class="c1">// reference copy</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">local</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">Copy</span><span class="p">()</span><span class="w">  </span><span class="c1">// value copy</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kt">local</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clone</span><span class="w"> </span><span class="n">a</span><span class="w">   </span><span class="c1">// same as .Copy()</span>
@@ -1501,10 +1501,12 @@
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">c</span><span class="p">))</span><span class="w">  </span><span class="c1">// true</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">print</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="w">  </span><span class="c1">// true</span>
 </span></code></pre></div>
-- this behavior is only for non-primitive types (not <code>int</code>, <code>float</code>, <code>bool</code>, <code>string</code>)
-- <code>=</code> assignment operator primitive types <code>int</code>, <code>float</code>, <code>bool</code>, <code>string</code> copy by value (not by reference)
-- To make a copy of an object, use squirrel's builtin <code>clone</code> operator, or use <code>.Copy()</code> function if available.
-- If you make your own types, it's a good idea to create your own <code>.Copy()</code> and <code>.Equal(other)</code> functions.</p>
+<ul>
+<li>this behavior is only for non-primitive types (not <code>int</code>, <code>float</code>, <code>bool</code>, <code>string</code>)</li>
+<li><code>=</code> assignment operator primitive types <code>int</code>, <code>float</code>, <code>bool</code>, <code>string</code> copy by value (not by reference)</li>
+<li>To make a copy of an object, use squirrel's builtin <code>clone</code> operator, or use <code>.Copy()</code> function if available.</li>
+<li>If you make your own types, it's a good idea to create your own <code>.Copy()</code> and <code>.Equal(other)</code> functions.</li>
+</ul>
 <h2 id="casting-ints-floats-strings-etc">Casting, ints, floats, strings, etc...</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w">     </span><span class="c1">// a is type &#39;integer&#39; of value 5</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w">        </span><span class="c1">// prints &#39;5&#39;</span>
@@ -1572,7 +1574,7 @@
 </span></code></pre></div></li>
 </ul>
 <h2 id="common-dictionary-and-array-tasks">Common dictionary and array tasks</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// deleting from dictionary</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// deleting from dictionary</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">local</span><span class="w"> </span><span class="n">myDictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">}</span><span class="w">     </span><span class="c1">// create dictionary</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">delete</span><span class="w"> </span><span class="n">myDictionary</span><span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">]</span><span class="w">                  </span><span class="c1">// delete &quot;abc&quot; from dictionary</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
@@ -1583,9 +1585,11 @@
 </span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">print</span><span class="p">(</span><span class="n">myArray</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span><span class="w">                   </span><span class="c1">// prints 7</span>
 </span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">myArray</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w">           </span><span class="c1">// remove at index 1, myArray: [&quot;my_string&quot;, 1, 2, 7]</span>
 </span></code></pre></div>
-- See <a href="http://squirrel-lang.org/squirreldoc/reference/language.html">http://squirrel-lang.org/squirreldoc/reference/language.html</a> for more language features.</p>
+<ul>
+<li>See <a href="http://squirrel-lang.org/squirreldoc/reference/language.html">http://squirrel-lang.org/squirreldoc/reference/language.html</a> for more language features.</li>
+</ul>
 <h2 id="dictionary-and-array-foreach-loops">Dictionary and array foreach loops</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// dictionary initializer syntax #1: { key = val }</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// dictionary initializer syntax #1: { key = val }</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">// Possible Output (dictionary iteration order is unspecified):</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">// a -&gt; 5</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">// c -&gt; dog</span>
@@ -1627,9 +1631,13 @@
 </span><span id="__span-8-40"><a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
 </span><span id="__span-8-41"><a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a><span class="p">}</span>
 </span></code></pre></div>
-- Please note, single variable foreach loop with dictionary outputs <code>value</code> and not <code>key</code>.
-    - This is different from other languages like <code>Python</code>.
-- dictionary foreach iteration order is <code>unspecified</code> (which is different than random)</p>
+<ul>
+<li>Please note, single variable foreach loop with dictionary outputs <code>value</code> and not <code>key</code>.<ul>
+<li>This is different from other languages like <code>Python</code>.</li>
+</ul>
+</li>
+<li>dictionary foreach iteration order is <code>unspecified</code> (which is different than random)</li>
+</ul>
 <h2 id="other">Other</h2>
 <ul>
 <li>semicolons <code>;</code> at the end of lines are optional, similar to <code>Python</code></li>
