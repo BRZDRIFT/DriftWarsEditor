@@ -9,6 +9,7 @@ enum BoundsCheck
     Inside      // Unit fully inside a location
 }
 ```
+
 - The `BoundsCheck` enum is used in unit search queries within locations.  
 - Primarily used in {{fn("gx_get_units-gx_get_units_count")}}
 
@@ -22,6 +23,7 @@ enum SpecialPlayer
     Rescue  = -3
 }
 ```
+
 - `Note:` Normal playerIDs are positive, with values: `[1-16]`
 
 ## ShapeType
@@ -96,6 +98,7 @@ enum ForceProp
 	Name			// Read-Write	(string)
 }
 ```
+
 - Primarily used in {{fn("property-getterssetters")}}
 
 ## PlayerProp
@@ -131,6 +134,7 @@ enum PlayerProp
 	Score					// Read-Write		(int)
 }
 ```
+
 - Primarily used in {{fn("property-getterssetters")}}
 
 ## UnitProp
@@ -155,6 +159,7 @@ enum UnitProp
 	Level					// Read-Write		(int)
 }
 ```
+
 - Primarily used in {{fn("property-getterssetters")}}
 - Setting `Health` to `<= 0` will cause unit to be set to `killed` state.
 
@@ -172,6 +177,7 @@ enum LocationProp
 	Size            // Read 		(Vec2)
 }
 ```
+
 - Primarily used in {{fn("property-getterssetters")}}
 
 ## GunShipState 
@@ -187,6 +193,7 @@ enum GunShipState
     ChainGunLevel2
 }
 ```
+
 - Primarily used for setting/getting unit property `GunShipState` in {{fn("property-getterssetters")}}
 
 Example:

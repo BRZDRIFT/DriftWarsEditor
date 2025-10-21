@@ -477,6 +477,7 @@ table params = {
     bool bBuildAdvanced = false     // default is false, if set to True, will be placed in 'build advanced' tab
 }
 ```
+
 - Can only be called during {{entry("gx_map_init")}}
 
 ## gx_map_init_remove_all_build_structure_items
@@ -612,6 +613,7 @@ gx_set_terrain_type({
 ```
 Vec2<int> gx_get_terrain_type(Vec2 index, int index2 = 0)
 ```
+
 - returns primary terrain type in `vec.m_x` and returns secondary terrain type in `vec.m_y`
 
 ## gx_set_player_camera_look_at
@@ -677,6 +679,7 @@ table params = {
 ```sq
 void gx_set_speech_bubble(int unit_id, string text, table params = {})
 ```
+
 - set a speech bubble for unit_id
 - currently there are no optional params
 

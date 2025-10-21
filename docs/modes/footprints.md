@@ -6,4 +6,4 @@
 
 - You can select squares on map, and right click to open up context menu for options
 
-- - Compatible with {{sideControls("symmetry-mode")}} and {{sideControls("flood-fill-mode")}}
+- Compatible with {{sideControls("symmetry-mode")}} and {{sideControls("flood-fill-mode")}}
