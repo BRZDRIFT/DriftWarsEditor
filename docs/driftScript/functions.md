@@ -2,8 +2,10 @@
 ```sq
 void gx_include(string filename)
 ```
+
 - Includes `filename` in current compilation.
 - A file is only included once by `gx_include`; subsequent calls are ignored.
+- Typically called at the top of your drift script file.
 
 ## gx_create_unit
 ```sq
@@ -33,6 +35,7 @@ local new_unit = gx_create_unit({ m_unitType = "Brute", m_playerID = 1, m_locati
 ```sq
 int gx_get_sim_tick()
 ```
+
 - Returns the current sim tick number in simulation.
 - The {{entry("gx_sim_init")}} call will have `tick = 0`
 - The first {{entry("gx_sim_update")}} call will have `tick = 1`
@@ -43,6 +46,7 @@ int gx_get_sim_tick()
 ```sq
 float gx_get_distance_between_units(int unitID, int otherUnitID)
 ```
+
 - returns the distance between the edges of two units
 - will return 0 if one or both of the units do not exist
 
@@ -67,6 +71,7 @@ table params = {
     bool m_bIncludeProjectiles = false              // Optional, include projectiles (default: false)
 }
 ```
+
 - `m_unitID` required to be set
 - `m_radius` required to be set
 - returns units whos outer edges have a distance equal/less than `m_radius` from `m_unitID`.
@@ -117,7 +122,7 @@ table params = {
 - Refer to {{type("Vec2")}} and {{type("Vec3")}} if needed.
 
 Example:
-```lua
+```sq
 gx_create_explosion( {
     m_color = Vec3(1, 0, .5),
     m_location = "my_location"
@@ -143,6 +148,7 @@ void gx_kill_unit(int unit_id)
 ```sq
 void gx_get_kills(int player_id, table params = {})
 ```
+
 ```sq
 table params = {
     m_playerID = {},
@@ -162,6 +168,7 @@ table params = {
 ```sq
 void gx_is_unit_killed(int unit_id)
 ```
+
 - returns if the unit `unit_id` is killed
 - returns `true` if unit does not exist
 - equivalent to calling `!gx_is_unit_alive(unit_id)`
@@ -194,6 +201,7 @@ bool gx_unit_exists(int unit_id)
 ```sq
 bool gx_is_unit_alive_and_constructed(int unit_id)
 ```
+
 - returns `true` if unit is alive and constructed
 - returns `false` if unit_id is invalid or unit no longer exists in game
 
@@ -201,6 +209,7 @@ bool gx_is_unit_alive_and_constructed(int unit_id)
 ```sq
 bool gx_is_unit_alive(int unit_id)
 ```
+
 - returns `true` if unit is alive
 - returns `false` if unit_id is invalid or unit no longer exists in game
 - Note: This function still returns `true` if unit is not yet fully constructed
@@ -224,8 +233,9 @@ table params = {
     string m_location = {},     // Optional, location to put unit
 }
 ```
+
 Example:
-```lua
+```sq
 gx_set_unit_position(some_unit, { m_location = "location_to_teleport_to" } )
 ```
 
@@ -237,6 +247,7 @@ gx_set_unit_position(some_unit, { m_location = "location_to_teleport_to" } )
 ```sq
 bool gx_is_ground_unit(int unit_id)
 ```
+
 - returns if unit is currently a `ground` unit
 - units are always in either the `ground` or `air` state
 - note: knock-back effect can cause `ground` units to temporarily become `air` units
@@ -246,6 +257,7 @@ bool gx_is_ground_unit(int unit_id)
 ```sq
 bool gx_is_air_unit(int unit_id)
 ```
+
 - returns if unit is currently an `air` unit
 - units are always in either the `ground` or `air` state
 - note: knock-back effect can cause `ground` units to temporarily become `air` units
@@ -272,6 +284,7 @@ table params = {
 ```sq
 int gx_get_player(int unit_id)
 ```
+
 - returns the `player_id` for unit `unit_id`
 
 ## gx_print
@@ -285,6 +298,7 @@ table params = {
     int m_playerID = {}     // Optional, send message to only player_id
 }
 ```
+
 - Should only set `m_forceID` or `m_playerID`, it is undefined to set both.
 - If neither `m_forceID` nor `m_playerID` is set, message will be broadcasted to all players (and observers)
 
@@ -308,6 +322,35 @@ gx_print("Hello World!", {})
 - `print(message)` is equivalent to `gx_print(message, {})`
 - `params` are ignored when running in map editor's console
 
+## gx_modify_scoreboard
+```sq
+void gx_modify_scoreboard(table params = {})
+```
+
+```sq
+local params = {
+    bool m_bDisplay = {},
+    bool m_bShowForceScores = {},
+    bool m_bShowPlayerScores {}
+}
+```
+
+- Set `m_bDisplay` to show scoreboard, must be `true` if you want to display
+- Set `m_bShowForceScores` to show scores for forces
+- Set `m_bShowPlayerScores` to show scores for players
+- You can set/add/get scores by using {{fn("property-getterssetters")}}
+
+Example:
+```sq
+gx_modify_scoreboard({
+    m_bDisplay = true,
+    m_bShowPlayerScores = true,
+    m_bShowForceScores = false
+})
+
+// Set score for 'Player 3' to 7
+gx_set_player_prop(PlayerProp.Score, 3, 7)
+```
 
 ## gx_set_victory
 ```sq
@@ -320,6 +363,7 @@ table params = {
     int m_forceID = {}
 }
 ```
+
 - once a player or team is set to `victory`, future calls to `gx_set_victory`/`gx_set_defeat` for that player/team will be ignored
 - should only set one of `m_playerID` or `m_forceID`, setting both is undefined
 - setting `m_forceID` will set victory for all players within that force
@@ -336,6 +380,7 @@ table params = {
     bool m_bKillAllUnits = true     // Optional, (default true)
 }
 ```
+
 - if `m_bKillAllUnits` is `true`, all units for player (or team) will be killed.
 - once a player or team is set to `defeat`, future calls to `gx_set_victory`/`gx_set_defeat` for that player/team will be ignored
 - should only set one of `m_playerID` or `m_forceID`, setting both is undefined
@@ -347,19 +392,19 @@ string gx_encode_text(string text)
 ```
 
 Example
-```lua
+```sq
 local someText = gx_encode_text("^23Rainbow Text")
 gx_print(someText)
 ```
 
-## gx_copy_ud
+## gx_map_init_copy_ud
 
 Creates a copy of a `unit_data`.
 A `unit_data` serves as a 'definition' for a type of unit.
 Required for creating new custom unit types.
 
 ```sq
-void gx_copy_ud(string unit_type, string new_unit_type)
+void gx_map_init_copy_ud(string unit_type, string new_unit_type)
 ```
 
 The example below creates a new type of unit called "User_BabyBrute"
@@ -368,17 +413,21 @@ It copies the existing definition of "Brute" to "User_BabyBrute".
 Example:
 
 ```sq
-gx_copy_ud("Brute", "User_BabyBrute")
+gx_map_init_copy_ud("Brute", "User_BabyBrute")
 ```
+
+- NOTE!! It's preferred to use the Drift Wars Map Editor to add/edit units!!
+- These functions are only for convenience
 - new unit type name MUST begin with `User_`. This is to prevent naming collisions for future added official units.
-- this function will be a no-op if `new_unit_type` name does not begin with `_`
+- this function will be a no-op if `new_unit_type` name does not begin with `User_`
+- This function will return empty string if `new_unit_type` already exists or if it does not start with `User_`.
 - `ud` is short for `unit_definition` 
 - Can only be called during {{entry("gx_map_init")}}
 - any attempt to call this outside of the {{entry("gx_map_init")}} will be ignored.
 
-## gx_modify_ud_props
+## gx_map_init_modify_ud_props
 ```sq
-void gx_modify_ud_props(string unit_type, table params = {})
+void gx_map_init_modify_ud_props(string unit_type, table params = {})
 ```
 
 ```sq
@@ -394,6 +443,7 @@ table params = {
     int m_buildTime = {}
 }
 ```
+
 The example below creates a new type of unit called "User_BabyBrute".
 It copies the existing `unit_definition` of "Brute" to "User_BabyBrute". 
 It then sets properties such as friendly name, maxHealth, baseArmor, and size.
@@ -401,8 +451,8 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.
 Example:
 
 ```sq
-gx_copy_ud("Brute", "User_BabyBrute")
-gx_modify_ud_props("User_BabyBrute", {
+gx_map_init_copy_ud("Brute", "User_BabyBrute")
+gx_map_init_modify_ud_props("User_BabyBrute", {
     m_friendlyName = "Baby Brute",
     m_maxHealth = 30,
     m_baseArmor = 0,
@@ -415,10 +465,11 @@ gx_modify_ud_props("User_BabyBrute", {
 - Can only be called during {{entry("gx_map_init")}}
 - any attempt to call this outside of the {{entry("gx_map_init")}} will be ignored.
 
-## gx_add_build_structure_item
+## gx_map_init_add_build_structure_item
 ```sq
-void gx_add_build_structure_item(string unitType, table params = {})
+void gx_map_init_add_build_structure_item(string unitType, table params = {})
 ```
+
 ```
 table params = {
     string m_structure = {},    // name of structure to build, i.e. "Microwave"
@@ -428,17 +479,17 @@ table params = {
 ```
 - Can only be called during {{entry("gx_map_init")}}
 
-## gx_remove_all_build_structure_items
+## gx_map_init_remove_all_build_structure_items
 ```sq
-void gx_remove_all_build_structure_items(string unitType)
+void gx_map_init_remove_all_build_structure_items(string unitType)
 ```
 
 - Remove all build structure items from worker
 - Can only be called during {{entry("gx_map_init")}}
 
-## gx_add_build_item
+## gx_map_init_add_build_item
 ```sq
-void gx_add_build_item(string unitType, table params)
+void gx_map_init_add_build_item(string unitType, table params)
 ```
 
 ```sq
@@ -448,13 +499,14 @@ table params = {
     string m_position = {}      // position in command card
 }
 ```
+
 - Only one `m_unitType` or `m_research` should be set
 - Can only be called during {{entry("gx_map_init")}}
 - Remove all build items from structure
 
-## gx_remove_all_build_items
+## gx_map_init_remove_all_build_items
 ```sq
-void gx_remove_all_build_items(string unitType)
+void gx_map_init_remove_all_build_items(string unitType)
 ```
 
 - Remove all build items from structure
@@ -493,6 +545,7 @@ table params = {
     bool m_bSet = true              // If true gives vision, else takes away vision. (default: true)
 }
 ```
+
 - This function gives or removes permanent vision of a `m_location`, `m_triangleGroup`, or `entire map`.
 - Only one of `m_location`, `m_triangleGroup`, or `m_bFullMapVision` should be set.
 - The only valid value of `m_bFullMapVision` is `true`. Setting to `false` is `undefined`.
@@ -554,8 +607,6 @@ gx_set_terrain_type({
 - if `m_location` is set, it is `undefined behavior` to also set  `m_index`, `m_index2`, or `m_triangleGroup`
 - if `m_triangleGroup` is set, is it `undefined behavior` to also set `m_index`, `m_index2`, or `m_location`
 - if `m_index` is set, it is `undefined behavior` to also set `m_location`, and `m_triangleGroup`
-
-
 
 ## gx_get_terrain_type
 ```
@@ -635,6 +686,7 @@ int gx_get_unit_ammo(int unit_id, string ammoName)
 void gx_set_unit_ammo(int unit_id, string ammoName, int count)
 void gx_add_unit_ammo(int unit_id, string ammoName, int count)
 ```
+
 - Can query and set how much `unit ammo` of type `ammoName` the unit is holding
 
 ## gx_(get|set|add)_player_ammo_in_unit
@@ -643,12 +695,14 @@ int gx_get_player_ammo_in_unit(int unit_id, string ammoName)
 void gx_set_player_ammo_in_unit(int unit_id, string ammoName, int count)
 void gx_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
 ```
+
 - Can query and set how much `player ammo` of type `ammoName` the unit is holding
 
 ## gx_get_player_ammo_total
 ```sq
 int gx_get_player_ammo_total(int player_id, string ammoName)
 ```
+
 - Returns how much `player ammo` of type `ammoName` the player has
 
 ## gx_get_unit_by_name
@@ -658,11 +712,12 @@ int gx_get_unit_by_name(params = {})
 
 ```sq
 local params = {
-    m_name,             // Required                                 (string)
-    m_player_id = 0     // Optional, used to Filter. Default = 0.   (int)
+    string m_name,             // Required                                 (string)
+    int m_player_id = 0        // Optional, used to Filter. Default = 0.   (int)
 }
 ```
-- returns unit_id with the given `m_name`
+
+- returns unit_id with the given `m_name` or
 - unit name can be set in map editor.
 - if multiple units have the same name, the first will be returned.
 
@@ -686,6 +741,7 @@ void gx_add_force_prop(ForceProp prop, int force_id, mixed val)
 void gx_add_player_prop(PlayerProp prop, int player_id, mixed val)
 void gx_add_unit_prop(UnitProp prop, int unit_id, mixed val)
 ```
+
 - Please refer to {{enum("ForceProp")}}, {{enum("PlayerProp")}}, {{enum("UnitProp")}}, and {{enum("LocationProp")}} for possibles values you can get/set (and their types).
 - Properties that are `int` or `float` and are `Read-Write` can use the `gx_add_*` functions
 
@@ -711,6 +767,7 @@ void gx_add_force_variable(int force_id, string varName, int varValue)
 void gx_add_player_variable(int player_id, string varName, int varValue)
 void gx_add_unit_variable(int unit_id, string varName, int varValue)
 ```
+
 - Calling `gx_get_*` to retrieve a non-existing `varValue` will return `0`.
 - Only `int` values can be set.
 
@@ -727,6 +784,7 @@ bool gx_is_event_queue_empty()
 ```sq
 Event gx_pop_event_from_queue()
 ```
+
 - Pop event from event queue.
 - See {{eventQueue()}}
 

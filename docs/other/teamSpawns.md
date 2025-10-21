@@ -1,3 +1,3 @@
-- The `Team Spawns` dialog allows you to assign Team Mappings for spawn locations.
+- The `[Teams] Spawns` dialog allows you to assign Team Mappings for spawn locations.
     - This can force team members to have close-spawns
 - This information is only used in the `Teams` game mode.

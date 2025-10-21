@@ -2,7 +2,6 @@ The `Map Settings` dialog allows you to set certain properties of the map.
 
 - `Map Name`: The friendly name for the map. This field is `required`.
 - `[Custom] Is Custom Map?`: By enabling this, certain features are enabled/disabled.
-    - Specifies map is a `custom` map
     - Town Halls will not be created at spawn locations
     - Workers will not be created near spawn locations
     - Normal Victory/Defeat conditions are ignored

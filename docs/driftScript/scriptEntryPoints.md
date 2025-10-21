@@ -8,6 +8,7 @@ function gx_map_init() {
     // your code here
 }
 ```
+
 - The very first entry-point function to be called.
     - Called before game begins, and even before minimap creation.
 - This is the only place you are allowed to modify/copy unit datas (i.e. make your own units).

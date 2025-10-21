@@ -30,13 +30,12 @@
     - min value: `-9,223,372,036,854,775,808`
     - note: many internal drift wars functions use `int32_t`
         - therefore try to keep values `<= 2147483647`
-    - overflow is undefined
+    - overflow is undefined, but most likely will work..
 - `float`: custom 64-bit fixed point Q31.32
     - max value: `+9223372036854775807 / 4294967296` = `+2147483647.99999999976716935634...`
-    - min value: `-9223372036854775807 / 4294967296` = `-2147483647.99999999976716935634...`
+    - min value: `-9223372036854775807 / 4294967296` = `-2147483648`
     - smallest value: `1 / 4294967296` = `0.00000000023283064365...`
-    - the value: `-2147483647` (bits: `0x8000000000000000`) is illegal to use
-    - overflow is undefined
+    - overflow is undefined, but most likely will work..
 
 ## Note
 - Many of these functions are optimized for speed and not accuracy
