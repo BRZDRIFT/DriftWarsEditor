@@ -1,6 +1,6 @@
 - Drift Wars supports utf-8 unicode.
     - You can usually copy paste utf-8 into Drift Wars Editor or game, and should work..
-    - Alternatively, most of the Drift Wars Editor Text fields can encode unicode using this syntax:
+    - Alternatively, most of the Drift Wars Editor text fields can encode unicode using this syntax:
         - `\u{unicode}`
         - Example: `\u{1F600}` = 😀
 
