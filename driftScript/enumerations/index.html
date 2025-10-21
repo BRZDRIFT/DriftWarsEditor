@@ -1482,7 +1482,7 @@
   <h1>Enumerations</h1>
 
 <h2 id="boundscheck">BoundsCheck</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">BoundsCheck</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">BoundsCheck</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">Invalid</span><span class="p">,</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">Center</span><span class="p">,</span><span class="w">     </span><span class="c1">// Unit&#39;s center position is in location</span>
@@ -1490,10 +1490,12 @@
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">Inside</span><span class="w">      </span><span class="c1">// Unit fully inside a location</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
 </span></code></pre></div>
-- The <code>BoundsCheck</code> enum is used in unit search queries within locations.<br />
-- Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#gx_get_units-gx_get_units_count">gx_get_units-gx_get_units_count</a></p>
+<ul>
+<li>The <code>BoundsCheck</code> enum is used in unit search queries within locations.  </li>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#gx_get_units-gx_get_units_count">gx_get_units-gx_get_units_count</a></li>
+</ul>
 <h2 id="specialplayer">SpecialPlayer</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">SpecialPlayer</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">SpecialPlayer</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">Invalid</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">0</span><span class="p">,</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">Neutral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span>
@@ -1501,7 +1503,9 @@
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">Rescue</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">-3</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
 </span></code></pre></div>
-- <code>Note:</code> Normal playerIDs are positive, with values: <code>[1-16]</code></p>
+<ul>
+<li><code>Note:</code> Normal playerIDs are positive, with values: <code>[1-16]</code></li>
+</ul>
 <h2 id="shapetype">ShapeType</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">ShapeType</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
@@ -1560,7 +1564,7 @@
 <li>Should only be used in conjunction with <code>TerrainType.Normal</code></li>
 </ul>
 <h2 id="forceprop">ForceProp</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">ForceProp</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">ForceProp</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">{</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">                    </span><span class="c1">// Access       Type</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="n">Invalid</span><span class="p">,</span>
@@ -1568,9 +1572,11 @@
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="n">Name</span><span class="w">            </span><span class="c1">// Read-Write   (string)</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
 </span></code></pre></div>
-- Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></p>
+<ul>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
+</ul>
 <h2 id="playerprop">PlayerProp</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">PlayerProp</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">PlayerProp</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">                            </span><span class="c1">// Access           Type</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">Invalid</span><span class="p">,</span>
@@ -1600,9 +1606,11 @@
 </span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">    </span><span class="n">Score</span><span class="w">                   </span><span class="c1">// Read-Write       (int)</span>
 </span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="p">}</span>
 </span></code></pre></div>
-- Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></p>
+<ul>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
+</ul>
 <h2 id="unitprop">UnitProp</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">UnitProp</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">UnitProp</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">{</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">                            </span><span class="c1">// Access           Type</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">Invalid</span><span class="p">,</span>
@@ -1621,10 +1629,12 @@
 </span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">    </span><span class="n">Level</span><span class="w">                   </span><span class="c1">// Read-Write       (int)</span>
 </span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="p">}</span>
 </span></code></pre></div>
-- Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a>
-- Setting <code>Health</code> to <code>&lt;= 0</code> will cause unit to be set to <code>killed</code> state.</p>
+<ul>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
+<li>Setting <code>Health</code> to <code>&lt;= 0</code> will cause unit to be set to <code>killed</code> state.</li>
+</ul>
 <h2 id="locationprop">LocationProp</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">LocationProp</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">LocationProp</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">{</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">                    </span><span class="c1">// Access       Type</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="n">Invalid</span><span class="p">,</span>
@@ -1636,9 +1646,11 @@
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="n">Size</span><span class="w">            </span><span class="c1">// Read         (Vec2)</span>
 </span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
 </span></code></pre></div>
-- Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></p>
+<ul>
+<li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
+</ul>
 <h2 id="gunshipstate">GunShipState</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">GunShipState</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">GunShipState</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">Invalid</span><span class="p">,</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="n">Normal</span><span class="p">,</span>
@@ -1649,7 +1661,9 @@
 </span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="n">ChainGunLevel2</span>
 </span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">}</span>
 </span></code></pre></div>
-- Primarily used for setting/getting unit property <code>GunShipState</code> in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></p>
+<ul>
+<li>Primarily used for setting/getting unit property <code>GunShipState</code> in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
+</ul>
 <p>Example:
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">gx_set_unit_prop</span><span class="p">(</span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="n">UnitProp</span><span class="p">.</span><span class="n">GunShipState</span><span class="p">,</span><span class="w"> </span><span class="n">GunShipState</span><span class="p">.</span><span class="n">ChainGunLevel2</span><span class="p">)</span>
 </span></code></pre></div></p>

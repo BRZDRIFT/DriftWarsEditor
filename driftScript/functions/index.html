@@ -2562,13 +2562,15 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <h2 id="gx_map_init_add_build_structure_item">gx_map_init_add_build_structure_item</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_map_init_add_build_structure_item</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
 </span></code></pre></div>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>table params = {
+<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>table params = {
 </span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>    string m_structure = {},    // name of structure to build, i.e. &quot;Microwave&quot;
 </span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>    Vec2 m_position = {},           // position in command card to place at, leaving empty will use default
 </span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>    bool bBuildAdvanced = false     // default is false, if set to True, will be placed in &#39;build advanced&#39; tab
 </span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>}
 </span></code></pre></div>
-- Can only be called during <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></p>
+<ul>
+<li>Can only be called during <a href="/DriftWarsEditor/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+</ul>
 <h2 id="gx_map_init_remove_all_build_structure_items">gx_map_init_remove_all_build_structure_items</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_map_init_remove_all_build_structure_items</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">)</span>
 </span></code></pre></div>
@@ -2678,9 +2680,11 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <li>if <code>m_index</code> is set, it is <code>undefined behavior</code> to also set <code>m_location</code>, and <code>m_triangleGroup</code></li>
 </ul>
 <h2 id="gx_get_terrain_type">gx_get_terrain_type</h2>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>Vec2&lt;int&gt; gx_get_terrain_type(Vec2 index, int index2 = 0)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>Vec2&lt;int&gt; gx_get_terrain_type(Vec2 index, int index2 = 0)
 </span></code></pre></div>
-- returns primary terrain type in <code>vec.m_x</code> and returns secondary terrain type in <code>vec.m_y</code></p>
+<ul>
+<li>returns primary terrain type in <code>vec.m_x</code> and returns secondary terrain type in <code>vec.m_y</code></li>
+</ul>
 <h2 id="gx_set_player_camera_look_at">gx_set_player_camera_look_at</h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>void gx_set_player_camera_look_at(int player_id, table params)
 </span></code></pre></div>
@@ -2731,10 +2735,12 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <li>See <a href="/DriftWarsEditor/driftScript/enumerations/#commandtype">CommandType</a> for possible command values</li>
 </ul>
 <h2 id="gx_set_speech_bubble">gx_set_speech_bubble</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_speech_bubble</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_speech_bubble</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
 </span></code></pre></div>
-- set a speech bubble for unit_id
-- currently there are no optional params</p>
+<ul>
+<li>set a speech bubble for unit_id</li>
+<li>currently there are no optional params</li>
+</ul>
 <h2 id="gx_getsetadd_unit_ammo">gx_(get|set|add)_unit_ammo</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_unit_ammo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ammoName</span><span class="p">)</span>
 </span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_unit_ammo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">ammoName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">count</span><span class="p">)</span>
