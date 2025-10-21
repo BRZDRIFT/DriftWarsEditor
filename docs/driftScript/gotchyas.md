@@ -58,6 +58,7 @@ print(a == c)		// false, a and c reference different objects
 print(a.Equals(c))	// true
 print(a.Equals(d))	// true
 ```
+
 - this behavior is only for non-primitive types (not `int`, `float`, `bool`, `string`)
 - `=` assignment operator primitive types `int`, `float`, `bool`, `string` copy by value (not by reference)
 - To make a copy of an object, use squirrel's builtin `clone` operator, or use `.Copy()` function if available.
@@ -144,6 +145,7 @@ myArray.append(7)                   // myArray:  ["my_string", 6, 1, 2, 7]
 print(myArray[4])                   // prints 7
 myArray.remove(1)           // remove at index 1, myArray: ["my_string", 1, 2, 7]
 ```
+
 - See [http://squirrel-lang.org/squirreldoc/reference/language.html](http://squirrel-lang.org/squirreldoc/reference/language.html) for more language features.
 
 ## Dictionary and array foreach loops
@@ -190,6 +192,7 @@ foreach (val in myArray) {
 	print(val)
 }
 ```
+
 - Please note, single variable foreach loop with dictionary outputs `value` and not `key`.
     - This is different from other languages like `Python`.
 - dictionary foreach iteration order is `unspecified` (which is different than random)

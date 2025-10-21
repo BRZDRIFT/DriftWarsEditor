@@ -33,7 +33,7 @@
     - overflow is undefined, but most likely will work..
 - `float`: custom 64-bit fixed point Q31.32
     - max value: `+9223372036854775807 / 4294967296` = `+2147483647.99999999976716935634...`
-    - min value: `-9223372036854775807 / 4294967296` = `-2147483648`
+    - min value: `-9223372036854775808 / 4294967296` = `-2147483648`
     - smallest value: `1 / 4294967296` = `0.00000000023283064365...`
     - overflow is undefined, but most likely will work..
 
