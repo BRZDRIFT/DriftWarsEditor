@@ -17,6 +17,7 @@ nav:
       - 'Locations': 'modes/locations.md'
     - Other:
       - 'Map Settings': 'other/mapSettings.md'
+      - 'Scene Settings': 'other/sceneSettings.md'
       - '[1v1] Spawns': 'other/1v1Spawns.md'
       - '[Teams] Spawns': 'other/teamSpawns.md'
       - 'Data Editor': 'other/dataEditor.md'

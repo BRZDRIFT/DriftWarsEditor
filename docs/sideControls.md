@@ -1,12 +1,3 @@
-## Scene Settings
-- You can use this control to add special effects to terrain cliffs and units
-- Setting `Theme` to `Snow` will render snow on terrain cliffs and units
-- More 'themes' will be added in the future.
-
-## Map Glow Settings
-- Certain ramps, cliff tiles, and texture splats allow for a 'glow' color.  
-- This control allows you to control certain aspects of the 'glow'.
-
 ## Misc Settings
 - Allows you to change various settings within the map editor.  
 - Interesting or confusing options are explained below..
@@ -32,3 +23,6 @@
 
 ## Camera
 - Various controls for controlling camera.
+
+## Minimap
+- Displays minimap

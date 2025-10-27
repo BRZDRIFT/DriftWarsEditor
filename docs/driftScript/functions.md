@@ -144,6 +144,21 @@ void gx_kill_unit(int unit_id)
 - kills the unit `unit_id`.
 - It is safe to call this function on already killed units
 
+## gx_kill_all_units
+```sq
+void gx_kill_all_units(table params = {})
+```
+
+```sq
+table params = { 
+    int m_playerIDs[],      // Optional
+    int m_forceIDs[],       // Optional
+    bool m_bAllPlayers      // Optional
+}
+```
+
+- kills all units for any players that match the params
+
 ## gx_get_kills
 ```sq
 void gx_get_kills(int player_id, table params = {})
@@ -375,13 +390,13 @@ void gx_set_defeat(table params)
 
 ```sq
 table params = {
-    int m_playerID = {},
-    int m_forceID = {},
+    int m_playerID = {},            // Optional
+    int m_forceID = {},             // Optional
     bool m_bKillAllUnits = true     // Optional, (default true)
 }
 ```
 
-- if `m_bKillAllUnits` is `true`, all units for player (or team) will be killed.
+- if `m_bKillAllUnits` is `true`, {{fn("gx_kill_all_units")}} will automatically be invoked for defeated player
 - once a player or team is set to `defeat`, future calls to `gx_set_victory`/`gx_set_defeat` for that player/team will be ignored
 - should only set one of `m_playerID` or `m_forceID`, setting both is undefined
 - setting `m_forceID` will set defeat for all players within that force
@@ -677,11 +692,12 @@ table params = {
 
 ## gx_set_speech_bubble
 ```sq
-void gx_set_speech_bubble(int unit_id, string text, table params = {})
+int gx_set_speech_bubble(int unit_id, string text, table params = {})
 ```
 
 - set a speech bubble for unit_id
 - currently there are no optional params
+- returns an integer id for the speech bubble (currently has no use)
 
 ## gx_(get|set|add)_unit_ammo
 ```sq

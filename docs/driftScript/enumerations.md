@@ -26,6 +26,17 @@ enum SpecialPlayer
 
 - `Note:` Normal playerIDs are positive, with values: `[1-16]`
 
+## VictoryStatus
+```sq
+enum VictoryStatus
+{
+	Invalid,
+	Victory,
+	Defeat,
+	Draw
+}
+```
+
 ## ShapeType
 ```sq
 enum ShapeType
@@ -96,6 +107,7 @@ enum ForceProp
 	Invalid,
 	Score,			// Read-Write	(int)
 	Name			// Read-Write	(string)
+	VictoryStatus	// Read-Write	(VictoryStatus)
 }
 ```
 
@@ -131,7 +143,15 @@ enum PlayerProp
 	 						// (not implemented atm)
 							
     StartLocationPosition,  // Read         	(Vec2)
-	Score					// Read-Write		(int)
+	Score,					// Read-Write		(int)
+    IsNormalPlayer, 		// Read				(bool)
+    IsHumanPlayer, 			// Read				(bool)
+    IsComputerPlayer,		// Read				(bool)
+    IsHostilePlayer,		// Read				(bool)
+    IsNeutralPlayer,		// Read				(bool)
+    IsRescueablePlayer,		// Read				(bool)
+	IsInGame,				// Read				(bool)
+	VictoryStatus			// Read-Write		(VictoryStatus),
 }
 ```
 
@@ -156,7 +176,9 @@ enum UnitProp
 	GetParentSpinnerShip,   // Read        		(int)
     GetParentBunker,        // Read        		(int)
     GunShipState,           // Read-Write       (GunShipState)
-	Level					// Read-Write		(int)
+	Level,					// Read-Write		(int)
+    Identifier,             // Read-Write       (string)
+    PlayerID                // Read-Write       (int)
 }
 ```
 

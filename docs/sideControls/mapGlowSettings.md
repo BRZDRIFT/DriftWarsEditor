@@ -1,2 +1,0 @@
-- Certain ramps, cliff tiles, and texture splats allow for a 'glow' color.
-- You can tweak 

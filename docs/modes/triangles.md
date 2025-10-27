@@ -17,8 +17,10 @@
     - Increases unit speed for associated player
 - `Water`
     - Decreases unit speed
+    - The different secondary styles just slightly change the visual look
 - `Lava`
     - Does damage over time to units
+    - The different secondary styles just slightly change the visual look
 - `Diamond`
     - "cracks" when units walk on it
 - `Unpassable`

@@ -1,4 +1,4 @@
-`Footprints` mode allows you to specify squares that track footprints / unit-movement on your map. These squares will 'darken' as units walk on them. (i.e. snow)
+`Footprints` mode allows you to specify squares that track footprints / unit-movement on your map. These squares will 'darken' as units walk on them. (snow, mud, etc..)
 
 - You can select squares on the map, and press `Enter` to make squares track footprints / unit-movement
 
