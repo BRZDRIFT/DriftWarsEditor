@@ -631,6 +631,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../sceneSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scene Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../1v1Spawns/" class="md-nav__link">
         
   
@@ -1222,10 +1245,14 @@
 
   <h1>[Custom] Tags Per Force</h1>
 
-<p><code>Tags Per Force</code> dialog allows you to set restrictions for which <code>Tags</code> can be part of which <code>Forces</code></p>
-<ul>
-<li>The information in this dialog is only used for <code>custom</code> game-type maps</li>
-</ul>
+<p><code>Tags Per Force</code> dialog allows you to set restrictions for which <code>Tags</code> can be part of which <code>Forces</code>
+- This also allows you to set a limit for how many <code>players</code> in a specific <code>force</code> can choose  specific <code>tag</code>. If you set the <code>Max Players</code> to <code>1</code>, then only one <code>player</code> in that <code>force</code> will be allowed to select that <code>tag</code>.
+- The <code>Max Players</code> in <code>Tags Per Force</code> works together with <code>Max Players</code> in the <code>Tags</code> dialog to smartly limit <code>Tag</code> allocations to players.
+- You must check the <code>Enable Per Force Tags</code> checkbox to enable this feature
+- The information in this dialog is only used for <code>custom</code> game-type maps.</p>
+<blockquote>
+<p>It is up to you that you provide high enough <code>MaxPlayers</code> values so every player in the force can select a <code>Tag</code>. If not enough <code>Tags</code> can be allocated for all the players in the force, your map may be unplayable.</p>
+</blockquote>
 
 
 

@@ -692,6 +692,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../other/sceneSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scene Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../other/1v1Spawns/" class="md-nav__link">
         
   
@@ -1303,13 +1326,26 @@
 
 <h2 id="units">Units</h2>
 <ul>
-<li>You can add units on the map for the selected player.</li>
+<li>Thi mode allows you to add/delete units on the map for the current player.</li>
+<li>You can change the current player using the dropdown below the unit list</li>
+<li>Selecting units, and then press <code>Enter</code> will open up a dialog for additional unit options, such as changing player ID, gemston amount, etc<ul>
+<li>Different types of units may offer different options in dialog</li>
+<li>You can also provide string identifiers to units in the options dialog, which can be using for scripting and other things.<ul>
+<li>Example: In order for a gateway to teleport units to another gateway, you need to provide each gateway a string identifier and set up the destination gateway in the options</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Compatible with <a href="/DriftWarsEditor/sideControls/#symmetry-mode">symmetry-mode</a>, <a href="/DriftWarsEditor/sideControls/#enable-unit-stacking">enable-unit-stacking</a>, 
 and <a href="/DriftWarsEditor/sideControls/#adddel-only-if-symmetries-are-valid">adddel-only-if-symmetries-are-valid</a>, </li>
 </ul>
 <h2 id="unit-groups">Unit Groups</h2>
 <ul>
 <li>You can assign unit groups to certain units, which can be helpful for scripting.</li>
+<li>Certain units have properties/abilities that may reference unit groups<ul>
+<li>Example: Control Panel can a reference group of Trap Doors to enable opening/closing them</li>
+</ul>
+</li>
 </ul>
 
 

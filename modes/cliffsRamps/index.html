@@ -639,6 +639,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../other/sceneSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scene Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../other/1v1Spawns/" class="md-nav__link">
         
   
@@ -1225,10 +1248,20 @@
 <p><code>Cliffs / Ramps</code> allow you to add cliffs and ramps to your map.</p>
 <ul>
 <li>
+<p>Drift Wars supports 5 levels of terrain</p>
+<ul>
+<li>Each cliff layer has a height of <code>4 units</code></li>
+<li>The base Z dimensions for the layers are: <code>z=-4</code>, <code>z=0</code>, <code>z=4</code>, <code>z=8</code>, <code>z=12</code></li>
+<li>The default terrain-Z is at <code>z=0</code></li>
+<li>Additionally, the Height Map can adjust a terrain layer's height by an additional <code>+8</code> to <code>-8</code> units.</li>
+</ul>
+</li>
+<li>
 <p>Adding Cliffs</p>
 <ul>
 <li><code>Add Cliffs</code>: Allows you to add cliffs units can walk on.</li>
 <li><code>Add Closed Cliffs</code>: Allow you to add unwalkable cliffs.</li>
+<li>You can set which terrain-level should use which 'cliff tileset' in the brush settings. It's currently a bit cumbersome, will be improved in future.</li>
 <li>Compatible with <a href="/DriftWarsEditor/sideControls/#symmetry-mode">symmetry-mode</a></li>
 </ul>
 </li>
@@ -1237,7 +1270,7 @@
 <ul>
 <li>To create ramps, you need to 'assemble' them from smaller pieces.</li>
 <li>Ramp pieces: <code>Left Ramp</code>, <code>Middle Ramp</code>, <code>Right Ramp</code>, <code>etc...</code></li>
-<li>Compatible with <a href="/DriftWarsEditor/sideControls/#symmetry-mode">symmetry-mode</a></li>
+<li>Compatible with <a href="/DriftWarsEditor/sideControls/#symmetry-mode">symmetry-mode</a> depending on the symmetry mode selected</li>
 <li><code>Important!</code> You can rotate Ramp pieces by pressing <code>R</code> when placing.</li>
 </ul>
 </li>

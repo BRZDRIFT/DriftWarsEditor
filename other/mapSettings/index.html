@@ -12,7 +12,7 @@
         <link rel="prev" href="../../modes/locations/">
       
       
-        <link rel="next" href="../1v1Spawns/">
+        <link rel="next" href="../sceneSettings/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -639,6 +639,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../sceneSettings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scene Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../1v1Spawns/" class="md-nav__link">
         
   
@@ -1225,19 +1248,23 @@
 <p>The <code>Map Settings</code> dialog allows you to set certain properties of the map.</p>
 <ul>
 <li><code>Map Name</code>: The friendly name for the map. This field is <code>required</code>.</li>
+<li><code>Max Players</code>: The maximum amount of players for this map. Required to be between <code>[1-16]</code></li>
 <li><code>[Custom] Is Custom Map?</code>: By enabling this, certain features are enabled/disabled.<ul>
 <li>Town Halls will not be created at spawn locations</li>
 <li>Workers will not be created near spawn locations</li>
-<li>Normal Victory/Defeat conditions are ignored</li>
+<li>Normal <code>Victory</code>/<code>Defeat</code> conditions are ignored</li>
 <li>Certain <code>DriftScript</code> functions are only enabled for <code>Custom Maps</code>.</li>
-<li>Default game modes <code>1v1</code>, <code>Teams</code>, <code>FFA</code>, <code>etc</code> will not be selectable in-game.</li>
+<li>Default game modes <code>1v1</code>, <code>Teams</code>, <code>FFA</code>, <code>etc</code> will not be selectable in in-game <code>Create Game</code> Lobby.</li>
 <li>Probably some more differences..</li>
 </ul>
 </li>
 <li><code>[Custom] Mode name</code>: Name of <code>Game Type</code> when <code>Is Custom Map?</code> is enabled.</li>
 <li><code>Map Credits</code>: Allows you to show some textual credits information for map</li>
-<li><code>Map Description</code>: Map description</li>
-<li><code>Set DriftPaint</code>: Uploads a <code>.png</code>, <code>.jpg</code>, <code>.DriftPaint</code> for pre-game loading screen</li>
+<li><code>Map Description</code>: Map description. Currently unused in-game.</li>
+<li><code>Set DriftPaint</code>: Uploads a <code>.png</code>, <code>.jpg</code>, or <code>.DriftPaint</code> for pre-game loading screen.<ul>
+<li>Recommended Size: No larger than <code>1920x1080</code>.</li>
+</ul>
+</li>
 <li><code>Clear DriftPaint</code>: Removes current <code>DriftPaint</code> background</li>
 </ul>
 
