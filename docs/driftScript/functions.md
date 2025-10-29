@@ -158,6 +158,7 @@ table params = {
 ```
 
 - kills all units for any players that match the params
+- It is valid to have both `m_forceIDs` and `m_playerIDs` set -- the players from `m_forceIDs` and `m_playerIDs` will be merged.
 
 ## gx_get_kills
 ```sq
@@ -299,6 +300,7 @@ table params = {
 - Providing `VictoryStatus.Pending` in `m_allowedVictoryStates[]` returns players that have not yet been assigned a `VictoryState` (those who are still playing)
 - Function is used to query and/or filter playerIDs based on simple coonditions
 - If neither m_forceIDs[] nor m_playerIDs[] is set, then will consider all players
+- It is valid to have both `m_forceIDs` and `m_playerIDs` set -- the players from `m_forceIDs` and `m_playerIDs` will be merged.
 
 ## gx_get_player
 ```sq
@@ -379,14 +381,17 @@ void gx_set_victory(table params)
 
 ```sq
 table params = {
-    int m_playerID = {},
-    int m_forceID = {}
+    int m_playerID = {},            // Optional
+    int m_forceID = {},             // Optional
+    bool m_bKillAllUnits = false    // Optional, (default false)
 }
 ```
 
 - once a player or team is set to `victory`, future calls to `gx_set_victory`/`gx_set_defeat` for that player/team will be ignored
 - should only set one of `m_playerID` or `m_forceID`, setting both is undefined
+- this function does nothing if both `m_playerID` and `m_forceID` is unset
 - setting `m_forceID` will set victory for all players within that force
+- if `m_bKillAllUnits` is `true`, {{fn("gx_kill_all_units")}} will automatically be invoked for victorious player
 
 ## gx_set_defeat
 ```sq
@@ -403,6 +408,7 @@ table params = {
 
 - if `m_bKillAllUnits` is `true`, {{fn("gx_kill_all_units")}} will automatically be invoked for defeated player
 - once a player or team is set to `defeat`, future calls to `gx_set_victory`/`gx_set_defeat` for that player/team will be ignored
+- this function does nothing if both `m_playerID` and `m_forceID` is unset
 - should only set one of `m_playerID` or `m_forceID`, setting both is undefined
 - setting `m_forceID` will set defeat for all players within that force
 
@@ -418,6 +424,10 @@ table params = {
     m_bCheckAlliedVictory = true
 }
 ```
+
+- Returns `true` if all the players represented by `m_forceIDs` and `m_playerIDs` are mutually allied with each other.
+- It is valid to have both `m_forceIDs` and `m_playerIDs` set -- the players from `m_forceIDs` and `m_playerIDs` will be merged.
+- If the number of resolved players from `m_forceIDs` and `m_playerIDs` is 1 or less, this function will always return `true`.
 
 ## gx_is_player_allied_to
 ```sq

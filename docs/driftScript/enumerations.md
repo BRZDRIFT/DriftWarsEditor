@@ -150,7 +150,9 @@ enum PlayerProp
 	MaxSupply,              // Read        		(int)
 	NumKills,               // Read        		(int)
 	NumDeaths,              // Read        		(int)
-    PlayerName,             // Read        		(string)
+
+    PlayerName,             // Read-Write  		(string)
+							// Is Write-Enabled only for computer players
 
     FullMapVision,          // Read-Write     	(bool)
                             // When set to true, player

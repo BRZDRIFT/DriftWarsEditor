@@ -139,7 +139,7 @@ local myDictionary = { "abc": 6, "def": 7 }     // create dictionary
 delete myDictionary["abc"]                  // delete "abc" from dictionary
 
 // arrays
-local myArray = ["my_string", 6, 1, 2]      // create dictionary
+local myArray = ["my_string", 6, 1, 2]      // create array
 print(myArray[0])                   // prints "my_string"
 myArray.append(7)                   // myArray:  ["my_string", 6, 1, 2, 7]
 print(myArray[4])                   // prints 7

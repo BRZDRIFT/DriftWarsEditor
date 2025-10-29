@@ -12,5 +12,5 @@
     - `2 : Robots : 16 : Robots`
     - `3 : Monsters : 16 : Monsters`
 
-> Important!
->> It is up to you that you provide adequate `Tags` and `MaxPlayers` values so every player in your map can select a `Tag`. If not enough `Tags` can be allocated for all the players in the game, your map may be unplayable.
+> Important!  
+It is up to you that you provide adequate `Tags` and `MaxPlayers` values so every player in your map can select a `Tag`. If not enough `Tags` can be allocated for all the players in the game, your map may be unplayable.
