@@ -1,4 +1,9 @@
-## BoundsCheck 
+> Important!  
+In your DriftScript code, DO NOT assume the numeric values of the enums will remain the same.  
+Always use the enums and not hardcoded numeric values.  
+Also DO NOT assume `Invalid` will always be equal to `0` or `-1`.
+
+## BoundsCheck
 
 ```sq
 enum BoundsCheck
@@ -24,18 +29,37 @@ enum SpecialPlayer
 }
 ```
 
-- `Note:` Normal playerIDs are positive, with values: `[1-16]`
+- The above are the `PlayerIDs` for the special players `Neutral`, `Hostile`, and `Rescue`
+- The players `Neutral`, `Hostile`, and `Rescue` are automatically assigned to the `Neutral` Force
+- These 3 special players exist in every game and game-mode.
+- `Note:` Normal PlayerIDs are positive, with values: `[1-16]`
+
+## SpecialForce
+```sq
+enum SpecialForce
+{
+	Invalid = 0,
+	Neutral = -1
+}
+```
+
+- The Force `Neutral` (`id = -1`) is special and exists in every game.
+- The players `Neutral`, `Hostile`, and `Rescue` are automatically assigned to the `Neutral` Force
+- `Note:` Normal ForceIDs are positive integers
 
 ## VictoryStatus
 ```sq
 enum VictoryStatus
 {
 	Invalid,
+	Pending,
 	Victory,
 	Defeat,
 	Draw
 }
 ```
+
+- A `VictoryStatus::Pending` indicates the player is not yet assigned Victory/Defeat/Draw, usually meaning the player is still playing.
 
 ## ShapeType
 ```sq
@@ -152,6 +176,7 @@ enum PlayerProp
     IsRescueablePlayer,		// Read				(bool)
 	IsInGame,				// Read				(bool)
 	VictoryStatus			// Read-Write		(VictoryStatus),
+	AlliedVictory			// Read-Write		(bool)
 }
 ```
 

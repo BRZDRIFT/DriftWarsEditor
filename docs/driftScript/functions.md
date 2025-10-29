@@ -285,22 +285,27 @@ int[] gx_get_players(table params = {})
 
 ```sq
 table params = {
-	bool m_bIncludeNormalPlayers = true;
-	bool m_bIncludeDefeatedPlayers = false;
-	bool m_bIncludeNeutralPlayer = false;
-	bool m_bIncludeRescuePlayer = false;
-	bool m_bIncludeHostilePlayer = false;
-	bool m_bPlayerMustBeInGame = true;
+    int m_forceIDs[],   # Optional if set, only consider players part of these forces
+    int m_playerIDs[],  # Optional, if set, only consider these players
+    VictoryStatus m_allowedVictoryStates[]      # filter, default: [VictoryStatus.Pending]
+	bool m_bIncludeNormalPlayers = true;        # filter, default true
+	bool m_bIncludeNeutralPlayer = false;       # filter, default false
+	bool m_bIncludeRescuePlayer = false;        # filter, default false
+	bool m_bIncludeHostilePlayer = false;       # filter, default false
+	bool m_bPlayerMustBeInGame = true;          # filter, default true
 }
 ```
 
+- Providing `VictoryStatus.Pending` in `m_allowedVictoryStates[]` returns players that have not yet been assigned a `VictoryState` (those who are still playing)
+- Function is used to query and/or filter playerIDs based on simple coonditions
+- If neither m_forceIDs[] nor m_playerIDs[] is set, then will consider all players
 
 ## gx_get_player
 ```sq
 int gx_get_player(int unit_id)
 ```
-
 - returns the `player_id` for unit `unit_id`
+- if unit does not exist, will return 0
 
 ## gx_print
 ```sq
@@ -400,6 +405,29 @@ table params = {
 - once a player or team is set to `defeat`, future calls to `gx_set_victory`/`gx_set_defeat` for that player/team will be ignored
 - should only set one of `m_playerID` or `m_forceID`, setting both is undefined
 - setting `m_forceID` will set defeat for all players within that force
+
+## gx_is_players_mutually_allied
+```sq
+bool gx_is_players_mutually_allied(table params)
+```
+
+```sq
+table params = {
+    m_forceIDs = [],
+    m_playerIDs = [],
+    m_bCheckAlliedVictory = true
+}
+```
+
+## gx_is_player_allied_to
+```sq
+bool gx_is_player_allied_to(int playerID, int otherPlayerID)
+```
+
+## gx_set_player_allied_to
+```sq
+bool gx_set_player_allied_to(int playerID, int otherPlayerID, bool bAlly)
+```
 
 ## gx_encode_text
 ```sq
