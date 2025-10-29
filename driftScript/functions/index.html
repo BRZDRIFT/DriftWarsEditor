@@ -2599,7 +2599,7 @@
 <li>should only set one of <code>m_playerID</code> or <code>m_forceID</code>, setting both is undefined</li>
 <li>this function does nothing if both <code>m_playerID</code> and <code>m_forceID</code> is unset</li>
 <li>setting <code>m_forceID</code> will set victory for all players within that force</li>
-<li>if <code>m_bKillAllUnits</code> is <code>true</code>, <a href="/DriftWarsEditor/driftScript/functions/#gx_kill_all_units">gx_kill_all_units</a> will automatically be invoked for victorious player</li>
+<li>if <code>m_bKillAllUnits</code> is <code>true</code>, <a href="/DriftWarsEditor/driftScript/functions/#gx_kill_all_units">gx_kill_all_units</a> will automatically be invoked for victorious player/force</li>
 </ul>
 <h2 id="gx_set_defeat">gx_set_defeat</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_defeat</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
@@ -2611,7 +2611,7 @@
 </span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
-<li>if <code>m_bKillAllUnits</code> is <code>true</code>, <a href="/DriftWarsEditor/driftScript/functions/#gx_kill_all_units">gx_kill_all_units</a> will automatically be invoked for defeated player</li>
+<li>if <code>m_bKillAllUnits</code> is <code>true</code>, <a href="/DriftWarsEditor/driftScript/functions/#gx_kill_all_units">gx_kill_all_units</a> will automatically be invoked for defeated player/force</li>
 <li>once a player or team is set to <code>defeat</code>, future calls to <code>gx_set_victory</code>/<code>gx_set_defeat</code> for that player/team will be ignored</li>
 <li>this function does nothing if both <code>m_playerID</code> and <code>m_forceID</code> is unset</li>
 <li>should only set one of <code>m_playerID</code> or <code>m_forceID</code>, setting both is undefined</li>
