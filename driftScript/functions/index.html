@@ -2402,6 +2402,7 @@
 </span></code></pre></div>
 <ul>
 <li>kills all units for any players that match the params</li>
+<li>It is valid to have both <code>m_forceIDs</code> and <code>m_playerIDs</code> set -- the players from <code>m_forceIDs</code> and <code>m_playerIDs</code> will be merged.</li>
 </ul>
 <h2 id="gx_get_kills">gx_get_kills</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_get_kills</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
@@ -2521,6 +2522,7 @@
 <li>Providing <code>VictoryStatus.Pending</code> in <code>m_allowedVictoryStates[]</code> returns players that have not yet been assigned a <code>VictoryState</code> (those who are still playing)</li>
 <li>Function is used to query and/or filter playerIDs based on simple coonditions</li>
 <li>If neither m_forceIDs[] nor m_playerIDs[] is set, then will consider all players</li>
+<li>It is valid to have both <code>m_forceIDs</code> and <code>m_playerIDs</code> set -- the players from <code>m_forceIDs</code> and <code>m_playerIDs</code> will be merged.</li>
 </ul>
 <h2 id="gx_get_player">gx_get_player</h2>
 <p><div class="language-sq highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_player</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
@@ -2587,14 +2589,17 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_victory</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span>
-</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
-</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="p">}</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">            </span><span class="c1">// Optional</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{},</span><span class="w">             </span><span class="c1">// Optional</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bKillAllUnits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="w">    </span><span class="c1">// Optional, (default false)</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>once a player or team is set to <code>victory</code>, future calls to <code>gx_set_victory</code>/<code>gx_set_defeat</code> for that player/team will be ignored</li>
 <li>should only set one of <code>m_playerID</code> or <code>m_forceID</code>, setting both is undefined</li>
+<li>this function does nothing if both <code>m_playerID</code> and <code>m_forceID</code> is unset</li>
 <li>setting <code>m_forceID</code> will set victory for all players within that force</li>
+<li>if <code>m_bKillAllUnits</code> is <code>true</code>, <a href="/DriftWarsEditor/driftScript/functions/#gx_kill_all_units">gx_kill_all_units</a> will automatically be invoked for victorious player</li>
 </ul>
 <h2 id="gx_set_defeat">gx_set_defeat</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_defeat</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
@@ -2608,6 +2613,7 @@
 <ul>
 <li>if <code>m_bKillAllUnits</code> is <code>true</code>, <a href="/DriftWarsEditor/driftScript/functions/#gx_kill_all_units">gx_kill_all_units</a> will automatically be invoked for defeated player</li>
 <li>once a player or team is set to <code>defeat</code>, future calls to <code>gx_set_victory</code>/<code>gx_set_defeat</code> for that player/team will be ignored</li>
+<li>this function does nothing if both <code>m_playerID</code> and <code>m_forceID</code> is unset</li>
 <li>should only set one of <code>m_playerID</code> or <code>m_forceID</code>, setting both is undefined</li>
 <li>setting <code>m_forceID</code> will set defeat for all players within that force</li>
 </ul>
@@ -2620,6 +2626,11 @@
 </span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="w">    </span><span class="n">m_bCheckAlliedVictory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
 </span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="p">}</span>
 </span></code></pre></div>
+<ul>
+<li>Returns <code>true</code> if all the players represented by <code>m_forceIDs</code> and <code>m_playerIDs</code> are mutually allied with each other.</li>
+<li>It is valid to have both <code>m_forceIDs</code> and <code>m_playerIDs</code> set -- the players from <code>m_forceIDs</code> and <code>m_playerIDs</code> will be merged.</li>
+<li>If the number of resolved players from <code>m_forceIDs</code> and <code>m_playerIDs</code> is 1 or less, this function will always return <code>true</code>.</li>
+</ul>
 <h2 id="gx_is_player_allied_to">gx_is_player_allied_to</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_is_player_allied_to</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">playerID</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">otherPlayerID</span><span class="p">)</span>
 </span></code></pre></div>
