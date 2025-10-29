@@ -391,7 +391,7 @@ table params = {
 - should only set one of `m_playerID` or `m_forceID`, setting both is undefined
 - this function does nothing if both `m_playerID` and `m_forceID` is unset
 - setting `m_forceID` will set victory for all players within that force
-- if `m_bKillAllUnits` is `true`, {{fn("gx_kill_all_units")}} will automatically be invoked for victorious player
+- if `m_bKillAllUnits` is `true`, {{fn("gx_kill_all_units")}} will automatically be invoked for victorious player/force
 
 ## gx_set_defeat
 ```sq
@@ -406,7 +406,7 @@ table params = {
 }
 ```
 
-- if `m_bKillAllUnits` is `true`, {{fn("gx_kill_all_units")}} will automatically be invoked for defeated player
+- if `m_bKillAllUnits` is `true`, {{fn("gx_kill_all_units")}} will automatically be invoked for defeated player/force
 - once a player or team is set to `defeat`, future calls to `gx_set_victory`/`gx_set_defeat` for that player/team will be ignored
 - this function does nothing if both `m_playerID` and `m_forceID` is unset
 - should only set one of `m_playerID` or `m_forceID`, setting both is undefined

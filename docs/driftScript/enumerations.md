@@ -54,12 +54,12 @@ enum VictoryStatus
 	Invalid,
 	Pending,
 	Victory,
-	Defeat,
-	Draw
+	Defeat
 }
 ```
 
-- A `VictoryStatus::Pending` indicates the player is not yet assigned Victory/Defeat/Draw, usually meaning the player is still playing.
+- A `VictoryStatus::Pending` indicates the player is not yet assigned Victory/Defeat, usually meaning the player is still playing.
+- `Draw` or `Tie` is not yet supported.
 
 ## ShapeType
 ```sq
