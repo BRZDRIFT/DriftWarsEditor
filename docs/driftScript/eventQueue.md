@@ -8,7 +8,12 @@ table Event
     int m_playerID = {}
     string m_playerName = {}
     string m_oldPlayerName = {}
+    int m_playerNameColorID = {}
+    int m_oldPlayerNameColorID = {}
     string m_cmd = {}
+    int m_unitID = {},
+    int m_soundID = {},
+    string m_location = {}
 }
 ```
 

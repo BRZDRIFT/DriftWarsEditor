@@ -4,6 +4,7 @@
 - `RAND_MAX` - Constant 64-bit int value of `0x7FFFFFFF`
     - (do not rely on the constant value staying the same)
 - `PI` - Constant float value for PI (`3.14159...`)
+- `TAU` - Constant float value for 2*PI (`6.28318...`)
 
 ## Functions
 - `float sqrt(x)` - returns square root of x

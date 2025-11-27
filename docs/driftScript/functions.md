@@ -115,11 +115,15 @@ table params = {
     float m_size = {},                  // Optional, Diameter of explosion
     Vec3 m_color = Vec3(1, 1, 0)        // Optional, ColorSRGB of explosion.
     string m_location = {},             // Optional, Location for explosion
-    Vec2 m_pos = {}                     // Optional, Position for explosion
+    bool m_bPlaySound = true            // Optional, defualt true
+    string m_sound = {}             // Optional, Sound to play
+    string m_soundPack = {}             // Optional, SoundPack to play
 }
 ```
 
-- Refer to {{type("Vec2")}} and {{type("Vec3")}} if needed.
+- Refer to {{type("Vec3")}} if needed.
+- Only one `m_sound` or `m_soundPack` should be set
+- If neither `m_sound` nor `m_soundPack` is set, default sound will be played.
 
 Example:
 ```sq
@@ -439,17 +443,6 @@ bool gx_is_player_allied_to(int playerID, int otherPlayerID)
 bool gx_set_player_allied_to(int playerID, int otherPlayerID, bool bAlly)
 ```
 
-## gx_encode_text
-```sq
-string gx_encode_text(string text)
-```
-
-Example
-```sq
-local someText = gx_encode_text("^23Rainbow Text")
-gx_print(someText)
-```
-
 ## gx_map_init_copy_ud
 
 Creates a copy of a `unit_data`.
@@ -730,12 +723,36 @@ table params = {
 
 ## gx_set_speech_bubble
 ```sq
-int gx_set_speech_bubble(int unit_id, string text, table params = {})
+int gx_set_speech_bubble(int unit_id, table params = {})
+```
+
+```sq
+table params = {
+    string m_text,          // Speech Bubble text to display
+    int m_duration = 60     // duration to display in ticks 
+                            // set to -1 to make it last forever
+                            // default: 60 ticks (3 seconds)
+}
 ```
 
 - set a speech bubble for unit_id
-- currently there are no optional params
-- returns an integer id for the speech bubble (currently has no use)
+- returns an integer id for the speech bubble
+
+## gx_remove_speech_bubble
+```sq
+int gx_remove_speech_bubble(int unit_id, int speechBubbleID)
+```
+
+- setting `speechBubbleID` to `0` will remove current speech bubble
+- Remove speech bubble for unit if current speech bubble ID matches `speechBubbleID`
+
+## gx_remove_current_speech_bubble
+```sq
+gx_remove_current_speech_bubble(int unit_id)
+```
+
+- Equivalent to calling `gx_remove_speech_bubble(unit_id, 0)`
+- Remove speech bubble for unit
 
 ## gx_(get|set|add)_unit_ammo
 ```sq
@@ -828,6 +845,358 @@ void gx_add_unit_variable(int unit_id, string varName, int varValue)
 - Calling `gx_get_*` to retrieve a non-existing `varValue` will return `0`.
 - Only `int` values can be set.
 
+## gx_modulo
+```sq
+mixed gx_modulo(mixed a, mixed b)
+```
+
+- function for wrapping `a` around `b`
+- If both `a` and `b` are integer, the result will be integer
+- If at least one `a` or `b` is a float, result will be float
+- The return value will have same sign as `b`
+- differs from the `%` operator for negative numbers
+
+```sq
+local result = 0
+result = 2 % 5              // 2
+result = gx_modulo(2, 5)    // 2
+result = 5 % 5              // 0
+result = gx_modulo(5, 5)    // 0
+result = 6 % 5              // 1
+result = gx_modulo(6, 5)    // 1
+result = -1 % 5             // -1
+result = gx_modulo(-1, 5)   // 4 !! <-- DIFFERENT THAN % operator
+```
+
+## gx_str_starts_with
+```sq
+bool gx_str_starts_with(string str, string val)
+```
+
+- returns `true` if `str` starts with `val`
+
+## gx_str_ends_with
+```sq
+bool gx_str_ends_with(string str, string val)
+```
+
+- returns `true` if `str` ends with `val`
+
+## gx_str_insert
+```sq
+string gx_str_insert(string str, string toInsert, int index)
+```
+
+- return a new string with `toInsert` inserted at position `index`
+
+## gx_str_encode_text
+```sq
+string gx_str_encode_text(string text)
+```
+
+Example
+```sq
+local someText = gx_str_encode_text("^23Rainbow Text")
+gx_print(someText)
+```
+
+## gx_str_encode_color_id
+```sq
+string gx_str_encode_color_id(int colorID)
+```
+
+Example
+```sq
+local colorID = 100
+local someText = gx_str_encode_text("^" + colorID)
+local someText2 = gx_str_encode_color_id(colorID)   # Equivalent to above
+```
+
+## gx_str_color_username
+```sq
+string gx_str_color_username(int colorID, string username)
+```
+
+Equivalent To / Implementation:
+```sq
+function gx_str_color_username(colorID, username)
+{
+    return gx_str_encode_color_id(colorID) + username
+}
+```
+
+## gx_str_color_username2
+```sq
+string gx_str_color_username2(int colorID, string username)
+```
+
+Equivalent To / Implementation:
+```sq
+function gx_str_color_username2(colorID, username)
+{
+    return gx_str_encode_color_id(ColorID.PushColor)
+    + gx_str_color_username(colorID, username)
+    + gx_str_encode_color_id(ColorID.PopColor)
+}
+```
+
+## gx_str_parse_command
+```sq
+string[] gx_str_parse_command(string cmd)
+```
+
+- splits a string based whitespace and handles quotes properly
+- useful when handling the `EventType.TextCommand` event
+
+## gx_convert_to_str
+```sq
+string gx_convert_to_str(mixed val)
+```
+
+- Safe function to convert a value to string
+- returns `""` on failure
+
+## gx_convert_to_int
+```sq
+int gx_convert_to_int(mixed val)
+```
+
+- Safe function to convert a value to integer
+- returns `0` on failure
+
+## gx_convert_to_float
+```sq
+float gx_convert_to_float(mixed val)
+```
+
+- Safe function to convert a value to float
+- returns `0.0` on failure
+
+## gx_sound2d_create
+```sq
+int gx_sound2d_create(table params = {})
+```
+
+```sq
+params = {
+    string m_sound,         // name of sound to play
+    int m_forceIDs[],       // forceIDs that can hear the sound
+    int m_playerIDs[],      // playerIDs that can hear the sound
+    float m_volume = 1,     // Optional, volume multiplier (default = 1)
+    float m_pitch = 1,      // Optional, pitch of sound (default = 1)
+    bool m_bLoop = false    // Optional, controls if sound should loop
+}
+```
+- If neither `m_forceIDs` nor `m_playerIDs` are set, sound will be heard by all players
+- returns the `soundID`
+
+## gx_sound2d_destroy
+```sq
+void gx_sound2d_destroy(int soundID)
+```
+
+- Will force a sound to stop and then be destroyed
+- This is the only way to stop a sound that is looping (`m_bLoop = true`)
+- After calling this, `gx_sound2d_is_playing` will return `false`
+- It is not required to call this. Sound will automatically be destroyed when it is finished playing (assuming not looping).
+
+## gx_sound2d_modify
+```sq
+void gx_sound2d_modify(int soundID, table params = {})
+```
+
+```sq
+params = {
+    float m_volume,     // Optional, volume multiplier
+    float m_pitch       // Optional, pitch of sound
+}
+```
+
+## gx_sound2d_is_playing
+```sq
+bool gx_sound2d_is_playing(int soundID)
+```
+
+- returns `true` if sound is currently playing
+
+## gx_sound3d_create
+```sq
+int gx_sound3d_create(table params = {})
+```
+
+```sq
+params = {
+    string m_sound,         // name of sound to play
+    string m_soundPack,     // name of soundpack to play
+    int m_unitID,           // Optional, unit for sound to attach to
+    bool m_bStopSoundOnUnitDeath,           // Optional, default true if m_unitID is set
+    Vec2 m_pos2d,           // Optional, 2d position for sound
+    Vec3 m_pos3d,           // Optional, 3d position for sound
+    float m_radius = 0,     // Optional, sound radius, default = 0
+    float m_volume = 1,     // Optional, volume multiplier (default = 1)
+    float m_pitch = 1,      // Optional, pitch of sound (default = 1)
+    bool m_bLoop = false                    // Optional, controls if sound should loop
+    bool m_bRandomLoopStartTime = false     // Optional
+}
+```
+
+- Only one of `m_unitID`, `m_pos2d`, `m_pos3d` should be set
+- Only one of `m_sound` or `m_soundPack` should be set
+- Sound will only be played if current player has vision of circle created by the position of the sound and `m_radius`
+- returns the `soundID`
+
+## gx_sound3d_destroy
+```sq
+void gx_sound3d_destroy(int soundID)
+```
+
+- Will force a sound to stop and then be destroyed
+- This is the only way to stop a sound that is looping (`m_bLoop = true`)
+- After calling this, `gx_sound3d_is_playing` will return `false`
+- It is not required to call this. Sound will automatically be destroyed when it is finished playing (assuming not looping).
+
+## gx_sound3d_modify
+```sq
+void gx_sound3d_modify(int soundID, table params = {})
+```
+
+```sq
+params = {
+    float m_volume,     // Optional, volume multiplier
+    float m_pitch,      // Optional, pitch of sound
+    Vec2 m_pos2d,       // Optional
+    Vec3 m_pos3d        // Optional
+}
+```
+
+- `m_pos2d` and `m_pos3d` will be ignored if sound is attached to a unit
+
+## gx_sound3d_is_playing
+```sq
+bool gx_sound3d_is_playing(int soundID)
+```
+
+- returns `true` if sound is currently playing
+
+## gx_decal_create
+```sq
+int gx_decal_create(table params)
+```
+
+```sq
+table params = {
+    string m_preset = {},           # decal preset
+    int m_alphaFn = {},
+    int m_colorFn = {},
+    bool m_bAlwaysDisplay = {},     # ignore fog of war checks
+    bool m_bDisplayOnMinimap = {},
+    vec4 m_color = {},              # srgb with alpha
+    vec2 m_pos = {},
+    float m_rotation = {},          # radians
+    float m_size = {},
+    string m_tag = {},
+    string m_texture = {}           # icon to use
+}
+```
+
+- create decal with properties, all fields are optional
+
+## gx_decal_modify
+```sq
+void gx_decal_modify(int decalID, table params)
+```
+
+```sq
+table params = {
+    string m_preset = {},           # decal preset
+    int m_alphaFn = {},
+    int m_colorFn = {},
+    bool m_bAlwaysDisplay = {},     # ignore fog of war checks
+    bool m_bDisplayOnMinimap = {},
+    vec4 m_color = {},              # srgb with alpha
+    vec2 m_pos = {},
+    float m_rotation = {},          # radians
+    float m_size = {},
+    string m_tag = {},
+    string m_texture = {}           # icon to use
+}
+```
+
+- modify/overwrite decal properties, all fields are optional
+
+## gx_decal_destroy
+```sq
+void gx_decal_destroy(int decalID)
+```
+
+- remove the decal from game
+
+## gx_decal_get_all_by_tag
+```sq
+int[] gx_decal_get_all_by_tag(string tag)
+```
+
+- return all decalIDs that have their `m_tag` set to `tag`
+
+## gx_decal_query
+```sq
+int[] gx_decal_query(table params)
+```
+
+```sq
+table params = {
+    AABR m_aabrs[] = {},            # Optional
+    string m_locations[] = {},      # Optional
+    bool m_bAll = false             # Optional, default false
+}
+```
+
+- Searches inside all of the provided aabrs and locations for decals
+- Query for decals inside `m_aabrs` and `m_locations`.
+- Setting `m_bAll` to true will return all decals on the map
+
+## gx_set_terrain_glow_color
+void gx_set_terrain_glow_color(table params = {})
+```sq
+table params = {
+    int m_index,        // Glow index to change, required
+    int m_hex,          // srgb hex code for color to set
+    Vec3<float> m_color // srgb color (each component [0.0-1.0]) for new color to set
+}
+```
+
+- Only one `m_hex` or `m_color` should be set, not both.
+- Internally, `m_hex` is converted to `m_color`.
+- `m_hex` parameter is only given for convenience.
+
+## gx_color_*
+
+```sq
+Vec3 gx_color_hsl_to_srgb(Vec3 hsl)
+Vec3 gx_color_srgb_to_hsl(Vec3 srgb)
+Vec3 gx_color_hex3_to_srgb(int hex3)
+int gx_color_srgb_to_hex3(Vec3 srgb)
+
+Vec4 gx_color_hsla_to_srgba(Vec4 hsl)
+Vec4 gx_color_srgba_to_hsla(Vec4 srgb)
+Vec4 gx_color_hex4_to_srgba(int hex4)
+int gx_color_srgba_to_hex4(Vec4 srgba)
+
+int gx_color_hex3_to_hex4(int hex3, int alpha = 255)
+int gx_color_hex4_to_hex3(int hex4)
+```
+
+- color conversion functions
+
+## gx_register_for_location_events
+```sq
+void gx_register_for_location_events(bool bEnable, table params = {})
+```
+
+- Register to receive `UnitEnteredLocation` and `UnitExitedLocation` events
+- no optional parameters currently
+- Usually you will want to only call this one time time in the `gx_sim_init` function
+- See {{enum("EventType")}} and {{eventQueue()}} for more information
 
 ## gx_is_event_queue_empty
 ```sq

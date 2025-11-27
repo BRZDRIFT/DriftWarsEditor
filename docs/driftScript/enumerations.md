@@ -177,8 +177,24 @@ enum PlayerProp
     IsNeutralPlayer,		// Read				(bool)
     IsRescueablePlayer,		// Read				(bool)
 	IsInGame,				// Read				(bool)
-	VictoryStatus			// Read-Write		(VictoryStatus),
-	AlliedVictory			// Read-Write		(bool)
+	VictoryStatus,			// Read-Write		(VictoryStatus),
+	AlliedVictory,			// Read-Write		(bool)
+	ColorID,				// Read				(int)
+	ForceID					// Read				(int)
+	PlayerNameColorID		// Read-Write		(int)
+							// Is Write-Enabled only for computer players
+							
+	ColoredPlayerName		// Read 			(string)
+							// Equivalent to:
+							// gx_str_encode_color_id(PlayerNameColorID)
+							// + PlayerName
+
+	ColoredPlayerName2		// Read				(string)
+							// Equivalent to:
+                            // gx_str_encode_color_id(ColorID.PushColor)
+                            // + gx_str_encode_color_id(PlayerNameColorID)
+							// + PlayerName
+							// + gx_str_encode_color_id(ColorID.PopColor)
 }
 ```
 
@@ -205,7 +221,18 @@ enum UnitProp
     GunShipState,           // Read-Write       (GunShipState)
 	Level,					// Read-Write		(int)
     Identifier,             // Read-Write       (string)
-    PlayerID                // Read-Write       (int)
+    PlayerID,               // Read-Write       (int)
+	
+	ForceGhostMode,			// Read-Write		(bool)
+							// Ghost mode allows units to walk through
+							// other units (similar to workers harvesting
+							// resources)
+
+	FriendlyName,			// Read-Write		(string)
+							// Allows you to override unit friendly name
+							// on a per-unit basis.
+
+	ForceInvulnerable		// Read-Write		(bool)
 }
 ```
 
@@ -252,6 +279,41 @@ gx_set_unit_prop(unit_id, UnitProp.GunShipState, GunShipState.ChainGunLevel2)
 
 - the above would give a gunship two chainguns
 
+## ColorID
+```sq
+enum ColorID
+{
+    Invalid,
+    Water,
+    Fire,
+    Rainbow,
+    DefaultTextColor,
+    PushColor,
+    PopColor,
+	PushInvisible,
+    PopInvisible,
+    Black,             	// 0x000000
+    White,            	// 0xFFFFFF
+    Red,              	// 0xFF0000
+    Orange,           	// 0xFF7F00
+    Yellow,           	// 0xFFFF00
+    Chartreuse,       	// 0x7FFF00
+    Green,            	// 0x00FF00
+    SpringGreen,      	// 0x00FF7F
+    Aqua,             	// 0x00FFFF
+    BabyBlue,         	// 0x007FFF
+    Blue,             	// 0x0000FF
+    Purple,           	// 0x7F00FF
+    Pink              	// 0xFF00FF
+}
+```
+
+- Common ColorIDs. See in-game Paint pallete for full-list.
+- `PushColor` and `PopColor` are sort of special, and is used for text.
+    - `PushColor` pushes the current color onto a color stack
+    - `PopColor` pops a color off, and sets current text color to it
+    - Allows you to save the current arbitrary color, and then re-use it later.
+
 ## CommandType
 ```sq
 enum CommandType
@@ -276,13 +338,21 @@ enum EventType
 {
     Invalid,            	// Invalid Event
 
-    PlayerNameChanged,  	// Populates m_playerID, m_playerName,
-							// and m_oldPlayerName of the Event structure
+    PlayerNameChanged,  	// Event is emitted whenever a player changes their name
+							// or changes their player name color.
+							// Populates m_playerID, m_playerName, m_oldPlayerName,
+							// m_playerNameColorID, and m_oldPlayerNameColorID
+							// of the Event structure
 
     PlayerLeftGame,     	// Populates m_playerID, and m_playerName
 							// of the Event structure
 
     TextCommand             // Populates m_playerID, m_playerName,
 							// and m_cmd of Event structure
+
+	UnitEnteredLocation,	// Populates m_unitID and m_location
+    UnitExitedLocation,		// Populates m_unitID and m_location
+	Sound2dDestroyed,		// Populates m_soundID
+	Sound3dDestroyed		// Populates m_soundID
 }
 ```
