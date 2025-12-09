@@ -1247,9 +1247,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#colorid" class="md-nav__link">
+  <a href="#colortype" class="md-nav__link">
     <span class="md-ellipsis">
-      ColorID
+      ColorType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unicode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unicode
     </span>
   </a>
   
@@ -1514,9 +1523,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#colorid" class="md-nav__link">
+  <a href="#colortype" class="md-nav__link">
     <span class="md-ellipsis">
-      ColorID
+      ColorType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unicode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unicode
     </span>
   </a>
   
@@ -1727,20 +1745,20 @@ Also DO NOT assume <code>Invalid</code> will always be equal to <code>0</code> o
 </span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="w">    </span><span class="n">IsInGame</span><span class="p">,</span><span class="w">               </span><span class="c1">// Read             (bool)</span>
 </span><span id="__span-8-38"><a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a><span class="w">    </span><span class="n">VictoryStatus</span><span class="p">,</span><span class="w">          </span><span class="c1">// Read-Write       (VictoryStatus),</span>
 </span><span id="__span-8-39"><a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a><span class="w">    </span><span class="n">AlliedVictory</span><span class="p">,</span><span class="w">          </span><span class="c1">// Read-Write       (bool)</span>
-</span><span id="__span-8-40"><a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a><span class="w">    </span><span class="n">ColorID</span><span class="p">,</span><span class="w">                </span><span class="c1">// Read             (int)</span>
+</span><span id="__span-8-40"><a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a><span class="w">    </span><span class="n">Color</span><span class="p">,</span><span class="w">                  </span><span class="c1">// Read-Write       (Vec3)</span>
 </span><span id="__span-8-41"><a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a><span class="w">    </span><span class="n">ForceID</span><span class="w">                 </span><span class="c1">// Read             (int)</span>
-</span><span id="__span-8-42"><a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a><span class="w">    </span><span class="n">PlayerNameColorID</span><span class="w">       </span><span class="c1">// Read-Write       (int)</span>
+</span><span id="__span-8-42"><a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a><span class="w">    </span><span class="n">PlayerNameColorDesc</span><span class="w">     </span><span class="c1">// Read-Write       (int) (i.e. ColorDesc)</span>
 </span><span id="__span-8-43"><a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a><span class="w">                            </span><span class="c1">// Is Write-Enabled only for computer players</span>
 </span><span id="__span-8-44"><a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a>
 </span><span id="__span-8-45"><a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a><span class="w">    </span><span class="n">ColoredPlayerName</span><span class="w">       </span><span class="c1">// Read             (string)</span>
 </span><span id="__span-8-46"><a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a><span class="w">                            </span><span class="c1">// Equivalent to:</span>
-</span><span id="__span-8-47"><a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a><span class="w">                            </span><span class="c1">// gx_str_encode_color_id(PlayerNameColorID)</span>
+</span><span id="__span-8-47"><a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a><span class="w">                            </span><span class="c1">// gx_get_player_prop(PlayerProp.PlayerNameColorDesc, playerID)</span>
 </span><span id="__span-8-48"><a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a><span class="w">                            </span><span class="c1">// + PlayerName</span>
 </span><span id="__span-8-49"><a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a>
 </span><span id="__span-8-50"><a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a><span class="w">    </span><span class="n">ColoredPlayerName2</span><span class="w">      </span><span class="c1">// Read             (string)</span>
 </span><span id="__span-8-51"><a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a><span class="w">                            </span><span class="c1">// Equivalent to:</span>
 </span><span id="__span-8-52"><a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a><span class="w">                            </span><span class="c1">// gx_str_encode_color_id(ColorID.PushColor)</span>
-</span><span id="__span-8-53"><a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a><span class="w">                            </span><span class="c1">// + gx_str_encode_color_id(PlayerNameColorID)</span>
+</span><span id="__span-8-53"><a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a><span class="w">                            </span><span class="c1">// + gx_get_player_prop(PlayerProp.ColoredPlayerName, playerID)</span>
 </span><span id="__span-8-54"><a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a><span class="w">                            </span><span class="c1">// + PlayerName</span>
 </span><span id="__span-8-55"><a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a><span class="w">                            </span><span class="c1">// + gx_str_encode_color_id(ColorID.PopColor)</span>
 </span><span id="__span-8-56"><a id="__codelineno-8-56" name="__codelineno-8-56" href="#__codelineno-8-56"></a><span class="p">}</span>
@@ -1766,7 +1784,7 @@ Also DO NOT assume <code>Invalid</code> will always be equal to <code>0</code> o
 </span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="n">GetParentBunker</span><span class="p">,</span><span class="w">        </span><span class="c1">// Read             (int)</span>
 </span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="n">GunShipState</span><span class="p">,</span><span class="w">           </span><span class="c1">// Read-Write       (GunShipState)</span>
 </span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">    </span><span class="n">Level</span><span class="p">,</span><span class="w">                  </span><span class="c1">// Read-Write       (int)</span>
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">    </span><span class="n">Identifier</span><span class="p">,</span><span class="w">             </span><span class="c1">// Read-Write       (string)</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">    </span><span class="n">Tag</span><span class="p">,</span><span class="w">                    </span><span class="c1">// Read-Write       (string)</span>
 </span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">    </span><span class="n">PlayerID</span><span class="p">,</span><span class="w">               </span><span class="c1">// Read-Write       (int)</span>
 </span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
 </span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">    </span><span class="n">ForceGhostMode</span><span class="p">,</span><span class="w">         </span><span class="c1">// Read-Write       (bool)</span>
@@ -1822,41 +1840,54 @@ Also DO NOT assume <code>Invalid</code> will always be equal to <code>0</code> o
 <ul>
 <li>the above would give a gunship two chainguns</li>
 </ul>
-<h2 id="colorid">ColorID</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">ColorID</span>
+<h2 id="colortype">ColorType</h2>
+<p>enum ColorType
+{
+    Invalid,
+    Normal,
+    Rainbow,
+    Water,
+    Lava
+}</p>
+<h2 id="unicode">Unicode</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">Unicode</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="n">Invalid</span><span class="p">,</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="n">Water</span><span class="p">,</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="n">Fire</span><span class="p">,</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="n">Rainbow</span><span class="p">,</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="n">DefaultTextColor</span><span class="p">,</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="n">PushColor</span><span class="p">,</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="n">PopColor</span><span class="p">,</span>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="n">PushInvisible</span><span class="p">,</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="n">PopInvisible</span><span class="p">,</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="n">Black</span><span class="p">,</span><span class="w">              </span><span class="c1">// 0x000000</span>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="n">White</span><span class="p">,</span><span class="w">              </span><span class="c1">// 0xFFFFFF</span>
-</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="n">Red</span><span class="p">,</span><span class="w">                </span><span class="c1">// 0xFF0000</span>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="n">Orange</span><span class="p">,</span><span class="w">             </span><span class="c1">// 0xFF7F00</span>
-</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="n">Yellow</span><span class="p">,</span><span class="w">             </span><span class="c1">// 0xFFFF00</span>
-</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="n">Chartreuse</span><span class="p">,</span><span class="w">         </span><span class="c1">// 0x7FFF00</span>
-</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="n">Green</span><span class="p">,</span><span class="w">              </span><span class="c1">// 0x00FF00</span>
-</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span><span class="n">SpringGreen</span><span class="p">,</span><span class="w">        </span><span class="c1">// 0x00FF7F</span>
-</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span><span class="n">Aqua</span><span class="p">,</span><span class="w">               </span><span class="c1">// 0x00FFFF</span>
-</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">    </span><span class="n">BabyBlue</span><span class="p">,</span><span class="w">           </span><span class="c1">// 0x007FFF</span>
-</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">    </span><span class="n">Blue</span><span class="p">,</span><span class="w">               </span><span class="c1">// 0x0000FF</span>
-</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">    </span><span class="n">Purple</span><span class="p">,</span><span class="w">             </span><span class="c1">// 0x7F00FF</span>
-</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w">    </span><span class="n">Pink</span><span class="w">                </span><span class="c1">// 0xFF00FF</span>
-</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="p">}</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="n">Special_PushColor</span><span class="p">,</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="n">Special_PopColor</span><span class="p">,</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="n">Special_PushInvisible</span><span class="p">,</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="n">Special_PopInvisible</span><span class="p">,</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="n">Special_DefaultColor</span><span class="p">,</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="n">Color_Effect_Water</span><span class="p">,</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="n">Color_Effect_Lava</span><span class="p">,</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="n">Color_Effect_Rainbow</span><span class="p">,</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="n">Color_Black</span><span class="p">,</span><span class="w">                    </span><span class="err">#</span><span class="w"> </span><span class="mh">0x000000</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="n">Color_White</span><span class="p">,</span><span class="w">                    </span><span class="err">#</span><span class="w"> </span><span class="mh">0xFFFFFF</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="n">Color_Red</span><span class="p">,</span><span class="w">                      </span><span class="err">#</span><span class="w"> </span><span class="mh">0xFF0000</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="n">Color_Orange</span><span class="p">,</span><span class="w">                   </span><span class="err">#</span><span class="w"> </span><span class="mh">0xFF7F00</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="n">Color_Yellow</span><span class="p">,</span><span class="w">                   </span><span class="err">#</span><span class="w"> </span><span class="mh">0xFFFF00</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="n">Color_Chartreuse</span><span class="p">,</span><span class="w">               </span><span class="err">#</span><span class="w"> </span><span class="mh">0x7FFF00</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="n">Color_Green</span><span class="p">,</span><span class="w">                    </span><span class="err">#</span><span class="w"> </span><span class="mh">0x00FF00</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="n">Color_SpringGreen</span><span class="p">,</span><span class="w">              </span><span class="err">#</span><span class="w"> </span><span class="mh">0x00FF7F</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span><span class="n">Color_Aqua</span><span class="p">,</span><span class="w">                     </span><span class="err">#</span><span class="w"> </span><span class="mh">0x00FFFF</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span><span class="n">Color_BabyBlue</span><span class="p">,</span><span class="w">                 </span><span class="err">#</span><span class="w"> </span><span class="mh">0x007FFF</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">    </span><span class="n">Color_Blue</span><span class="p">,</span><span class="w">                     </span><span class="err">#</span><span class="w"> </span><span class="mh">0x0000FF</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">    </span><span class="n">Color_Purple</span><span class="p">,</span><span class="w">                   </span><span class="err">#</span><span class="w"> </span><span class="mh">0x7F00FF</span>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">    </span><span class="n">Color_Pink</span><span class="w">                      </span><span class="err">#</span><span class="w"> </span><span class="mh">0xFF00FF</span>
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
-<li>Common ColorIDs. See in-game Paint pallete for full-list.</li>
-<li><code>PushColor</code> and <code>PopColor</code> are sort of special, and is used for text.<ul>
-<li><code>PushColor</code> pushes the current color onto a color stack</li>
-<li><code>PopColor</code> pops a color off, and sets current text color to it</li>
+<li>Useful unicode characters available in the game.</li>
+<li><code>Special_PushColor</code> and <code>Special_PopColor</code> are sort of special, and is used for text.<ul>
+<li><code>Special_PushColor</code> pushes the current color onto a color stack</li>
+<li><code>Special_PopColor</code> pops a color off, and sets current text color to it</li>
 <li>Allows you to save the current arbitrary color, and then re-use it later.</li>
 </ul>
 </li>
+<li><code>Special_PushInvisible</code> and <code>Special_PopInvisible</code> are also special<ul>
+<li>All characters after <code>Special_PushInvisible</code> will be invisible unless highlighted until a corresponding <code>Special_PopInvisible</code> is reached.</li>
+</ul>
+</li>
+<li>The <code>Color_*</code> unicode characters control text colors for all characters after</li>
 </ul>
 <h2 id="commandtype">CommandType</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">CommandType</span>
@@ -1879,23 +1910,27 @@ Also DO NOT assume <code>Invalid</code> will always be equal to <code>0</code> o
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="p">{</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="n">Invalid</span><span class="p">,</span><span class="w">                </span><span class="c1">// Invalid Event</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="n">PlayerNameChanged</span><span class="p">,</span><span class="w">      </span><span class="c1">// Event is emitted whenever a player changes their name</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">                            </span><span class="c1">// or changes their player name color.</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">                            </span><span class="c1">// Populates m_playerID, m_playerName, m_oldPlayerName,</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">                            </span><span class="c1">// m_playerNameColorID, and m_oldPlayerNameColorID</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">                            </span><span class="c1">// of the Event structure</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">    </span><span class="n">PlayerLeftGame</span><span class="p">,</span><span class="w">         </span><span class="c1">// Populates m_playerID, and m_playerName</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">                            </span><span class="c1">// of the Event structure</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">    </span><span class="n">TextCommand</span><span class="w">             </span><span class="c1">// Populates m_playerID, m_playerName,</span>
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">                            </span><span class="c1">// and m_cmd of Event structure</span>
-</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
-</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">    </span><span class="n">UnitEnteredLocation</span><span class="p">,</span><span class="w">    </span><span class="c1">// Populates m_unitID and m_location</span>
-</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">    </span><span class="n">UnitExitedLocation</span><span class="p">,</span><span class="w">     </span><span class="c1">// Populates m_unitID and m_location</span>
-</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">    </span><span class="n">Sound2dDestroyed</span><span class="p">,</span><span class="w">       </span><span class="c1">// Populates m_soundID</span>
-</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="w">    </span><span class="n">Sound3dDestroyed</span><span class="w">        </span><span class="c1">// Populates m_soundID</span>
-</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="p">}</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">    </span><span class="n">PlayerNameChanged</span><span class="p">,</span><span class="w">      </span><span class="c1">// Populates m_playerID, m_playerName, m_oldPlayerName,</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">                            </span><span class="c1">// m_playerName2, m_oldPlayerName2,</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">                            </span><span class="c1">// m_playerNameColor, and m_oldPlayerNameColor</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">                            </span><span class="c1">// of the Event structure</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">    </span><span class="n">PlayerNameColorChanged</span><span class="p">,</span><span class="w"> </span><span class="c1">// Populates m_playerID, m_playerName, m_oldPlayerName,</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">                            </span><span class="c1">// m_playerName2, m_oldPlayerName2,</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">                            </span><span class="c1">// m_playerNameColor, and m_oldPlayerNameColor</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">                            </span><span class="c1">// of the Event structure</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">    </span><span class="n">PlayerLeftGame</span><span class="p">,</span><span class="w">         </span><span class="c1">// Populates m_playerID, m_playerName, and m_playerName2,</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">                            </span><span class="c1">// of the Event structure</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">    </span><span class="n">TextCommand</span><span class="w">             </span><span class="c1">// Populates m_playerID, m_playerName, m_playerName2,</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="w">                            </span><span class="c1">// and m_cmd of Event structure</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="w">    </span><span class="n">UnitEnteredLocation</span><span class="p">,</span><span class="w">    </span><span class="c1">// Populates m_unitID and m_location</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="w">    </span><span class="n">UnitExitedLocation</span><span class="p">,</span><span class="w">     </span><span class="c1">// Populates m_unitID and m_location</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a><span class="w">    </span><span class="n">Sound2dDestroyed</span><span class="p">,</span><span class="w">       </span><span class="c1">// Populates m_soundID</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="w">    </span><span class="n">Sound3dDestroyed</span><span class="w">        </span><span class="c1">// Populates m_soundID</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="p">}</span>
 </span></code></pre></div>
 
 
